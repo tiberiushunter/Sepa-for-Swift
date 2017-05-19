@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  WeatherViewController.swift
 //  SEPA
 //
 //  Created by Welek Samuel on 19/05/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class WeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

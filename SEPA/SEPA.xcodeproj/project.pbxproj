@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D281ECE701000AAD24C /* AppDelegate.swift */; };
-		E2A59D2B1ECE701000AAD24C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2A1ECE701000AAD24C /* FirstViewController.swift */; };
-		E2A59D2D1ECE701000AAD24C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2C1ECE701000AAD24C /* SecondViewController.swift */; };
+		E2A59D2B1ECE701000AAD24C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */; };
+		E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */; };
 		E2A59D301ECE701000AAD24C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A59D2E1ECE701000AAD24C /* Main.storyboard */; };
 		E2A59D321ECE701000AAD24C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A59D311ECE701000AAD24C /* Assets.xcassets */; };
 		E2A59D351ECE701000AAD24C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A59D331ECE701000AAD24C /* LaunchScreen.storyboard */; };
 		E2A59D401ECE701000AAD24C /* SEPATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D3F1ECE701000AAD24C /* SEPATests.swift */; };
 		E2A59D4B1ECE701100AAD24C /* SEPAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D4A1ECE701100AAD24C /* SEPAUITests.swift */; };
+		E2A59D5D1ECE7D7000AAD24C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D5C1ECE7D7000AAD24C /* CalendarViewController.swift */; };
+		E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */; };
+		E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */; };
+		E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +41,8 @@
 /* Begin PBXFileReference section */
 		E2A59D251ECE700F00AAD24C /* SEPA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEPA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A59D281ECE701000AAD24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2A59D2A1ECE701000AAD24C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		E2A59D2C1ECE701000AAD24C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		E2A59D2F1ECE701000AAD24C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2A59D311ECE701000AAD24C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2A59D341ECE701000AAD24C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		E2A59D461ECE701100AAD24C /* SEPAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SEPAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A59D4A1ECE701100AAD24C /* SEPAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPAUITests.swift; sourceTree = "<group>"; };
 		E2A59D4C1ECE701100AAD24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2A59D5C1ECE7D7000AAD24C /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = ../CalendarViewController.swift; sourceTree = "<group>"; };
+		E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +108,13 @@
 			isa = PBXGroup;
 			children = (
 				E2A59D281ECE701000AAD24C /* AppDelegate.swift */,
-				E2A59D2A1ECE701000AAD24C /* FirstViewController.swift */,
-				E2A59D2C1ECE701000AAD24C /* SecondViewController.swift */,
+				E2A59D5C1ECE7D7000AAD24C /* CalendarViewController.swift */,
+				E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */,
+				E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */,
 				E2A59D2E1ECE701000AAD24C /* Main.storyboard */,
+				E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */,
+				E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */,
+				E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */,
 				E2A59D311ECE701000AAD24C /* Assets.xcassets */,
 				E2A59D331ECE701000AAD24C /* LaunchScreen.storyboard */,
 				E2A59D361ECE701000AAD24C /* Info.plist */,
@@ -190,6 +202,7 @@
 		E2A59D1D1ECE700F00AAD24C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Welek Samuel";
@@ -259,9 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A59D2D1ECE701000AAD24C /* SecondViewController.swift in Sources */,
+				E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */,
+				E2A59D5D1ECE7D7000AAD24C /* CalendarViewController.swift in Sources */,
+				E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */,
 				E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */,
-				E2A59D2B1ECE701000AAD24C /* FirstViewController.swift in Sources */,
+				E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */,
+				E2A59D2B1ECE701000AAD24C /* WeatherViewController.swift in Sources */,
+				E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +505,7 @@
 				E2A59D511ECE701100AAD24C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E2A59D521ECE701100AAD24C /* Build configuration list for PBXNativeTarget "SEPATests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +514,7 @@
 				E2A59D541ECE701100AAD24C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E2A59D551ECE701100AAD24C /* Build configuration list for PBXNativeTarget "SEPAUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +523,7 @@
 				E2A59D571ECE701100AAD24C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
