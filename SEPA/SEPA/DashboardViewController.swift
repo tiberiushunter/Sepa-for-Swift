@@ -69,7 +69,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
-    func tableView(tableView: UITableView, didDeSelectRowsAtIndexPath indexPath: NSIndexPath){
+    func tableView(tableView: UITableView, didSelectRowsAtIndexPath indexPath: NSIndexPath){
         print (indexPath)
         
         /*Add cases here to move to different segues
