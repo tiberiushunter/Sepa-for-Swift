@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Weather-->
@@ -193,13 +194,56 @@
                     <view key="view" contentMode="scaleToFill" id="84I-U3-2Ni">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vB0-Vn-y18">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QzH-zC-LH5">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="10X-Ru-yC4">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" id="sJb-u0-HgR">
+                                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sJb-u0-HgR" id="yGJ-VM-p7D">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QzH-zC-LH5" firstAttribute="top" secondItem="vB0-Vn-y18" secondAttribute="top" id="2a5-hl-wRs"/>
+                                    <constraint firstAttribute="bottom" secondItem="QzH-zC-LH5" secondAttribute="bottom" id="Nss-Xi-yd3"/>
+                                    <constraint firstItem="QzH-zC-LH5" firstAttribute="leading" secondItem="vB0-Vn-y18" secondAttribute="leading" id="Osu-QX-kmu"/>
+                                    <constraint firstAttribute="height" constant="536" id="UhX-EO-NsB"/>
+                                    <constraint firstAttribute="width" constant="600" id="g4d-oM-WpY"/>
+                                    <constraint firstAttribute="trailing" secondItem="QzH-zC-LH5" secondAttribute="trailing" id="tSi-qz-D6F"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vB0-Vn-y18" firstAttribute="top" secondItem="YUW-Za-bJz" secondAttribute="bottom" id="XMU-d4-O3X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vB0-Vn-y18" secondAttribute="trailing" constant="-20" id="fAf-BT-q0r"/>
+                            <constraint firstItem="prL-dF-FI4" firstAttribute="top" secondItem="vB0-Vn-y18" secondAttribute="bottom" id="ma1-Ks-mPq"/>
+                            <constraint firstItem="vB0-Vn-y18" firstAttribute="leading" secondItem="84I-U3-2Ni" secondAttribute="leadingMargin" constant="-20" id="xfu-uc-NgC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="jua-ag-bcm"/>
+                    <connections>
+                        <outlet property="tableView" destination="10X-Ru-yC4" id="BDA-JP-Bn3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yg9-uT-aSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1506" y="-1322"/>
+            <point key="canvasLocation" x="-1520" y="-1292"/>
         </scene>
     </scenes>
     <resources>
