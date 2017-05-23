@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20FD9C71ED4230800876005 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9C61ED4230800876005 /* CalendarViewController.swift */; };
 		E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D281ECE701000AAD24C /* AppDelegate.swift */; };
 		E2A59D2B1ECE701000AAD24C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */; };
 		E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */; };
@@ -15,7 +16,6 @@
 		E2A59D351ECE701000AAD24C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A59D331ECE701000AAD24C /* LaunchScreen.storyboard */; };
 		E2A59D401ECE701000AAD24C /* SEPATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D3F1ECE701000AAD24C /* SEPATests.swift */; };
 		E2A59D4B1ECE701100AAD24C /* SEPAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D4A1ECE701100AAD24C /* SEPAUITests.swift */; };
-		E2A59D5D1ECE7D7000AAD24C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D5C1ECE7D7000AAD24C /* CalendarViewController.swift */; };
 		E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */; };
 		E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */; };
 		E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */; };
@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E20FD9C61ED4230800876005 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		E2A59D251ECE700F00AAD24C /* SEPA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEPA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A59D281ECE701000AAD24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		E2A59D461ECE701100AAD24C /* SEPAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SEPAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A59D4A1ECE701100AAD24C /* SEPAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPAUITests.swift; sourceTree = "<group>"; };
 		E2A59D4C1ECE701100AAD24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2A59D5C1ECE7D7000AAD24C /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = ../CalendarViewController.swift; sourceTree = "<group>"; };
 		E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 		E2A59D271ECE700F00AAD24C /* SEPA */ = {
 			isa = PBXGroup;
 			children = (
+				E20FD9C61ED4230800876005 /* CalendarViewController.swift */,
 				E2A59D281ECE701000AAD24C /* AppDelegate.swift */,
-				E2A59D5C1ECE7D7000AAD24C /* CalendarViewController.swift */,
 				E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */,
 				E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */,
 				E2A59D2E1ECE701000AAD24C /* Main.storyboard */,
@@ -272,8 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20FD9C71ED4230800876005 /* CalendarViewController.swift in Sources */,
 				E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */,
-				E2A59D5D1ECE7D7000AAD24C /* CalendarViewController.swift in Sources */,
 				E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */,
 				E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */,
 				E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */,
