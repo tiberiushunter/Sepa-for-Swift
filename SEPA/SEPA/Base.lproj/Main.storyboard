@@ -5,122 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Weather-->
-        <scene sceneID="hNz-n2-bh7">
-            <objects>
-                <viewController title="Weather" id="9pv-A4-QxB" customClass="WeatherTodayViewController" customModule="SEPA" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by WeatherViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="190" y="329" width="221" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Weather View Controller" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="106" y="279" width="389" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Today" image="first" id="acW-dT-cKf"/>
-                    <navigationItem key="navigationItem" title="Weather - Today" id="6wN-cO-y8F"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1570" y="-2876"/>
-        </scene>
-        <!--7 Days-->
-        <scene sceneID="aVc-cx-4QI">
-            <objects>
-                <viewController id="sDQ-Ei-yFt" customClass="Weather7DayViewController" customModule="SEPA" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LMR-4d-KoQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="hi7-yo-cxS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3GU-vW-CC1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Weather 7 Days" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="itJ-mG-hTk">
-                                <rect key="frame" x="172" y="279" width="258" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="7 Days" id="Yo7-M9-QFA"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="how-BW-TPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1570" y="-1532"/>
-        </scene>
-        <!--Weather Tomorrow-->
-        <scene sceneID="pJB-7t-PJs">
-            <objects>
-                <viewController title="Weather Tomorrow" id="psJ-O3-IOg" customClass="WeatherTomorrowViewController" customModule="SEPA" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h72-Zt-ahl"/>
-                        <viewControllerLayoutGuide type="bottom" id="Kbr-p4-ryu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DAI-kZ-Od0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Weather Tomorrow" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="nZ6-rk-mzS">
-                                <rect key="frame" x="149" y="279" width="303" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Tomorrow" id="XUL-tW-WQJ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I64-lh-Dse" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1570" y="-2210"/>
-        </scene>
-        <!--Weather-->
-        <scene sceneID="C3d-da-nrW">
-            <objects>
-                <tabBarController title="Weather" id="KuA-RJ-YIT" customClass="WeatherTabBarController" customModule="SEPA" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="RGJ-1l-1cG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="CPn-EM-217"/>
-                        <segue destination="psJ-O3-IOg" kind="relationship" relationship="viewControllers" id="sme-za-CDJ"/>
-                        <segue destination="sDQ-Ei-yFt" kind="relationship" relationship="viewControllers" id="Ia1-Mt-Amy"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="no5-11-ERF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="418" y="-2001"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="MpK-xn-Gqh">
             <objects>
@@ -216,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFO-J3-s2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-448"/>
+            <point key="canvasLocation" x="872" y="-448"/>
         </scene>
         <!--News-->
         <scene sceneID="wg7-f3-ORb">
@@ -286,7 +170,7 @@
                         <sections>
                             <tableViewSection headerTitle="My Dashboard Apps" id="9MP-aw-lGh">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weatherTableViewCell" textLabel="8xo-aC-oTp" style="IBUITableViewCellStyleDefault" id="awN-Nb-Mtb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weatherTableViewCell" textLabel="8xo-aC-oTp" style="IBUITableViewCellStyleDefault" id="awN-Nb-Mtb" customClass="DashboardTableViewCell" customModule="SEPA">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awN-Nb-Mtb" id="hOS-W9-4YN">
@@ -303,10 +187,10 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="KuA-RJ-YIT" kind="show" id="WTT-L9-SWP"/>
+                                            <segue destination="mak-Ge-HjU" kind="show" id="FFD-Nv-Lbk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsTableViewCell" textLabel="Tgk-BX-04u" style="IBUITableViewCellStyleDefault" id="hoF-8r-e7T">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsTableViewCell" textLabel="Tgk-BX-04u" style="IBUITableViewCellStyleDefault" id="hoF-8r-e7T" customClass="DashboardTableViewCell" customModule="SEPA">
                                         <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hoF-8r-e7T" id="IEq-NM-qns">
@@ -326,7 +210,7 @@
                                             <segue destination="8rJ-Kc-sve" kind="show" id="u90-F0-yCE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calendarTableViewCell" textLabel="2vX-PL-GW5" style="IBUITableViewCellStyleDefault" id="vdY-fv-8my">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calendarTableViewCell" textLabel="2vX-PL-GW5" style="IBUITableViewCellStyleDefault" id="vdY-fv-8my" customClass="DashboardTableViewCell" customModule="SEPA">
                                         <rect key="frame" x="0.0" y="180" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vdY-fv-8my" id="e7N-Zm-lC8">
@@ -346,7 +230,7 @@
                                             <segue destination="f74-2J-m59" kind="show" id="65V-e4-ynW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationTableViewCell" textLabel="d1k-ZD-DYC" style="IBUITableViewCellStyleDefault" id="fdu-04-HfZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationTableViewCell" textLabel="d1k-ZD-DYC" style="IBUITableViewCellStyleDefault" id="fdu-04-HfZ" customClass="DashboardTableViewCell" customModule="SEPA">
                                         <rect key="frame" x="0.0" y="224" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fdu-04-HfZ" id="Qd5-bU-i8x">
@@ -366,7 +250,7 @@
                                             <segue destination="5mD-YP-cxM" kind="show" id="jCj-05-eWH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calculatorTableViewCell" textLabel="3LZ-Cn-kuR" style="IBUITableViewCellStyleDefault" id="mIK-Sd-VZN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calculatorTableViewCell" textLabel="3LZ-Cn-kuR" style="IBUITableViewCellStyleDefault" id="mIK-Sd-VZN" customClass="DashboardTableViewCell" customModule="SEPA">
                                         <rect key="frame" x="0.0" y="268" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mIK-Sd-VZN" id="BDG-vd-xFS">
@@ -386,7 +270,7 @@
                                             <segue destination="qHa-Yi-P3T" kind="show" id="LkL-XE-bqj"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photosTableViewCell" textLabel="c2g-Uz-jnl" style="IBUITableViewCellStyleDefault" id="lSP-CQ-b1x">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photosTableViewCell" textLabel="c2g-Uz-jnl" style="IBUITableViewCellStyleDefault" id="lSP-CQ-b1x" customClass="DashboardTableViewCell" customModule="SEPA">
                                         <rect key="frame" x="0.0" y="312" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lSP-CQ-b1x" id="PBf-Hd-jYs">
@@ -439,14 +323,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="SEPA Dashboard" id="htV-Oe-XQi"/>
+                    <connections>
+                        <outlet property="TableView" destination="Xn0-fP-tnK" id="E9E-FV-Gx2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAy-98-sdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-405" y="-2001"/>
+            <point key="canvasLocation" x="-379" y="-2001"/>
+        </scene>
+        <!--WeatherInitial-->
+        <scene sceneID="SXr-Tn-j27">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Weather" referencedIdentifier="WeatherInitial" id="mak-Ge-HjU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0V-cF-x1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="91.5" y="-2379"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
