@@ -11,7 +11,6 @@ import MapKit
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
-    var passedString = "blank"
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
 
