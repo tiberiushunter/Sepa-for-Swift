@@ -1,5 +1,5 @@
 //
-//  WeatherURL.swift
+//  DarkSkyWeatherAPI.swift
 //  SEPA
 //
 //  Created by Welek Samuel on 23/05/2017.
