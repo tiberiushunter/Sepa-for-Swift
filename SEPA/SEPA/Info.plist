@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Giving us permission allows SEPA to accurately pin point your location.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Giving us permission allows SEPA to accurately pin point your location.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Giving us permission allows SEPA to accurately pin point your location.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

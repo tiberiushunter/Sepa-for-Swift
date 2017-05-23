@@ -40,7 +40,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weather" image="first" id="acW-dT-cKf"/>
-                    <navigationItem key="navigationItem" id="6wN-cO-y8F"/>
+                    <navigationItem key="navigationItem" title="Weather" id="6wN-cO-y8F"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +79,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" id="oWd-Es-Unr"/>
-                    <navigationItem key="navigationItem" id="dP1-qy-PQy"/>
+                    <navigationItem key="navigationItem" title="Calendar" id="dP1-qy-PQy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt1-G2-ZfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,11 +119,29 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calculator" id="G2O-6N-2Zu"/>
-                    <navigationItem key="navigationItem" id="OPi-qz-wQO"/>
+                    <navigationItem key="navigationItem" title="Calculator" id="OPi-qz-wQO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzf-95-QiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1080" y="-448"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="tkh-2z-0a8">
+            <objects>
+                <viewController id="5mD-YP-cxM" customClass="LocationViewController" customModule="SEPA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8bm-qh-CgY"/>
+                        <viewControllerLayoutGuide type="bottom" id="ygk-7U-ZHl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Caa-Fy-0xX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFO-J3-s2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="-448"/>
         </scene>
         <!--News-->
         <scene sceneID="wg7-f3-ORb">
@@ -160,7 +178,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="second" id="cPa-gy-q4n"/>
-                    <navigationItem key="navigationItem" id="d1m-kN-XSv"/>
+                    <navigationItem key="navigationItem" title="News" id="d1m-kN-XSv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="-850" y="-2127"/>
         </scene>
-        <!--Dashboard Table View Controller-->
+        <!--SEPA Dashboard-->
         <scene sceneID="NVy-D8-1gG">
             <objects>
-                <tableViewController id="5bX-80-Tyx" customClass="DashboardTableViewController" customModule="SEPA" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="SEPA Dashboard" id="5bX-80-Tyx" customClass="DashboardTableViewController" customModule="SEPA" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xn0-fP-tnK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,8 +271,28 @@
                                             <segue destination="f74-2J-m59" kind="show" id="65V-e4-ynW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calculatorTableViewCell" textLabel="3LZ-Cn-kuR" style="IBUITableViewCellStyleDefault" id="mIK-Sd-VZN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationTableViewCell" textLabel="d1k-ZD-DYC" style="IBUITableViewCellStyleDefault" id="fdu-04-HfZ">
                                         <rect key="frame" x="0.0" y="224" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fdu-04-HfZ" id="Qd5-bU-i8x">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Location History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d1k-ZD-DYC">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5mD-YP-cxM" kind="show" id="jCj-05-eWH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calculatorTableViewCell" textLabel="3LZ-Cn-kuR" style="IBUITableViewCellStyleDefault" id="mIK-Sd-VZN">
+                                        <rect key="frame" x="0.0" y="268" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mIK-Sd-VZN" id="BDG-vd-xFS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -274,7 +312,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photosTableViewCell" textLabel="c2g-Uz-jnl" style="IBUITableViewCellStyleDefault" id="lSP-CQ-b1x">
-                                        <rect key="frame" x="0.0" y="268" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="312" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lSP-CQ-b1x" id="PBf-Hd-jYs">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -298,7 +336,7 @@
                             <tableViewSection headerTitle="Settings" id="Uen-LO-xJi">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsTableViewCell" textLabel="OnR-Qo-FAL" style="IBUITableViewCellStyleDefault" id="Nhm-pv-5IO">
-                                        <rect key="frame" x="0.0" y="340" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="384" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nhm-pv-5IO" id="jEx-ND-L12">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -325,7 +363,7 @@
                             <outlet property="delegate" destination="5bX-80-Tyx" id="1Bc-jv-gnM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="htV-Oe-XQi"/>
+                    <navigationItem key="navigationItem" title="SEPA Dashboard" id="htV-Oe-XQi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAy-98-sdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

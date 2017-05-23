@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E20FD9C71ED4230800876005 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9C61ED4230800876005 /* CalendarViewController.swift */; };
 		E20FD9D31ED4530D00876005 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D21ED4530D00876005 /* DashboardTableViewController.swift */; };
+		E20FD9D51ED4582300876005 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */; };
+		E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D61ED45A5200876005 /* LocationViewController.swift */; };
+		E20FD9DD1ED463B000876005 /* WeatherURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9DC1ED463B000876005 /* WeatherURL.swift */; };
 		E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D281ECE701000AAD24C /* AppDelegate.swift */; };
 		E2A59D2B1ECE701000AAD24C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */; };
 		E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		E20FD9C61ED4230800876005 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		E20FD9D21ED4530D00876005 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
+		E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		E20FD9D61ED45A5200876005 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		E20FD9DC1ED463B000876005 /* WeatherURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherURL.swift; sourceTree = "<group>"; };
 		E2A59D251ECE700F00AAD24C /* SEPA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEPA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A59D281ECE701000AAD24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E20FD9D81ED4636600876005 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E20FD9DB1ED4639100876005 /* API */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E20FD9DB1ED4639100876005 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E20FD9DC1ED463B000876005 /* WeatherURL.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		E2A59D1C1ECE700F00AAD24C = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +131,7 @@
 		E2A59D271ECE700F00AAD24C /* SEPA */ = {
 			isa = PBXGroup;
 			children = (
+				E20FD9D81ED4636600876005 /* Utilities */,
 				E20FD9C61ED4230800876005 /* CalendarViewController.swift */,
 				E2A59D281ECE701000AAD24C /* AppDelegate.swift */,
 				E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */,
@@ -121,6 +144,8 @@
 				E2A59D331ECE701000AAD24C /* LaunchScreen.storyboard */,
 				E2A59D361ECE701000AAD24C /* Info.plist */,
 				E20FD9D21ED4530D00876005 /* DashboardTableViewController.swift */,
+				E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */,
+				E20FD9D61ED45A5200876005 /* LocationViewController.swift */,
 			);
 			path = SEPA;
 			sourceTree = "<group>";
@@ -278,9 +303,12 @@
 				E20FD9C71ED4230800876005 /* CalendarViewController.swift in Sources */,
 				E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */,
 				E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */,
+				E20FD9DD1ED463B000876005 /* WeatherURL.swift in Sources */,
 				E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */,
 				E20FD9D31ED4530D00876005 /* DashboardTableViewController.swift in Sources */,
+				E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */,
 				E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */,
+				E20FD9D51ED4582300876005 /* DashboardTableViewCell.swift in Sources */,
 				E2A59D2B1ECE701000AAD24C /* WeatherViewController.swift in Sources */,
 				E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */,
 			);
