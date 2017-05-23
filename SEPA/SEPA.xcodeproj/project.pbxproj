@@ -12,6 +12,9 @@
 		E20FD9D51ED4582300876005 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */; };
 		E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D61ED45A5200876005 /* LocationViewController.swift */; };
 		E20FD9DD1ED463B000876005 /* WeatherURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9DC1ED463B000876005 /* WeatherURL.swift */; };
+		E20FD9E91ED4749F00876005 /* WeatherTomorrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9E81ED4749F00876005 /* WeatherTomorrowViewController.swift */; };
+		E20FD9EB1ED474EB00876005 /* WeatherTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */; };
+		E20FD9EE1ED476D600876005 /* Weather7DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */; };
 		E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D281ECE701000AAD24C /* AppDelegate.swift */; };
 		E2A59D2B1ECE701000AAD24C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */; };
 		E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */; };
@@ -48,6 +51,9 @@
 		E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		E20FD9D61ED45A5200876005 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		E20FD9DC1ED463B000876005 /* WeatherURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherURL.swift; sourceTree = "<group>"; };
+		E20FD9E81ED4749F00876005 /* WeatherTomorrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTomorrowViewController.swift; sourceTree = "<group>"; };
+		E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTabBarController.swift; sourceTree = "<group>"; };
+		E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather7DayViewController.swift; sourceTree = "<group>"; };
 		E2A59D251ECE700F00AAD24C /* SEPA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEPA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A59D281ECE701000AAD24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -95,17 +101,86 @@
 		E20FD9D81ED4636600876005 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E20FD9DB1ED4639100876005 /* API */,
+				E20FD9DC1ED463B000876005 /* WeatherURL.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
 		};
-		E20FD9DB1ED4639100876005 /* API */ = {
+		E20FD9DE1ED4722E00876005 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				E20FD9DC1ED463B000876005 /* WeatherURL.swift */,
+				E20FD9EC1ED476AE00876005 /* Sub Views */,
+				E20FD9D81ED4636600876005 /* Utilities */,
+				E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */,
 			);
-			name = API;
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		E20FD9DF1ED4727400876005 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		E20FD9E01ED4727A00876005 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */,
+			);
+			name = Calculator;
+			sourceTree = "<group>";
+		};
+		E20FD9E11ED4728200876005 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */,
+				E20FD9D21ED4530D00876005 /* DashboardTableViewController.swift */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		E20FD9E21ED4728900876005 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				E20FD9C61ED4230800876005 /* CalendarViewController.swift */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		E20FD9E31ED4728E00876005 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */,
+			);
+			name = Photos;
+			sourceTree = "<group>";
+		};
+		E20FD9E41ED4729300876005 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		E20FD9E51ED472A100876005 /* LocationHistory */ = {
+			isa = PBXGroup;
+			children = (
+				E20FD9D61ED45A5200876005 /* LocationViewController.swift */,
+			);
+			name = LocationHistory;
+			sourceTree = "<group>";
+		};
+		E20FD9EC1ED476AE00876005 /* Sub Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */,
+				E20FD9E81ED4749F00876005 /* WeatherTomorrowViewController.swift */,
+				E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */,
+			);
+			name = "Sub Views";
 			sourceTree = "<group>";
 		};
 		E2A59D1C1ECE700F00AAD24C = {
@@ -131,21 +206,19 @@
 		E2A59D271ECE700F00AAD24C /* SEPA */ = {
 			isa = PBXGroup;
 			children = (
-				E20FD9D81ED4636600876005 /* Utilities */,
-				E20FD9C61ED4230800876005 /* CalendarViewController.swift */,
+				E20FD9E11ED4728200876005 /* Dashboard */,
+				E20FD9DE1ED4722E00876005 /* Weather */,
+				E20FD9DF1ED4727400876005 /* News */,
+				E20FD9E51ED472A100876005 /* LocationHistory */,
+				E20FD9E21ED4728900876005 /* Calendar */,
+				E20FD9E01ED4727A00876005 /* Calculator */,
+				E20FD9E31ED4728E00876005 /* Photos */,
+				E20FD9E41ED4729300876005 /* Settings */,
 				E2A59D281ECE701000AAD24C /* AppDelegate.swift */,
-				E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */,
-				E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */,
 				E2A59D2E1ECE701000AAD24C /* Main.storyboard */,
-				E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */,
-				E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */,
-				E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */,
 				E2A59D311ECE701000AAD24C /* Assets.xcassets */,
 				E2A59D331ECE701000AAD24C /* LaunchScreen.storyboard */,
 				E2A59D361ECE701000AAD24C /* Info.plist */,
-				E20FD9D21ED4530D00876005 /* DashboardTableViewController.swift */,
-				E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */,
-				E20FD9D61ED45A5200876005 /* LocationViewController.swift */,
 			);
 			path = SEPA;
 			sourceTree = "<group>";
@@ -310,6 +383,9 @@
 				E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */,
 				E20FD9D51ED4582300876005 /* DashboardTableViewCell.swift in Sources */,
 				E2A59D2B1ECE701000AAD24C /* WeatherViewController.swift in Sources */,
+				E20FD9E91ED4749F00876005 /* WeatherTomorrowViewController.swift in Sources */,
+				E20FD9EB1ED474EB00876005 /* WeatherTabBarController.swift in Sources */,
+				E20FD9EE1ED476D600876005 /* Weather7DayViewController.swift in Sources */,
 				E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
