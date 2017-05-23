@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Weather-->
@@ -45,12 +44,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="-2027"/>
+            <point key="canvasLocation" x="864" y="-448"/>
         </scene>
         <!--Settings-->
         <scene sceneID="MpK-xn-Gqh">
             <objects>
-                <viewController title="Settings" id="zlv-Ta-eR2" customClass="SettingsViewController" customModule="SEPA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="zlv-Ta-eR2" customClass="SettingsViewController" customModule="SEPA" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4aD-xW-zn6"/>
                         <viewControllerLayoutGuide type="bottom" id="u0F-C3-KmH"/>
@@ -64,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0y-7E-XIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1874" y="-504"/>
+            <point key="canvasLocation" x="-2378" y="-448"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="OCt-7l-ecZ">
@@ -84,12 +83,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt1-G2-ZfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="-708"/>
+            <point key="canvasLocation" x="-430" y="-448"/>
         </scene>
-        <!--Photo-->
+        <!--Photos-->
         <scene sceneID="VAA-TE-OBC">
             <objects>
-                <viewController title="Photo" id="JHN-9l-Cbq" customClass="PhotoViewController" customModule="SEPA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Photos" id="JHN-9l-Cbq" customClass="PhotoViewController" customModule="SEPA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XMi-6G-bAw"/>
                         <viewControllerLayoutGuide type="bottom" id="ihS-qg-acR"/>
@@ -104,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFV-03-7nP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1226" y="-516"/>
+            <point key="canvasLocation" x="-1726" y="-448"/>
         </scene>
         <!--Calculator-->
         <scene sceneID="Sdl-Fl-B2R">
@@ -124,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzf-95-QiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="-516"/>
+            <point key="canvasLocation" x="-1080" y="-448"/>
         </scene>
         <!--News-->
         <scene sceneID="wg7-f3-ORb">
@@ -165,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="-1369"/>
+            <point key="canvasLocation" x="228" y="-448"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rJE-OI-AYP">
@@ -205,15 +204,74 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" id="sJb-u0-HgR">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weatherTableViewCell" id="sJb-u0-HgR">
                                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sJb-u0-HgR" id="yGJ-VM-p7D">
                                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <segue destination="9pv-A4-QxB" kind="show" identifier="WeatherSegue" id="Vjo-oc-xaV"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsTableViewCell" id="qYJ-zf-idk">
+                                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qYJ-zf-idk" id="cJF-Y3-4BY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <segue destination="8rJ-Kc-sve" kind="show" identifier="NewsSegue" id="2Ev-E0-knr"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calendarTableViewCell" id="ere-8k-Qe2">
+                                                        <rect key="frame" x="0.0" y="180" width="600" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ere-8k-Qe2" id="Aih-Yf-dsL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <segue destination="f74-2J-m59" kind="show" identifier="CalendarSegue" id="f7M-zT-aw6"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calculatorTableViewCell" id="RZk-uy-EEG">
+                                                        <rect key="frame" x="0.0" y="224" width="600" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RZk-uy-EEG" id="Nlw-VG-k2E">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <segue destination="qHa-Yi-P3T" kind="show" identifier="CalculatorSegue" id="EKL-ZV-SN9"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photosTableViewCell" id="911-BY-iqj">
+                                                        <rect key="frame" x="0.0" y="268" width="600" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="911-BY-iqj" id="kIp-eT-EGh">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <segue destination="JHN-9l-Cbq" kind="show" identifier="PhotosSegue" id="tsE-Hl-Ou2"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsTableViewCell" id="4eX-sw-r7u">
+                                                        <rect key="frame" x="0.0" y="312" width="600" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4eX-sw-r7u" id="wEP-lo-MbS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <segue destination="zlv-Ta-eR2" kind="show" identifier="SettingsSegue" id="9Vs-qm-emy"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
+                                                <sections/>
                                             </tableView>
                                         </subviews>
                                     </stackView>
@@ -230,10 +288,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vB0-Vn-y18" firstAttribute="top" secondItem="YUW-Za-bJz" secondAttribute="bottom" id="XMU-d4-O3X"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vB0-Vn-y18" secondAttribute="trailing" constant="-20" id="fAf-BT-q0r"/>
-                            <constraint firstItem="prL-dF-FI4" firstAttribute="top" secondItem="vB0-Vn-y18" secondAttribute="bottom" id="ma1-Ks-mPq"/>
-                            <constraint firstItem="vB0-Vn-y18" firstAttribute="leading" secondItem="84I-U3-2Ni" secondAttribute="leadingMargin" constant="-20" id="xfu-uc-NgC"/>
+                            <constraint firstItem="vB0-Vn-y18" firstAttribute="leading" secondItem="84I-U3-2Ni" secondAttribute="leading" id="Png-QN-dX2"/>
+                            <constraint firstItem="vB0-Vn-y18" firstAttribute="top" secondItem="YUW-Za-bJz" secondAttribute="bottom" id="XKD-fb-DM9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="jua-ag-bcm"/>
@@ -243,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yg9-uT-aSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1520" y="-1292"/>
+            <point key="canvasLocation" x="-986" y="-1320"/>
         </scene>
     </scenes>
     <resources>
