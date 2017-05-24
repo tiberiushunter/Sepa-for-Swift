@@ -13,6 +13,8 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
     
     var weatherModel = WeatherModel(Id: WeatherViewControllerId.today)
     
+    @IBOutlet weak var currentTemp: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +25,9 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
         weatherModel.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         weatherModel.locationManager.requestAlwaysAuthorization()
         weatherModel.locationManager.startUpdatingLocation()
+      
+   
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,11 +44,22 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
         
         if (status == .AuthorizedAlways){
             weatherModel.getLocation()
+            
+            //TODO: Need to make this a lot nicer....
+            
+            let a = weatherModel.getWeatherData()
+            currentTemp.text = String(format: "%.2f", convertToCelsius(a.Temperature!)) + "°C"
+
         } else if (status == .Denied){
             let alert = UIAlertController(title: "Error", message: "Goto Settings and allow this app to access your location", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
+        
+    }
+    
+    func convertToCelsius(fahrenheit: Double) -> Double {
+        return Double(5.0 / 9.0 * (Double(fahrenheit) - 32.0))
     }
     
     
