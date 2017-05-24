@@ -11,7 +11,7 @@
 		E20FD9D31ED4530D00876005 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D21ED4530D00876005 /* DashboardTableViewController.swift */; };
 		E20FD9D51ED4582300876005 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */; };
 		E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D61ED45A5200876005 /* LocationViewController.swift */; };
-		E20FD9DD1ED463B000876005 /* DarkSkyWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9DC1ED463B000876005 /* DarkSkyWeatherAPI.swift */; };
+		E20FD9DD1ED463B000876005 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9DC1ED463B000876005 /* Constants.swift */; };
 		E20FD9E91ED4749F00876005 /* WeatherTomorrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9E81ED4749F00876005 /* WeatherTomorrowViewController.swift */; };
 		E20FD9EB1ED474EB00876005 /* WeatherTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */; };
 		E20FD9EE1ED476D600876005 /* Weather7DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */; };
@@ -27,6 +27,7 @@
 		E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */; };
 		E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */; };
 		E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */; };
+		E2C9F4541ED5FD4B003BCDC9 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4531ED5FD4B003BCDC9 /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,7 @@
 		E20FD9D21ED4530D00876005 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		E20FD9D61ED45A5200876005 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		E20FD9DC1ED463B000876005 /* DarkSkyWeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyWeatherAPI.swift; sourceTree = "<group>"; };
+		E20FD9DC1ED463B000876005 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E20FD9E81ED4749F00876005 /* WeatherTomorrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTomorrowViewController.swift; sourceTree = "<group>"; };
 		E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTabBarController.swift; sourceTree = "<group>"; };
 		E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather7DayViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		E2C9F4531ED5FD4B003BCDC9 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,19 +102,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E20FD9D81ED4636600876005 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				E20FD9DC1ED463B000876005 /* DarkSkyWeatherAPI.swift */,
-			);
-			name = Utilities;
-			sourceTree = "<group>";
-		};
 		E20FD9DE1ED4722E00876005 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				E20FD9F11ED4885100876005 /* Views */,
-				E20FD9D81ED4636600876005 /* Utilities */,
+				E2C9F4521ED5FD2F003BCDC9 /* Models */,
+				E20FD9F11ED4885100876005 /* ViewControllers */,
 				E20FD9EF1ED477F600876005 /* Weather.storyboard */,
 			);
 			name = Weather;
@@ -175,7 +169,7 @@
 			name = LocationHistory;
 			sourceTree = "<group>";
 		};
-		E20FD9F11ED4885100876005 /* Views */ = {
+		E20FD9F11ED4885100876005 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				E2A59D2A1ECE701000AAD24C /* WeatherViewController.swift */,
@@ -183,7 +177,7 @@
 				E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */,
 				E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */,
 			);
-			name = Views;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E2A59D1C1ECE700F00AAD24C = {
@@ -209,6 +203,7 @@
 		E2A59D271ECE700F00AAD24C /* SEPA */ = {
 			isa = PBXGroup;
 			children = (
+				E20FD9DC1ED463B000876005 /* Constants.swift */,
 				E20FD9E11ED4728200876005 /* Dashboard */,
 				E20FD9DE1ED4722E00876005 /* Weather */,
 				E20FD9DF1ED4727400876005 /* News */,
@@ -242,6 +237,14 @@
 				E2A59D4C1ECE701100AAD24C /* Info.plist */,
 			);
 			path = SEPAUITests;
+			sourceTree = "<group>";
+		};
+		E2C9F4521ED5FD2F003BCDC9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2C9F4531ED5FD4B003BCDC9 /* WeatherModel.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,7 +383,8 @@
 				E20FD9C71ED4230800876005 /* CalendarViewController.swift in Sources */,
 				E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */,
 				E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */,
-				E20FD9DD1ED463B000876005 /* DarkSkyWeatherAPI.swift in Sources */,
+				E20FD9DD1ED463B000876005 /* Constants.swift in Sources */,
+				E2C9F4541ED5FD4B003BCDC9 /* WeatherModel.swift in Sources */,
 				E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */,
 				E20FD9D31ED4530D00876005 /* DashboardTableViewController.swift in Sources */,
 				E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */,
