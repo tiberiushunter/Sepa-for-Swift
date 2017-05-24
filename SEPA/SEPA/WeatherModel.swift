@@ -41,13 +41,17 @@ class WeatherModel: NSObject, CLLocationManagerDelegate{
         let request: NSURLRequest = NSURLRequest(URL: url)
         let queue: NSOperationQueue = NSOperationQueue()
         
+         var a = Weather(json: ["precipIntensity": 0, "icon": "clear-night", "time": 1495658390, "precipProbability": 0, "windSpeed": 2.64, "nearestStormBearing": 19, "summary": "Clear", "apparentTemperature": 78.25, "dewPoint": 55.43, "nearestStormDistance": 293, "cloudCover": 0.08, "humidity": 0.78, "windBearing": 4, "temperature": 78.25, "visibility": 7.15, "pressure": 1025.28, "ozone": 319.98])
+        
+        
         if (wVCId == WeatherViewControllerId.today) {
             NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
                 do {
                     if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
-                        if let currently = jsonResult["currently"] as? Dictionary<String, AnyObject>{
+                        if let currently = jsonResult["currently"] as? Dictionary<String, String>{
                             print(currently)
-     
+                            a = Weather(json: currently)
+
                             
                             
                             
@@ -60,18 +64,25 @@ class WeatherModel: NSObject, CLLocationManagerDelegate{
                     print(error.localizedDescription)
                 }
             })
+           
         } else if (wVCId == WeatherViewControllerId.tomorrow) {
             print("tomorrowfhr")
+
+             return a
         
             
         } else if (wVCId == WeatherViewControllerId.sevenDay) {
             print("7day")
+
+             return a
         }
         else {
             print("how did I get here??")
+
+             return a
         }
-        let a = Weather(json: ["precipIntensity": 0, "icon": "clear-night", "time": 1495658390, "precipProbability": 0, "windSpeed": 2.64, "nearestStormBearing": 19, "summary": "Clear", "apparentTemperature": 62.25, "dewPoint": 55.43, "nearestStormDistance": 293, "cloudCover": 0.08, "humidity": 0.78, "windBearing": 4, "temperature": 62.25, "visibility": 7.15, "pressure": 1025.28, "ozone": 319.98])
-        return a
+
+       return a
         
     }
 }
