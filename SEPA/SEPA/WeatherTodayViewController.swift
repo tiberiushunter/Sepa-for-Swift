@@ -10,16 +10,19 @@ import UIKit
 import MapKit
 
 class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
-    let w = WeatherModel()
+    
+    var weatherModel = WeatherModel(Id: WeatherViewControllerId.today)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        w.locationManager.delegate = self
-        w.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        w.locationManager.requestAlwaysAuthorization()
-        w.locationManager.startUpdatingLocation()
+        weatherModel = WeatherModel(Id: WeatherViewControllerId.today)
+        
+        weatherModel.locationManager.delegate = self
+        weatherModel.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        weatherModel.locationManager.requestAlwaysAuthorization()
+        weatherModel.locationManager.startUpdatingLocation()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,13 +38,14 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
         //print("Location Changed. Latitude: " + newLat + " Longitude: " + newLong)
         
         if (status == .AuthorizedAlways){
-            w.getLocation()
+            weatherModel.getLocation()
         } else if (status == .Denied){
             let alert = UIAlertController(title: "Error", message: "Goto Settings and allow this app to access your location", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
+    
     
    }
 

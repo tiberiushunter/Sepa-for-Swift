@@ -20,5 +20,16 @@ struct WeatherURL {
     func getFullURL() -> String {
         return baseURL + key + coordStr
     }
-    
+}
+
+enum WeatherViewControllerId: Int {
+    case today = 1
+    case tomorrow = 2
+    case sevenDay = 3
+    case nothing = 0
+
+}
+
+func convertToCelsius(fahrenheit: Int) -> Int {
+    return Int(5.0 / 9.0 * (Double(fahrenheit) - 32.0))
 }

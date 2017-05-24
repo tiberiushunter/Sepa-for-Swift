@@ -15,12 +15,20 @@ class WeatherModel: NSObject, CLLocationManagerDelegate{
     
     var temperature = 0.00
     
+    var wVCId = WeatherViewControllerId.nothing
+    
+    init(Id: WeatherViewControllerId){
+        wVCId = Id
+    }
+    
     func getLocation() -> CLLocationCoordinate2D{
         if let loc = locationManager.location?.coordinate{
             return loc
         }
         getWeatherData()
+        
         return coords
+        
     }
     
     func getWeatherData(){
@@ -29,25 +37,30 @@ class WeatherModel: NSObject, CLLocationManagerDelegate{
         let request: NSURLRequest = NSURLRequest(URL: url)
         let queue: NSOperationQueue = NSOperationQueue()
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-            do {
-                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
-                    if let currently = jsonResult["currently"] as? Dictionary<String, AnyObject>{
-                        if let temperature = currently["temperature"] as? Double{
-                            self.temperature = temperature
+        if (wVCId == WeatherViewControllerId.today) {
+            NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                do {
+                    if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
+                        if let currently = jsonResult["currently"] as? Dictionary<String, AnyObject>{
+                            if let temperature = currently["temperature"] as? Double{
+                                //self.temperature = temperature
+                                print(temperature)
+                            }
                         }
                     }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
                 }
-                
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
+            })
+        } else if (wVCId == WeatherViewControllerId.tomorrow) {
+            print("tomorrowfhr")
             
-        })
+        } else if (wVCId == WeatherViewControllerId.sevenDay) {
+            print("7day")
+        }
+        else {
+            print("how did I get here??")
+        }
         
-    }
-    
-    func convertToCelsius(fahrenheit: Int) -> Int {
-        return Int(5.0 / 9.0 * (Double(fahrenheit) - 32.0))
     }
 }
