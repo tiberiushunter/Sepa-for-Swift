@@ -24,7 +24,6 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
-
     }
     
     override func didReceiveMemoryWarning() {

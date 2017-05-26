@@ -27,7 +27,6 @@
 		E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */; };
 		E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */; };
 		E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */; };
-		E2C9F4541ED5FD4B003BCDC9 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4531ED5FD4B003BCDC9 /* WeatherModel.swift */; };
 		E2C9F4591ED61B38003BCDC9 /* WeatherAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9F4581ED61B38003BCDC9 /* WeatherAPIModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +74,6 @@
 		E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		E2C9F4531ED5FD4B003BCDC9 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		E2C9F4581ED61B38003BCDC9 /* WeatherAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,7 +242,6 @@
 		E2C9F4521ED5FD2F003BCDC9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E2C9F4531ED5FD4B003BCDC9 /* WeatherModel.swift */,
 				E2C9F4581ED61B38003BCDC9 /* WeatherAPIModel.swift */,
 			);
 			name = Models;
@@ -387,7 +384,6 @@
 				E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */,
 				E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */,
 				E20FD9DD1ED463B000876005 /* Constants.swift in Sources */,
-				E2C9F4541ED5FD4B003BCDC9 /* WeatherModel.swift in Sources */,
 				E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */,
 				E20FD9D31ED4530D00876005 /* DashboardTableViewController.swift in Sources */,
 				E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */,
