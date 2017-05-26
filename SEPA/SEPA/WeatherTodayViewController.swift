@@ -13,12 +13,49 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
     var currentTemperature = 0.00
+    var refreshControl: UIRefreshControl!
     
     @IBOutlet weak var currentTemp: UILabel!
+    @IBOutlet weak var webView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+     //   refreshControl = UIRefreshControl()
+     //   refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+    //    refreshControl.addTarget(self, action: #selector(WeatherTodayViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        //tableView.addSubview(refreshControl) // not required when using UITableViewController
+        
+      //  let url = NSBundle.mainBundle().URLForResource("index", withExtension:"html")
+      //  let request = NSURLRequest(URL: url!)
+      //  webView.loadRequest(request)
+        
+        let path: String = NSBundle.mainBundle().pathForResource("day", ofType: "svg")!
+        
+        let url: NSURL = NSURL.fileURLWithPath(path)  //Creating a URL which points towards our path
+        
+        
+        
+      
+        //Creating a page request which will load our URL (Which points to our path)
+        let request: NSURLRequest = NSURLRequest(URL: url)
+        webView.loadRequest(request)  //Telling our webView to load our above request
+       
+        
+        webView.scalesPageToFit = false
+        
+        
+        let contentSize = webView.scrollView.contentSize;
+        let webViewSize = webView.bounds.size;
+        let scaleFactor = webViewSize.width / contentSize.width;
+        
+        webView.scrollView.minimumZoomScale = scaleFactor;
+        webView.scrollView.maximumZoomScale = scaleFactor;
+        webView.scrollView.zoomScale = scaleFactor;
+        
+        
+        
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -30,6 +67,13 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func refresh(){
+        
+    }
+
+    
+    
     
     func convertStringToDictionary(text: String) -> [String:AnyObject]? {
         if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {

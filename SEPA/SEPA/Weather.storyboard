@@ -17,32 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by WeatherViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6v-De-tmj">
-                                <rect key="frame" x="190" y="78" width="221" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="currentTemp" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jGK-AY-mQh">
-                                <rect key="frame" x="200" y="28" width="201" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="imJ-gT-XuQ">
+                                <rect key="frame" x="20" y="20" width="344" height="381"/>
+                                <subviews>
+                                    <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMo-I9-ftB">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="339"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                    </webView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="currentTemp" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jGK-AY-mQh">
+                                        <rect key="frame" x="0.0" y="339" width="344" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="w6v-De-tmj" firstAttribute="top" secondItem="jGK-AY-mQh" secondAttribute="bottom" constant="8" symbolic="YES" id="a6u-Yo-5Aw"/>
-                            <constraint firstItem="w6v-De-tmj" firstAttribute="centerX" secondItem="jGK-AY-mQh" secondAttribute="centerX" id="aSP-aE-vVG"/>
-                            <constraint firstAttribute="centerX" secondItem="jGK-AY-mQh" secondAttribute="centerX" id="c8c-2M-82S"/>
-                            <constraint firstAttribute="centerY" secondItem="jGK-AY-mQh" secondAttribute="centerY" id="obU-7P-XWv"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="first" id="tdf-nc-17t"/>
                     <navigationItem key="navigationItem" title="Weather - Today" id="bEN-0F-h3l"/>
                     <connections>
                         <outlet property="currentTemp" destination="jGK-AY-mQh" id="XiJ-TR-IU5"/>
+                        <outlet property="webView" destination="dMo-I9-ftB" id="KS9-EZ-UZ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQ4-SI-jxB" sceneMemberID="firstResponder"/>
@@ -61,21 +59,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Weather 7 Days" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hYD-PM-CQD">
-                                <rect key="frame" x="172" y="279" width="258" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Loaded by WeatherViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwh-Kp-YLd">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by WeatherViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwh-Kp-YLd">
                                 <rect key="frame" x="190" y="78" width="221" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="currentTemp" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ofu-ao-YJ1">
-                                <rect key="frame" x="200" y="28" width="201" height="42"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="currentTemp" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ofu-ao-YJ1">
+                                <rect key="frame" x="190" y="28" width="201" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,7 +76,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uwh-Kp-YLd" firstAttribute="centerX" secondItem="ofu-ao-YJ1" secondAttribute="centerX" id="DJO-m6-tBo"/>
+                            <constraint firstItem="ofu-ao-YJ1" firstAttribute="top" secondItem="aZ0-oV-kyR" secondAttribute="bottom" constant="8" symbolic="YES" id="G5D-iO-2dK"/>
                             <constraint firstItem="uwh-Kp-YLd" firstAttribute="top" secondItem="ofu-ao-YJ1" secondAttribute="bottom" constant="8" symbolic="YES" id="Thn-Hz-vM9"/>
+                            <constraint firstItem="uwh-Kp-YLd" firstAttribute="centerX" secondItem="nMN-9G-c5A" secondAttribute="centerX" id="VtD-FO-vvZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="7 Days" id="dKC-xn-NLH"/>
@@ -106,13 +99,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Loaded by WeatherViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ja-YH-1bT">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by WeatherViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ja-YH-1bT">
                                 <rect key="frame" x="190" y="78" width="221" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="currentTemp" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="3xh-wU-qgv">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="currentTemp" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="3xh-wU-qgv">
                                 <rect key="frame" x="200" y="28" width="201" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
@@ -122,8 +115,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3xh-wU-qgv" firstAttribute="top" secondItem="net-oi-FM5" secondAttribute="bottom" constant="8" symbolic="YES" id="1Dl-4f-f8m"/>
                             <constraint firstItem="6ja-YH-1bT" firstAttribute="centerX" secondItem="3xh-wU-qgv" secondAttribute="centerX" id="Zop-8p-FNj"/>
                             <constraint firstItem="6ja-YH-1bT" firstAttribute="top" secondItem="3xh-wU-qgv" secondAttribute="bottom" constant="8" symbolic="YES" id="cpe-JQ-rK6"/>
+                            <constraint firstItem="3xh-wU-qgv" firstAttribute="centerX" secondItem="gCU-ng-tlg" secondAttribute="centerX" id="tiV-yc-93n"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tomorrow" id="gmo-iO-9a6"/>
