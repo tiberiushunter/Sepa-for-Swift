@@ -12,7 +12,6 @@ import MapKit
 class Weather7DayViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
-    var weatherModel = Weather()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +45,7 @@ class Weather7DayViewController: UIViewController, CLLocationManagerDelegate {
             getWeather { jsonString in
                 let jsonDictionary = self.convertStringToDictionary(jsonString as String)
                 if let currently = jsonDictionary!["currently"] as? Dictionary<String, AnyObject>{
-                    self.weatherModel = Weather(json: currently)
+                   // self.weatherModel = Weather(json: currently)
                     
                     dispatch_async(dispatch_get_main_queue()) {
                        // self.currentTemp.text = String(format: "%.2f", self.convertToCelsius(self.weatherModel.Temperature!)) + "°C"

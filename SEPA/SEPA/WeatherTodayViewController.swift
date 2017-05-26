@@ -12,7 +12,7 @@ import MapKit
 class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
-    var weatherModel = Weather()
+    var currentTemperature = 0.00
     
     @IBOutlet weak var currentTemp: UILabel!
     
@@ -46,12 +46,14 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
         if (status == .AuthorizedAlways){
             getLocation()
             getWeather { jsonString in
-                let jsonDictionary = self.convertStringToDictionary(jsonString as String)
-                if let currently = jsonDictionary!["currently"] as? Dictionary<String, AnyObject>{
-                    self.weatherModel = Weather(json: currently)
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.currentTemp.text = String(format: "%.2f", self.convertToCelsius(self.weatherModel.Temperature!)) + "°C"
+                if let jsonDictionary = self.convertStringToDictionary(jsonString as String){
+                    if let currently = jsonDictionary["currently"] as? Dictionary<String, AnyObject>{
+                        if let currTemp = currently["temperature"] as? Double{
+                            self.currentTemperature = currTemp
+                        }
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.currentTemp.text = String(format: "%.2f", self.convertToCelsius(self.currentTemperature)) + "°C"
+                        }
                     }
                 }
             }
