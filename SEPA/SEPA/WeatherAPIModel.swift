@@ -9,7 +9,7 @@
 import Foundation
 
 class Weather {
-    var Time: Double?
+    var Time: Int64?
     var Summary: String?
     var Icon: String?
     var NearestStormDistance: Double?
@@ -28,8 +28,12 @@ class Weather {
     var Pressure: Double?
     var Ozone: Double?
     
-    required init(json: [String: Any]) {
-        self.Time = json[Current.Time.rawValue] as? Double
+    init(){
+        
+    }
+    
+    init(json: [String: AnyObject]) {
+        self.Time = json[Current.Time.rawValue] as? Int64
         self.Summary = json[Current.Summary.rawValue] as? String
         self.Icon = json[Current.Icon.rawValue] as? String
         self.NearestStormDistance = json[Current.NearestStormDistance.rawValue] as? Double
