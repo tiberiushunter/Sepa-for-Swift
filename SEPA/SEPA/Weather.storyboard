@@ -46,7 +46,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQ4-SI-jxB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="-3650"/>
+            <point key="canvasLocation" x="1750" y="-3602"/>
+        </scene>
+        <!--Currently-->
+        <scene sceneID="qKt-xH-u9N">
+            <objects>
+                <viewController storyboardIdentifier="WeatherCurrently" title="Currently" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6G3-wr-YKq" customClass="WeatherCurrentlyViewController" customModule="SEPA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EHl-7u-JCS"/>
+                        <viewControllerLayoutGuide type="bottom" id="VQV-4y-5Kr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hgn-eY-6Jv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Khu-8z-3b5">
+                                <rect key="frame" x="20" y="20" width="344" height="381"/>
+                                <subviews>
+                                    <webView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hsc-wH-YDb">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="339"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                        <rect key="contentStretch" x="0.10000000000000001" y="1" width="1" height="1"/>
+                                    </webView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="currentTemp" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="9tW-xd-ZYI">
+                                        <rect key="frame" x="0.0" y="339" width="344" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Currently" id="byk-YN-wcJ"/>
+                    <connections>
+                        <outlet property="currentTemp" destination="9tW-xd-ZYI" id="vMn-Hc-lEo"/>
+                        <outlet property="webView" destination="hsc-wH-YDb" id="QaQ-vg-aSg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dwI-DZ-TOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750" y="-4301"/>
         </scene>
         <!--7 Days-->
         <scene sceneID="g4z-er-8Qf">
@@ -86,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5t-yB-UA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="-2150"/>
+            <point key="canvasLocation" x="1750" y="-2126"/>
         </scene>
         <!--Tomorrow-->
         <scene sceneID="UHo-iP-wSH">
@@ -126,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ux-Aq-44d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="-2910"/>
+            <point key="canvasLocation" x="1750" y="-2886"/>
         </scene>
         <!--Weather-->
         <scene sceneID="onU-CU-Enk">
@@ -138,6 +180,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="6G3-wr-YKq" kind="relationship" relationship="viewControllers" id="mwZ-e3-R95"/>
                         <segue destination="E74-Em-vCD" kind="relationship" relationship="viewControllers" id="PpL-Uq-oqN"/>
                         <segue destination="use-Zr-14M" kind="relationship" relationship="viewControllers" id="sQR-kB-BT7"/>
                         <segue destination="3BD-tl-8uf" kind="relationship" relationship="viewControllers" id="uKA-dR-lge"/>

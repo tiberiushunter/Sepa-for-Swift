@@ -43,6 +43,7 @@
 		E21221441ED8DF3600A76502 /* weather_sunset.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221291ED8DF3600A76502 /* weather_sunset.svg */; };
 		E21221451ED8DF3600A76502 /* weather-sprite.svg in Resources */ = {isa = PBXBuildFile; fileRef = E212212A1ED8DF3600A76502 /* weather-sprite.svg */; };
 		E21221461ED8DF3600A76502 /* weather.svg in Resources */ = {isa = PBXBuildFile; fileRef = E212212B1ED8DF3600A76502 /* weather.svg */; };
+		E27DF3741EDB25440064DA71 /* WeatherCurrentlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DF3731EDB25440064DA71 /* WeatherCurrentlyViewController.swift */; };
 		E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D281ECE701000AAD24C /* AppDelegate.swift */; };
 		E2A59D2B1ECE701000AAD24C /* WeatherTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2A1ECE701000AAD24C /* WeatherTodayViewController.swift */; };
 		E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */; };
@@ -110,6 +111,7 @@
 		E21221291ED8DF3600A76502 /* weather_sunset.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = weather_sunset.svg; sourceTree = "<group>"; };
 		E212212A1ED8DF3600A76502 /* weather-sprite.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "weather-sprite.svg"; sourceTree = "<group>"; };
 		E212212B1ED8DF3600A76502 /* weather.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = weather.svg; sourceTree = "<group>"; };
+		E27DF3731EDB25440064DA71 /* WeatherCurrentlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCurrentlyViewController.swift; sourceTree = "<group>"; };
 		E2A59D251ECE700F00AAD24C /* SEPA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEPA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A59D281ECE701000AAD24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A59D2A1ECE701000AAD24C /* WeatherTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				E20FD9E81ED4749F00876005 /* WeatherTomorrowViewController.swift */,
 				E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */,
 				E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */,
+				E27DF3731EDB25440064DA71 /* WeatherCurrentlyViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */,
 				E20FD9D51ED4582300876005 /* DashboardTableViewCell.swift in Sources */,
 				E2A59D2B1ECE701000AAD24C /* WeatherTodayViewController.swift in Sources */,
+				E27DF3741EDB25440064DA71 /* WeatherCurrentlyViewController.swift in Sources */,
 				E20FD9E91ED4749F00876005 /* WeatherTomorrowViewController.swift in Sources */,
 				E20FD9EB1ED474EB00876005 /* WeatherTabBarController.swift in Sources */,
 				E20FD9EE1ED476D600876005 /* Weather7DayViewController.swift in Sources */,

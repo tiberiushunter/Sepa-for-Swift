@@ -1,5 +1,5 @@
 //
-//  WeatherTodayViewController.swift
+//  WeatherCurrentlyViewController.swift
 //  SEPA
 //
 //  Created by Welek Samuel on 19/05/2017.
@@ -9,12 +9,12 @@
 import UIKit
 import MapKit
 
-class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
+class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
     var currentTemperature = 0.00
     var refreshControl: UIRefreshControl!
-    
+
     @IBOutlet weak var currentTemp: UILabel!
     @IBOutlet weak var webView: UIWebView!
     
@@ -29,24 +29,24 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
         let request: NSURLRequest = NSURLRequest(URL: url)
         
         
-         //webView.scalesPageToFit = false
+        //webView.scalesPageToFit = false
         
         
-   //     let contentSize = webView.scrollView.contentSize;
-    //    let webViewSize = webView.bounds.size;
-    //    let scaleFactor = webViewSize.width / contentSize.width;
+        //     let contentSize = webView.scrollView.contentSize;
+        //    let webViewSize = webView.bounds.size;
+        //    let scaleFactor = webViewSize.width / contentSize.width;
         
-     //   webView.scrollView.minimumZoomScale = scaleFactor;
-     //   webView.scrollView.maximumZoomScale = scaleFactor;
-     //   webView.scrollView.zoomScale = scaleFactor;
+        //   webView.scrollView.minimumZoomScale = scaleFactor;
+        //   webView.scrollView.maximumZoomScale = scaleFactor;
+        //   webView.scrollView.zoomScale = scaleFactor;
         
-      
+        
         
         webView.loadRequest(request)  //Telling our webView to load our above request
-      
-   
-   webView.resizeWebContent()
-
+        
+        
+        webView.resizeWebContent()
+        
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -62,7 +62,7 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
     func refresh(){
         
     }
-
+    
     
     
     
@@ -89,7 +89,7 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
                         dispatch_async(dispatch_get_main_queue()) {
                             self.currentTemp.text = String(format: "%.2f", self.convertToCelsius(self.currentTemperature)) + "°C"
                         }
-
+                        
                         
                     }
                 }
@@ -122,7 +122,7 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
         let session = NSURLSession.sharedSession()
         
         request.HTTPMethod = "GET"
-    
+        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -133,5 +133,18 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
         })
         
         task.resume()
+    }
+}
+
+
+extension UIWebView {
+    ///Method to fit content of webview inside webview according to different screen size
+    func resizeWebContent() {
+        let contentSize = self.scrollView.contentSize
+        let viewSize = self.bounds.size
+        let zoomScale = viewSize.width/contentSize.width
+        self.scrollView.minimumZoomScale = zoomScale
+        self.scrollView.maximumZoomScale = zoomScale
+        self.scrollView.zoomScale = zoomScale
     }
 }
