@@ -24,6 +24,7 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
     var rainIntensity = 0.00
     var nearestStormDistance = 0.00
     var nearestStormDirection = 0.00
+    var imageIcon = WeatherIcon.nothing
     
     @IBOutlet weak var lblTime: UILabel!
     
@@ -47,6 +48,7 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
     
     @IBOutlet weak var lblNearestStormDirection: UILabel!
     
+    @IBOutlet weak var weatherImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +104,7 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         let currentDate = NSDate()
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         let convertedDate = dateFormatter.stringFromDate(currentDate)
         
         self.lblTime.text = "Last Updated: " + convertedDate
@@ -160,7 +162,24 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
                         if let nearStormDir = currently["nearestStormBearing"] as? Double {
                             self.nearestStormDirection = nearStormDir
                         }
-                        
+                        if let imageIcon = currently["icon"] as? String {
+                            switch(imageIcon){
+                                case "clear-day": self.imageIcon = WeatherIcon.clearDay
+                                case "clear-night": self.imageIcon = WeatherIcon.clearNight
+                                case "rain": self.imageIcon = WeatherIcon.rain
+                                case "snow": self.imageIcon = WeatherIcon.snow
+                                case "sleet": self.imageIcon = WeatherIcon.snow
+                                case "wind": self.imageIcon = WeatherIcon.wind
+                                case "fog": self.imageIcon = WeatherIcon.fog
+                                case "cloudy": self.imageIcon = WeatherIcon.cloudy
+                                case "partly-cloudy-day": self.imageIcon = WeatherIcon.partlyCloudyDay
+                                case "partly-cloudy-night": self.imageIcon = WeatherIcon.partlyCloudyNight
+                                case "hail": self.imageIcon = WeatherIcon.rain
+                                case "thunderstorm": self.imageIcon = WeatherIcon.thunderstorm
+                                case "tornado": self.imageIcon = WeatherIcon.tornado
+                                default: self.imageIcon = WeatherIcon.nothing
+                            }
+                        }
                         dispatch_async(dispatch_get_main_queue()) {
 
                             self.lblSummary.text = self.summary
@@ -172,6 +191,8 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
                             self.lblRainIntensity.text = String(format: "%.2f", self.rainIntensity)
                             self.lblNearestStormDistance.text = String(format: "%.2f", self.nearestStormDistance)
                             self.lblNearestStormDirection.text = String(format: "%.2f", self.nearestStormDirection)
+                            //self.weatherImage.image = UIImage(named: String(self.imageIcon))
+                            self.weatherImage.image = UIImage(named:self.imageIcon.rawValue)
                         }
                         
                         
@@ -204,8 +225,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         let request = NSMutableURLRequest(URL: url)
         
         let session = NSURLSession.sharedSession()
-        
-        print(url)
         
         request.HTTPMethod = "GET"
         

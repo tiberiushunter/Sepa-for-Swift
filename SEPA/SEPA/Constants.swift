@@ -22,13 +22,26 @@ struct WeatherURL {
     }
 }
 
-enum WeatherViewControllerId: Int {
-    case today = 1
-    case tomorrow = 2
-    case sevenDay = 3
-    case nothing = 0
-
+enum WeatherIcon: String {
+    case clearDay = "sunny"
+    case clearNight = "full-moon"
+    case rain = "showers"
+    case snow = "snow"
+    case wind = "windy"
+    case fog = "fog"
+    case cloudy = "sun-cloudy"
+    case partlyCloudyDay = "sunny-to-cloudy"
+    case partlyCloudyNight = "new-moon"
+    case thunderstorm = "thunder"
+    case tornado = "stormy"
+    case nothing = ""
 }
+
+
+
+/*
+ clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night. (Developers should ensure that a sensible default is defined, as additional values, such as hail, thunderstorm, or tornado, may be defined in the future.)
+ */
 
 struct UnixTimeURL {
     private let baseURL = "http://www.convert-unix-time.com/api?"

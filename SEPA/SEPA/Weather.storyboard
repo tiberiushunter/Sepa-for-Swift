@@ -60,30 +60,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="imT-bH-ATh">
-                                <rect key="frame" x="151" y="206" width="298" height="187"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="imT-bH-ATh">
+                                <rect key="frame" x="51" y="82" width="498" height="437"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XvU-UK-vrt">
-                                        <rect key="frame" x="124" y="0.0" width="50" height="34"/>
+                                        <rect key="frame" x="124" y="0.0" width="250" height="284"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="time" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-kt-0gc">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="17"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="location" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wzg-Gg-BCY">
-                                                <rect key="frame" x="0.0" y="17" width="50" height="17"/>
+                                                <rect key="frame" x="0.0" y="17" width="250" height="17"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aGg-4N-HhS">
+                                                <rect key="frame" x="0.0" y="34" width="250" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="1aS-qS-JqR"/>
+                                                    <constraint firstAttribute="width" constant="250" id="WeL-fd-rfx"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyG-RG-YhR">
-                                        <rect key="frame" x="0.0" y="34" width="298" height="153"/>
+                                        <rect key="frame" x="100" y="284" width="298" height="153"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="inb-qT-AU1">
                                                 <rect key="frame" x="0.0" y="0.0" width="156" height="153"/>
@@ -248,6 +255,7 @@
                         <outlet property="lblTime" destination="bG5-kt-0gc" id="Kcl-ux-jsj"/>
                         <outlet property="lblWindDirection" destination="kVo-YJ-9bI" id="h8P-ck-xrz"/>
                         <outlet property="lblWindSpeed" destination="nA3-NV-Z4v" id="zpS-Df-0fZ"/>
+                        <outlet property="weatherImage" destination="aGg-4N-HhS" id="LAI-YF-ZcM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwI-DZ-TOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
