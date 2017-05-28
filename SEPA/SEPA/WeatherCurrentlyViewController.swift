@@ -12,21 +12,51 @@ import MapKit
 class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
-    var currentTemperature = 0.00
-    var refreshControl: UIRefreshControl!
+    
+    //var refreshControl: UIRefreshControl!
 
-    @IBOutlet weak var currentTemp: UILabel!
-    @IBOutlet weak var webView: UIWebView!
+    var summary = ""
+    var currentTemperature = 0.00
+    var feelLikeTemperaure = 0.00
+    var windDirection = 0.00
+    var windSpeed = 0.00
+    var chanceOfRain = 0.00
+    var rainIntensity = 0.00
+    var nearestStormDistance = 0.00
+    var nearestStormDirection = 0.00
+    
+    @IBOutlet weak var lblTime: UILabel!
+    
+    @IBOutlet weak var lblLocation: UILabel!
+
+    @IBOutlet weak var lblSummary: UILabel!
+    
+    @IBOutlet weak var lblCurrentTemp: UILabel!
+    
+    @IBOutlet weak var lblFeelLikeTemp: UILabel!
+    
+    @IBOutlet weak var lblWindDirection: UILabel!
+    
+    @IBOutlet weak var lblWindSpeed: UILabel!
+    
+    @IBOutlet weak var lblChanceOfRain: UILabel!
+    
+    @IBOutlet weak var lblRainIntensity: UILabel!
+    
+    @IBOutlet weak var lblNearestStormDistance: UILabel!
+    
+    @IBOutlet weak var lblNearestStormDirection: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let path: String = NSBundle.mainBundle().pathForResource("day", ofType: "svg")!
+   //     let path: String = NSBundle.mainBundle().pathForResource("day", ofType: "svg")!
         
-        let url: NSURL = NSURL.fileURLWithPath(path)  //Creating a URL which points towards our path
+   //     let url: NSURL = NSURL.fileURLWithPath(path)  //Creating a URL which points towards our path
         
         //Creating a page request which will load our URL (Which points to our path)
-        let request: NSURLRequest = NSURLRequest(URL: url)
+      //  let request: NSURLRequest = NSURLRequest(URL: url)
         
         
         //webView.scalesPageToFit = false
@@ -42,10 +72,15 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         
         
         
-        webView.loadRequest(request)  //Telling our webView to load our above request
+      //  webView.loadRequest(request)  //Telling our webView to load our above request
         
         
-        webView.resizeWebContent()
+     //   webView.resizeWebContent()
+        
+
+        
+        setTimeLabel()
+        setLocationLabel()
         
         
         locationManager.delegate = self
@@ -61,6 +96,20 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
     
     func refresh(){
         
+    }
+    
+    func setTimeLabel(){
+        let currentDate = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        let convertedDate = dateFormatter.stringFromDate(currentDate)
+        
+        self.lblTime.text = "Last Updated: " + convertedDate
+    }
+    
+    func setLocationLabel(){
+        self.lblLocation.text = "Current Location"
     }
     
     
@@ -83,11 +132,46 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
             getWeather { jsonString in
                 if let jsonDictionary = self.convertStringToDictionary(jsonString as String){
                     if let currently = jsonDictionary["currently"] as? Dictionary<String, AnyObject>{
+                        print(currently)
                         if let currTemp = currently["temperature"] as? Double{
                             self.currentTemperature = currTemp
                         }
+                        if let feelLikeTemp = currently["apparentTemperature"] as? Double {
+                            self.feelLikeTemperaure = feelLikeTemp
+                        }
+                        if let sum = currently["summary"] as? String {
+                            self.summary = sum
+                        }
+                        if let windDir = currently["windBearing"] as? Double {
+                            self.windDirection = windDir
+                        }
+                        if let windSpe = currently["windSpeed"] as? Double {
+                            self.windSpeed = windSpe
+                        }
+                        if let chanceOfRain = currently["precipProbability"] as? Double {
+                            self.chanceOfRain = chanceOfRain
+                        }
+                        if let rainInt = currently["precipIntensity"] as? Double {
+                            self.rainIntensity = rainInt
+                        }
+                        if let nearStormDist = currently["nearestStormDistance"] as? Double {
+                            self.nearestStormDistance = nearStormDist
+                        }
+                        if let nearStormDir = currently["nearestStormBearing"] as? Double {
+                            self.nearestStormDirection = nearStormDir
+                        }
+                        
                         dispatch_async(dispatch_get_main_queue()) {
-                            self.currentTemp.text = String(format: "%.2f", self.convertToCelsius(self.currentTemperature)) + "°C"
+
+                            self.lblSummary.text = self.summary
+                            self.lblCurrentTemp.text = String(format: "%.2f", self.convertToCelsius(self.currentTemperature)) + "°C"
+                            self.lblFeelLikeTemp.text = String(format: "%.2f", self.convertToCelsius(self.feelLikeTemperaure)) + "°C"
+                            self.lblWindDirection.text = String(format: "%.2f", self.windDirection)
+                            self.lblWindSpeed.text = String(format: "%.2f", self.windSpeed)
+                            self.lblChanceOfRain.text = String(format: "%.2f", self.chanceOfRain)
+                            self.lblRainIntensity.text = String(format: "%.2f", self.rainIntensity)
+                            self.lblNearestStormDistance.text = String(format: "%.2f", self.nearestStormDistance)
+                            self.lblNearestStormDirection.text = String(format: "%.2f", self.nearestStormDirection)
                         }
                         
                         
@@ -120,6 +204,8 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         let request = NSMutableURLRequest(URL: url)
         
         let session = NSURLSession.sharedSession()
+        
+        print(url)
         
         request.HTTPMethod = "GET"
         
