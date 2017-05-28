@@ -30,3 +30,18 @@ enum WeatherViewControllerId: Int {
 
 }
 
+struct UnixTimeURL {
+    private let baseURL = "http://www.convert-unix-time.com/api?"
+    private var timestamp = ""
+    private let format = "&format=english"
+    private let timezone = "&timezone=London"
+    
+    init (timestamp: String){
+        self.timestamp = "timestamp=\(timestamp)"
+
+    }
+    
+    func getFullURL() -> String {
+        return baseURL + timestamp + format + timezone
+    }
+}

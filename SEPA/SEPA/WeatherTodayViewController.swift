@@ -20,42 +20,33 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-     //   refreshControl = UIRefreshControl()
-     //   refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-    //    refreshControl.addTarget(self, action: #selector(WeatherTodayViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        //tableView.addSubview(refreshControl) // not required when using UITableViewController
-        
-      //  let url = NSBundle.mainBundle().URLForResource("index", withExtension:"html")
-      //  let request = NSURLRequest(URL: url!)
-      //  webView.loadRequest(request)
         
         let path: String = NSBundle.mainBundle().pathForResource("day", ofType: "svg")!
         
         let url: NSURL = NSURL.fileURLWithPath(path)  //Creating a URL which points towards our path
         
-        
-        
-      
         //Creating a page request which will load our URL (Which points to our path)
         let request: NSURLRequest = NSURLRequest(URL: url)
+        
+        
+         //webView.scalesPageToFit = false
+        
+        
+   //     let contentSize = webView.scrollView.contentSize;
+    //    let webViewSize = webView.bounds.size;
+    //    let scaleFactor = webViewSize.width / contentSize.width;
+        
+     //   webView.scrollView.minimumZoomScale = scaleFactor;
+     //   webView.scrollView.maximumZoomScale = scaleFactor;
+     //   webView.scrollView.zoomScale = scaleFactor;
+        
+      
+        
         webView.loadRequest(request)  //Telling our webView to load our above request
-       
-        
-        webView.scalesPageToFit = false
-        
-        
-        let contentSize = webView.scrollView.contentSize;
-        let webViewSize = webView.bounds.size;
-        let scaleFactor = webViewSize.width / contentSize.width;
-        
-        webView.scrollView.minimumZoomScale = scaleFactor;
-        webView.scrollView.maximumZoomScale = scaleFactor;
-        webView.scrollView.zoomScale = scaleFactor;
-        
-        
-        
+      
+   
+   webView.resizeWebContent()
+
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -98,6 +89,8 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
                         dispatch_async(dispatch_get_main_queue()) {
                             self.currentTemp.text = String(format: "%.2f", self.convertToCelsius(self.currentTemperature)) + "°C"
                         }
+
+                        
                     }
                 }
             }
@@ -140,5 +133,18 @@ class WeatherTodayViewController: UIViewController, CLLocationManagerDelegate {
         })
         
         task.resume()
+    }
+}
+
+
+extension UIWebView {
+    ///Method to fit content of webview inside webview according to different screen size
+    func resizeWebContent() {
+        let contentSize = self.scrollView.contentSize
+        let viewSize = self.bounds.size
+        let zoomScale = viewSize.width/contentSize.width
+        self.scrollView.minimumZoomScale = zoomScale
+        self.scrollView.maximumZoomScale = zoomScale
+        self.scrollView.zoomScale = zoomScale
     }
 }
