@@ -1,21 +1,21 @@
 //
-//  WeatherTomorrowViewController.swift
+//  WeatherTodayViewController.swift
 //  SEPA
 //
-//  Created by Welek Samuel on 23/05/2017.
+//  Created by Welek Samuel on 19/05/2017.
 //  Copyright © 2017 Welek Samuel. All rights reserved.
 //
 
 import UIKit
 import MapKit
 
-class WeatherTomorrowViewController: UIViewController, CLLocationManagerDelegate {
+class Weather48HourTableViewController: UITableViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -28,6 +28,7 @@ class WeatherTomorrowViewController: UIViewController, CLLocationManagerDelegate
         // Dispose of any resources that can be recreated.
     }
     
+  
     func convertStringToDictionary(text: String) -> [String:AnyObject]? {
         if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
             do {
@@ -43,22 +44,13 @@ class WeatherTomorrowViewController: UIViewController, CLLocationManagerDelegate
         if (status == .AuthorizedAlways){
             getLocation()
             getWeather { jsonString in
-                let jsonDictionary = self.convertStringToDictionary(jsonString as String)
-                if let currently = jsonDictionary!["currently"] as? Dictionary<String, AnyObject>{
-                 //   self.weatherModel = Weather(json: currently)
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        // self.currentTemp.text = String(format: "%.2f", self.convertToCelsius(self.weatherModel.Temperature!)) + "°C"
-                    }
-                }
+                print(jsonString)
             }
-            
-        } else if (status == .Denied){
+    } else if (status == .Denied){
             let alert = UIAlertController(title: "Error", message: "Goto Settings and allow this app to access your location", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        
     }
     
     func convertToCelsius(fahrenheit: Double) -> Double {
@@ -80,7 +72,7 @@ class WeatherTomorrowViewController: UIViewController, CLLocationManagerDelegate
         let session = NSURLSession.sharedSession()
         
         request.HTTPMethod = "GET"
-        
+    
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -94,3 +86,5 @@ class WeatherTomorrowViewController: UIViewController, CLLocationManagerDelegate
     }
     
 }
+    
+

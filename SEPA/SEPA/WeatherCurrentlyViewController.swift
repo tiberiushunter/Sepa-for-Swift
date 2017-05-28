@@ -194,8 +194,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
                             //self.weatherImage.image = UIImage(named: String(self.imageIcon))
                             self.weatherImage.image = UIImage(named:self.imageIcon.rawValue)
                         }
-                        
-                        
                     }
                 }
             }
