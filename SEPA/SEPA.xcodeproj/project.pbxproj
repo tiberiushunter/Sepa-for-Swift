@@ -55,6 +55,8 @@
 		E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */; };
 		E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */; };
 		E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */; };
+		E2CED74F1EDC8038007DBAEF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED74E1EDC8038007DBAEF /* Utilities.swift */; };
+		E2CED7511EDC8138007DBAEF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7501EDC8138007DBAEF /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		E2CED74E1EDC8038007DBAEF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		E2CED7501EDC8138007DBAEF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +297,8 @@
 			children = (
 				E21221101ED8DF1C00A76502 /* Resources */,
 				E20FD9DC1ED463B000876005 /* Constants.swift */,
+				E2CED7501EDC8138007DBAEF /* Extensions.swift */,
+				E2CED74E1EDC8038007DBAEF /* Utilities.swift */,
 				E20FD9E11ED4728200876005 /* Dashboard */,
 				E20FD9DE1ED4722E00876005 /* Weather */,
 				E20FD9DF1ED4727400876005 /* News */,
@@ -494,6 +500,7 @@
 				E20FD9DD1ED463B000876005 /* Constants.swift in Sources */,
 				E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */,
 				E20FD9D31ED4530D00876005 /* DashboardTableViewController.swift in Sources */,
+				E2CED74F1EDC8038007DBAEF /* Utilities.swift in Sources */,
 				E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */,
 				E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */,
 				E27DF3761EDB561E0064DA71 /* Weather48HourTableCell.swift in Sources */,
@@ -501,6 +508,7 @@
 				E2A59D2B1ECE701000AAD24C /* Weather48HourTableViewController.swift in Sources */,
 				E27DF3741EDB25440064DA71 /* WeatherCurrentlyViewController.swift in Sources */,
 				E20FD9EB1ED474EB00876005 /* WeatherTabBarController.swift in Sources */,
+				E2CED7511EDC8138007DBAEF /* Extensions.swift in Sources */,
 				E20FD9EE1ED476D600876005 /* Weather7DayViewController.swift in Sources */,
 				E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */,
 			);
