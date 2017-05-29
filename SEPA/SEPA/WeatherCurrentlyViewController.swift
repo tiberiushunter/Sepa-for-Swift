@@ -26,6 +26,8 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
     
     @IBOutlet weak var topStackView: UIStackView!
     
+    @IBOutlet weak var detailsStackView: UIStackView!
+    
     @IBOutlet weak var btnUpdate: UIButton!
     
     @IBOutlet weak var lblTime: UILabel!
@@ -85,7 +87,7 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         let currentDate = NSDate()
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         let convertedDate = dateFormatter.stringFromDate(currentDate)
         
         self.lblTime.text = "Last Updated: " + convertedDate

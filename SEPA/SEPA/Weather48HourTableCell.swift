@@ -11,10 +11,14 @@ import UIKit
 class Weather48HourTableCell: UITableViewCell {
     
 
-    @IBOutlet weak var weatherImageIcon: UIImageView!
+    @IBOutlet weak var weatherIcon: UIImageView!
+
+    @IBOutlet weak var lblSummary: UILabel!
     
-    @IBOutlet weak var summary: UILabel!
-    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
+    
+    @IBOutlet weak var lblTemperature: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

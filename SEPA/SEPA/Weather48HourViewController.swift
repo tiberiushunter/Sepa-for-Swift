@@ -1,5 +1,5 @@
 //
-//  WeatherTodayViewController.swift
+//  Weather48HourViewController.swift
 //  SEPA
 //
 //  Created by Welek Samuel on 19/05/2017.
@@ -9,13 +9,21 @@
 import UIKit
 import MapKit
 
-class Weather48HourTableViewController: UITableViewController, CLLocationManagerDelegate {
+class Weather48HourViewController: UIViewController, UITableViewDataSource, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    let reuseIdentifier = "tableViewCell"
+    
+    var dummyObjects = ["a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -26,18 +34,6 @@ class Weather48HourTableViewController: UITableViewController, CLLocationManager
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-  
-    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
-        if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
-            do {
-                return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject]
-            } catch let error as NSError {
-                print(error)
-            }
-        }
-        return nil
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus){
@@ -52,12 +48,7 @@ class Weather48HourTableViewController: UITableViewController, CLLocationManager
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
-    
-    func convertToCelsius(fahrenheit: Double) -> Double {
-        return Double(5.0 / 9.0 * (Double(fahrenheit) - 32.0))
-    }
-    
-    
+ 
     func getLocation(){
         if let loc = locationManager.location?.coordinate{
             coords = loc
@@ -84,6 +75,25 @@ class Weather48HourTableViewController: UITableViewController, CLLocationManager
         
         task.resume()
     }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: Weather48HourTableCell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! Weather48HourTableCell
+        
+        cell.weatherIcon.image = UIImage(named: WeatherIcon.clearDay.rawValue)
+        cell.lblSummary.text = "Overcast"
+        cell.lblTime.text = "25/06/2017 16:00"
+        cell.lblTemperature.text = "27°C"
+        return cell
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dummyObjects.count
+    }
+    
     
 }
     
