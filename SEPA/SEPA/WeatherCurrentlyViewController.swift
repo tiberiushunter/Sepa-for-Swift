@@ -28,7 +28,8 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
     
     @IBOutlet weak var txtSearchLocation: UITextField!
 
-    @IBOutlet weak var btnCurrentLocation: UIButton!
+    
+    @IBOutlet weak var detailsStackView: UIStackView!
     
     @IBOutlet weak var btnUpdate: UIButton!
     
@@ -95,6 +96,25 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+    }
+    
+  
+    @IBOutlet weak var topStackView: UIStackView!
+
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator:UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (context) -> Void in
+            
+            let orientation = UIApplication.sharedApplication().statusBarOrientation
+            
+            if orientation.isPortrait {
+                self.topStackView.axis = .Vertical
+            } else {
+                self.topStackView.axis = .Horizontal
+            }
+            
+            }, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
