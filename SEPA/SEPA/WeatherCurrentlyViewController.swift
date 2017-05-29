@@ -55,6 +55,14 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let orientation = UIApplication.sharedApplication().statusBarOrientation
+        
+        if orientation.isPortrait {
+            self.topStackView.axis = .Vertical
+        } else {
+            self.topStackView.axis = .Horizontal
+        }
+        
         setTimeLabel()
         
         locationManager.delegate = self

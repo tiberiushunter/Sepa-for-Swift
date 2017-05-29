@@ -57,6 +57,7 @@
 		E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */; };
 		E2CED74F1EDC8038007DBAEF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED74E1EDC8038007DBAEF /* Utilities.swift */; };
 		E2CED7511EDC8138007DBAEF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7501EDC8138007DBAEF /* Extensions.swift */; };
+		E2CED7531EDCB432007DBAEF /* Weather48HourDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7521EDCB432007DBAEF /* Weather48HourDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		E2CED74E1EDC8038007DBAEF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E2CED7501EDC8138007DBAEF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E2CED7521EDCB432007DBAEF /* Weather48HourDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather48HourDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,11 +231,10 @@
 		E20FD9F11ED4885100876005 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E2A59D2A1ECE701000AAD24C /* Weather48HourViewController.swift */,
+				E2CED7541EDCB439007DBAEF /* 48Hour */,
 				E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */,
 				E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */,
 				E27DF3731EDB25440064DA71 /* WeatherCurrentlyViewController.swift */,
-				E27DF3751EDB561E0064DA71 /* Weather48HourTableCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -332,6 +333,16 @@
 				E2A59D4C1ECE701100AAD24C /* Info.plist */,
 			);
 			path = SEPAUITests;
+			sourceTree = "<group>";
+		};
+		E2CED7541EDCB439007DBAEF /* 48Hour */ = {
+			isa = PBXGroup;
+			children = (
+				E2A59D2A1ECE701000AAD24C /* Weather48HourViewController.swift */,
+				E27DF3751EDB561E0064DA71 /* Weather48HourTableCell.swift */,
+				E2CED7521EDCB432007DBAEF /* Weather48HourDetailViewController.swift */,
+			);
+			name = 48Hour;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,6 +519,7 @@
 				E2A59D2B1ECE701000AAD24C /* Weather48HourViewController.swift in Sources */,
 				E27DF3741EDB25440064DA71 /* WeatherCurrentlyViewController.swift in Sources */,
 				E20FD9EB1ED474EB00876005 /* WeatherTabBarController.swift in Sources */,
+				E2CED7531EDCB432007DBAEF /* Weather48HourDetailViewController.swift in Sources */,
 				E2CED7511EDC8138007DBAEF /* Extensions.swift in Sources */,
 				E20FD9EE1ED476D600876005 /* Weather7DayViewController.swift in Sources */,
 				E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */,

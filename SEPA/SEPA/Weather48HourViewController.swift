@@ -9,21 +9,31 @@
 import UIKit
 import MapKit
 
-class Weather48HourViewController: UIViewController, UITableViewDataSource, CLLocationManagerDelegate {
+class Weather48HourViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
     
+    var jsonString = ""
     
     @IBOutlet weak var tableView: UITableView!
     let reuseIdentifier = "tableViewCell"
     
-    var dummyObjects = ["a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a"]
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getLocation()
+        getWeather { jsonString in
+                self.jsonString = jsonString as String
+            
+        }
+        
+        
         tableView.dataSource = self
+        tableView.delegate = self
+        
+       
+
+      //  updateWeatherData()
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -34,19 +44,6 @@ class Weather48HourViewController: UIViewController, UITableViewDataSource, CLLo
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus){
-        if (status == .AuthorizedAlways){
-            getLocation()
-            getWeather { jsonString in
-                print(jsonString)
-            }
-    } else if (status == .Denied){
-            let alert = UIAlertController(title: "Error", message: "Goto Settings and allow this app to access your location", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
     }
  
     func getLocation(){
@@ -76,14 +73,114 @@ class Weather48HourViewController: UIViewController, UITableViewDataSource, CLLo
         task.resume()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let id = segue.identifier{
+            if (id == "showWeather48HourDetail"){
+                let newVc = segue.destinationViewController as! Weather48HourDetailViewController
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let cell = tableView.cellForRowAtIndexPath(indexPath) as! Weather48HourTableCell
+                  //  let cell: Weather48HourTableCell = tableView.visibleCells(reuseIdentifier, forIndexPath: indexPath) as! Weather48HourTableCell
+                    
+                    newVc.timestamp = cell.timestamp
+                    
+                    newVc.summary = cell.summary
+                    newVc.currentTemperature = cell.currentTemperature
+                    newVc.feelLikeTemperaure = cell.feelLikeTemperaure
+                    newVc.windDirection = cell.windDirection
+                    newVc.windSpeed = cell.windSpeed
+                    newVc.chanceOfRain = cell.chanceOfRain
+                    newVc.rainIntensity = cell.rainIntensity
+                    newVc.nearestStormDistance = cell.nearestStormDistance
+                    newVc.nearestStormDirection = cell.nearestStormDirection
+                    newVc.imageIcon = cell.imageIcon
+                }
+                
+            }
+        }
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: Weather48HourTableCell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! Weather48HourTableCell
         
-        cell.weatherIcon.image = UIImage(named: WeatherIcon.clearDay.rawValue)
-        cell.lblSummary.text = "Overcast"
-        cell.lblTime.text = "25/06/2017 16:00"
-        cell.lblTemperature.text = "27°C"
+        if let jsonDictionary = Utilities().convertStringToDictionary(jsonString){
+            if let hourly = jsonDictionary["hourly"] as? Dictionary<String, AnyObject>{
+                        if let data = hourly["data"]![indexPath.row] as?
+                            Dictionary<String, AnyObject>{
+                            if let currTemp = data["temperature"] as? Double{
+                                cell.currentTemperature = currTemp
+                                cell.lblTemperature.text = String(format: "%.2f", Utilities().convertToCelsius(currTemp)) + "°C"
+                            }
+                            if let feelLikeTemp = data["apparentTemperature"] as? Double {
+                                cell.feelLikeTemperaure = feelLikeTemp
+                            }
+                            if let sum = data["summary"] as? String {
+                                cell.summary = sum
+                                cell.lblSummary.text = sum
+                            }
+                            if let windDir = data["windBearing"] as? Double {
+                                cell.windDirection = windDir
+                            }
+                            if let windSpe = data["windSpeed"] as? Double {
+                                cell.windSpeed = windSpe
+                            }
+                            if let chanceOfRain = data["precipProbability"] as? Double {
+                                cell.chanceOfRain = chanceOfRain
+                            }
+                            if let rainInt = data["precipIntensity"] as? Double {
+                                cell.rainIntensity = rainInt
+                            }
+                            if let nearStormDist = data["nearestStormDistance"] as? Double {
+                                cell.nearestStormDistance = nearStormDist
+                            }
+                            if let nearStormDir = data["nearestStormBearing"] as? Double {
+                                cell.nearestStormDirection = nearStormDir
+                            }
+                            if let time = data["time"] as? Double {
+                                cell.lblTime.text = Utilities().getDateFromTimestamp(time)
+                                cell.timestamp = Utilities().getDateFromTimestamp(time)
+                            }
+                            if let imageIcon = data["icon"] as? String {
+                                switch(imageIcon){
+                                case "clear-day":
+                                    cell.imageIcon = WeatherIcon.clearDay
+                                case "clear-night":
+                                    cell.imageIcon = WeatherIcon.clearNight
+                                case "rain":
+                                    cell.imageIcon = WeatherIcon.rain
+                                case "snow":
+                                    cell.imageIcon = WeatherIcon.snow
+                                case "sleet":
+                                    cell.imageIcon = WeatherIcon.snow
+                                case "wind":
+                                    cell.imageIcon = WeatherIcon.wind
+                                case "fog":
+                                    cell.imageIcon = WeatherIcon.fog
+                                case "cloudy":
+                                    cell.imageIcon = WeatherIcon.cloudy
+                                case "partly-cloudy-day":
+                                    cell.imageIcon = WeatherIcon.partlyCloudyDay
+                                case "partly-cloudy-night":
+                                    cell.imageIcon = WeatherIcon.partlyCloudyNight
+                                case "hail":
+                                    cell.imageIcon = WeatherIcon.rain
+                                case "thunderstorm":
+                                    cell.imageIcon = WeatherIcon.thunderstorm
+                                case "tornado":
+                                    cell.imageIcon = WeatherIcon.tornado
+                                    
+                                default:
+                                    cell.imageIcon = WeatherIcon.nothing
+                                }
+                                cell.weatherIcon.image = UIImage(named: cell.imageIcon.rawValue)
+                            }
+                        }
+                    }
+        }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -91,10 +188,8 @@ class Weather48HourViewController: UIViewController, UITableViewDataSource, CLLo
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyObjects.count
-    }
-    
-    
+        return 48
+    }    
 }
     
 

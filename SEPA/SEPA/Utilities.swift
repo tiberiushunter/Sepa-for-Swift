@@ -24,5 +24,14 @@ class Utilities {
         return Double(5.0 / 9.0 * (Double(fahrenheit) - 32.0))
     }
     
+    func getDateFromTimestamp(timestamp: Double)->String{
+        let currentDate = NSDate(timeIntervalSince1970: timestamp)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        return String(dateFormatter.stringFromDate(currentDate))
+    }
+    
+    
 }
 
