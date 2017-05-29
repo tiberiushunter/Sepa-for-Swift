@@ -26,16 +26,11 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
     var nearestStormDirection = 0.00
     var imageIcon = WeatherIcon.nothing
     
-    @IBOutlet weak var txtSearchLocation: UITextField!
-
-    
     @IBOutlet weak var detailsStackView: UIStackView!
     
     @IBOutlet weak var btnUpdate: UIButton!
     
     @IBOutlet weak var lblTime: UILabel!
-    
-    @IBOutlet weak var lblLocation: UILabel!
 
     @IBOutlet weak var lblSummary: UILabel!
     
@@ -89,8 +84,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
 
         
         setTimeLabel()
-        setLocationLabel()
-        
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -136,13 +129,7 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         
         self.lblTime.text = "Last Updated: " + convertedDate
     }
-    
-    func setLocationLabel(){
-        self.lblLocation.text = "Current Location"
-    }
-    
-    
-    
+  
     @IBAction func update(sender: AnyObject) {
         setTimeLabel()
         updateWeatherData()
@@ -244,7 +231,7 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
                         self.lblFeelLikeTemp.text = String(format: "%.0f", Utilities().convertToCelsius(self.feelLikeTemperaure)) + "°C"
                         self.lblWindDirection.text = String(format: "%.2f", self.windDirection)
                         self.lblWindSpeed.text = String(format: "%.2f", self.windSpeed)
-                        self.lblChanceOfRain.text = String(format: "%.2f", self.chanceOfRain * 100) + "%"
+                        self.lblChanceOfRain.text = String(format: "%.0f", self.chanceOfRain * 100) + "%"
                         self.lblRainIntensity.text = String(format: "%.2f", self.rainIntensity)
                         self.lblNearestStormDistance.text = String(format: "%.2f", self.nearestStormDistance)
                         self.lblNearestStormDirection.text = String(format: "%.2f", self.nearestStormDirection)
