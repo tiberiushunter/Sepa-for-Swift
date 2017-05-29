@@ -13,8 +13,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
     
-    //var refreshControl: UIRefreshControl!
-
     var summary = ""
     var currentTemperature = 0.00
     var feelLikeTemperaure = 0.00
@@ -26,7 +24,7 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
     var nearestStormDirection = 0.00
     var imageIcon = WeatherIcon.nothing
     
-    @IBOutlet weak var detailsStackView: UIStackView!
+    @IBOutlet weak var topStackView: UIStackView!
     
     @IBOutlet weak var btnUpdate: UIButton!
     
@@ -55,34 +53,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-   //     let path: String = NSBundle.mainBundle().pathForResource("day", ofType: "svg")!
-        
-   //     let url: NSURL = NSURL.fileURLWithPath(path)  //Creating a URL which points towards our path
-        
-        //Creating a page request which will load our URL (Which points to our path)
-      //  let request: NSURLRequest = NSURLRequest(URL: url)
-        
-        
-        //webView.scalesPageToFit = false
-        
-        
-        //     let contentSize = webView.scrollView.contentSize;
-        //    let webViewSize = webView.bounds.size;
-        //    let scaleFactor = webViewSize.width / contentSize.width;
-        
-        //   webView.scrollView.minimumZoomScale = scaleFactor;
-        //   webView.scrollView.maximumZoomScale = scaleFactor;
-        //   webView.scrollView.zoomScale = scaleFactor;
-        
-        
-        
-      //  webView.loadRequest(request)  //Telling our webView to load our above request
-        
-        
-     //   webView.resizeWebContent()
-        
-
-        
         setTimeLabel()
         
         locationManager.delegate = self
@@ -90,10 +60,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
     }
-    
-  
-    @IBOutlet weak var topStackView: UIStackView!
-
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator:UIViewControllerTransitionCoordinator) {
         
@@ -115,11 +81,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         // Dispose of any resources that can be recreated.
     }
     
-    func didPullToRefresh(){
-        setTimeLabel()
-        updateWeatherData()
-    }
-    
     func setTimeLabel(){
         let currentDate = NSDate()
         let dateFormatter = NSDateFormatter()
@@ -134,7 +95,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         setTimeLabel()
         updateWeatherData()
     }
-    
 
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus){
         if (status == .AuthorizedAlways){
@@ -144,7 +104,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        
     }
     
     func getLocation(){
@@ -157,7 +116,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
         let urlPath = WeatherURL(lat: String(coords.latitude), long: String(coords.longitude)).getFullURL()
         let url: NSURL = NSURL(string: urlPath)!
         let request = NSMutableURLRequest(URL: url)
-        
         let session = NSURLSession.sharedSession()
         
         request.HTTPMethod = "GET"
@@ -170,7 +128,6 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
             
             completion(jsonString!)
         })
-        
         task.resume()
     }
     
@@ -225,16 +182,15 @@ class WeatherCurrentlyViewController: UIViewController, CLLocationManagerDelegat
                         }
                     }
                     dispatch_async(dispatch_get_main_queue()) {
-                        
                         self.lblSummary.text = self.summary
                         self.lblCurrentTemp.text = String(format: "%.2f", Utilities().convertToCelsius(self.currentTemperature)) + "°C"
                         self.lblFeelLikeTemp.text = String(format: "%.0f", Utilities().convertToCelsius(self.feelLikeTemperaure)) + "°C"
-                        self.lblWindDirection.text = String(format: "%.2f", self.windDirection)
-                        self.lblWindSpeed.text = String(format: "%.2f", self.windSpeed)
+                        self.lblWindDirection.text = String(format: "%.0f", self.windDirection) + "°N"
+                        self.lblWindSpeed.text = String(format: "%.2f", self.windSpeed) + "mph"
                         self.lblChanceOfRain.text = String(format: "%.0f", self.chanceOfRain * 100) + "%"
                         self.lblRainIntensity.text = String(format: "%.2f", self.rainIntensity)
-                        self.lblNearestStormDistance.text = String(format: "%.2f", self.nearestStormDistance)
-                        self.lblNearestStormDirection.text = String(format: "%.2f", self.nearestStormDirection)
+                        self.lblNearestStormDistance.text = String(format: "%.0f", self.nearestStormDistance) + " miles"
+                        self.lblNearestStormDirection.text = String(format: "%.0f", self.nearestStormDirection) + "°N"
                         self.weatherImage.image = UIImage(named:self.imageIcon.rawValue)
                     }
                 }
