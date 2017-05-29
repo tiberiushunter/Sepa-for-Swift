@@ -243,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwI-DZ-TOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="-4283"/>
+            <point key="canvasLocation" x="852" y="-5219"/>
         </scene>
         <!--7 Days-->
         <scene sceneID="g4z-er-8Qf">
@@ -438,7 +438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5t-yB-UA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="-2905"/>
+            <point key="canvasLocation" x="852" y="-3809"/>
         </scene>
         <!--Weather-->
         <scene sceneID="onU-CU-Enk">
@@ -457,7 +457,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ksv-1o-D8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="-2717"/>
+            <point key="canvasLocation" x="-4" y="-4401"/>
         </scene>
         <!--48 Hour-->
         <scene sceneID="kk6-q0-GCx">
@@ -558,7 +558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xq8-Dv-o4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="-3577"/>
+            <point key="canvasLocation" x="852" y="-4517"/>
         </scene>
         <!--48 Hour Detail-->
         <scene sceneID="wVh-WQ-G7t">
@@ -585,11 +585,11 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Gwh-1q-LYl">
-                                                <rect key="frame" x="255" y="17" width="50" height="281"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Gwh-1q-LYl">
+                                                <rect key="frame" x="280" y="17" width="0.0" height="281"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-N8-D1Z">
-                                                        <rect key="frame" x="0.0" y="116" width="50" height="50"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-N8-D1Z">
+                                                        <rect key="frame" x="0.0" y="141" width="0.0" height="0.0"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
@@ -769,7 +769,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwo-9N-45h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486" y="-3577"/>
+            <point key="canvasLocation" x="1580" y="-4517"/>
         </scene>
     </scenes>
     <resources>

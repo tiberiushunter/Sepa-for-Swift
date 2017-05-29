@@ -231,7 +231,7 @@
 		E20FD9F11ED4885100876005 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E2CED7541EDCB439007DBAEF /* 48Hour */,
+				E2CED7541EDCB439007DBAEF /* Weather48HourViewControllers */,
 				E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */,
 				E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */,
 				E27DF3731EDB25440064DA71 /* WeatherCurrentlyViewController.swift */,
@@ -335,14 +335,14 @@
 			path = SEPAUITests;
 			sourceTree = "<group>";
 		};
-		E2CED7541EDCB439007DBAEF /* 48Hour */ = {
+		E2CED7541EDCB439007DBAEF /* Weather48HourViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				E2A59D2A1ECE701000AAD24C /* Weather48HourViewController.swift */,
 				E27DF3751EDB561E0064DA71 /* Weather48HourTableCell.swift */,
 				E2CED7521EDCB432007DBAEF /* Weather48HourDetailViewController.swift */,
 			);
-			name = 48Hour;
+			name = Weather48HourViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

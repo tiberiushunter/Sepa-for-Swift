@@ -27,14 +27,9 @@ class Weather48HourViewController: UIViewController, UITableViewDataSource, UITa
             
         }
         
-        
         tableView.dataSource = self
         tableView.delegate = self
-        
-       
 
-      //  updateWeatherData()
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
@@ -69,7 +64,6 @@ class Weather48HourViewController: UIViewController, UITableViewDataSource, UITa
             
             completion(jsonString!)
         })
-        
         task.resume()
     }
     
@@ -79,10 +73,8 @@ class Weather48HourViewController: UIViewController, UITableViewDataSource, UITa
                 let newVc = segue.destinationViewController as! Weather48HourDetailViewController
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let cell = tableView.cellForRowAtIndexPath(indexPath) as! Weather48HourTableCell
-                  //  let cell: Weather48HourTableCell = tableView.visibleCells(reuseIdentifier, forIndexPath: indexPath) as! Weather48HourTableCell
-                    
+                   
                     newVc.timestamp = cell.timestamp
-                    
                     newVc.summary = cell.summary
                     newVc.currentTemperature = cell.currentTemperature
                     newVc.feelLikeTemperaure = cell.feelLikeTemperaure

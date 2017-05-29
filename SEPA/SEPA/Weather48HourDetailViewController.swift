@@ -76,8 +76,6 @@ class Weather48HourDetailViewController: UIViewController, CLLocationManagerDele
         self.lblNearestStormDistance.text = String(format: "%.0f", self.nearestStormDistance) + " miles"
         self.lblNearestStormDirection.text = String(format: "%.0f", self.nearestStormDirection) + "°N"
         self.weatherImage.image = UIImage(named:self.imageIcon.rawValue)
-        
-       // setTimeLabel()
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator:UIViewControllerTransitionCoordinator) {
