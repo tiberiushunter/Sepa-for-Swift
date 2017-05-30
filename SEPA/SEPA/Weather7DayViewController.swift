@@ -175,7 +175,6 @@ class Weather7DayViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
