@@ -2,20 +2,35 @@
 //  Weather7DayViewController.swift
 //  SEPA
 //
-//  Created by Welek Samuel on 23/05/2017.
+//  Created by Welek Samuel on 19/05/2017.
 //  Copyright © 2017 Welek Samuel. All rights reserved.
 //
 
 import UIKit
 import MapKit
 
-class Weather7DayViewController: UIViewController, CLLocationManagerDelegate {
+class Weather7DayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
     
+    var jsonString = ""
+    
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    let reuseIdentifier = "tableViewCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        getLocation()
+        getWeather { jsonString in
+            self.jsonString = jsonString as String
+            
+        }
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -27,44 +42,6 @@ class Weather7DayViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
-        if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
-            do {
-                return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject]
-            } catch let error as NSError {
-                print(error)
-            }
-        }
-        return nil
-    }
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus){
-        if (status == .AuthorizedAlways){
-            getLocation()
-            getWeather { jsonString in
-                let jsonDictionary = self.convertStringToDictionary(jsonString as String)
-                if let currently = jsonDictionary!["currently"] as? Dictionary<String, AnyObject>{
-                   // self.weatherModel = Weather(json: currently)
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                       // self.currentTemp.text = String(format: "%.2f", self.convertToCelsius(self.weatherModel.Temperature!)) + "°C"
-                    }
-                }
-            }
-            
-        } else if (status == .Denied){
-            let alert = UIAlertController(title: "Error", message: "Goto Settings and allow this app to access your location", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        
-    }
-    
-    func convertToCelsius(fahrenheit: Double) -> Double {
-        return Double(5.0 / 9.0 * (Double(fahrenheit) - 32.0))
-    }
-    
     
     func getLocation(){
         if let loc = locationManager.location?.coordinate{
@@ -89,8 +66,125 @@ class Weather7DayViewController: UIViewController, CLLocationManagerDelegate {
             
             completion(jsonString!)
         })
-        
         task.resume()
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let id = segue.identifier{
+            if (id == "showWeather7DayDetail"){
+                let newVc = segue.destinationViewController as! Weather7DayDetailViewController
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let cell = tableView.cellForRowAtIndexPath(indexPath) as! Weather7DayTableCell
+                    
+                    newVc.timestamp = cell.timestamp
+                    newVc.summary = cell.summary
+                    newVc.temperatureMinimum = cell.temperatureMinimum
+                    newVc.temperatureMaximum = cell.temperatureMaximum
+                    newVc.windDirection = cell.windDirection
+                    newVc.windSpeed = cell.windSpeed
+                    newVc.chanceOfRain = cell.chanceOfRain
+                    newVc.rainIntensity = cell.rainIntensity
+                    newVc.nearestStormDistance = cell.nearestStormDistance
+                    newVc.nearestStormDirection = cell.nearestStormDirection
+                    newVc.imageIcon = cell.imageIcon
+                }
+                
+            }
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: Weather7DayTableCell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! Weather7DayTableCell
+        
+        if let jsonDictionary = Utilities().convertStringToDictionary(jsonString){
+            if let daily = jsonDictionary["daily"] as? Dictionary<String, AnyObject>{
+                if let data = daily["data"]![indexPath.row] as?
+                    Dictionary<String, AnyObject>{
+                    if let tempMin = data["temperatureMin"] as? Double{
+                        cell.temperatureMinimum = tempMin
+                    }
+                    if let tempMax = data["temperatureMax"] as? Double{
+                        cell.temperatureMaximum = tempMax
+                    }
+                    if let sum = data["summary"] as? String {
+                        cell.summary = sum
+                        cell.lblSummary.text = sum
+                    }
+                    if let windDir = data["windBearing"] as? Double {
+                        cell.windDirection = windDir
+                    }
+                    if let windSpe = data["windSpeed"] as? Double {
+                        cell.windSpeed = windSpe
+                    }
+                    if let chanceOfRain = data["precipProbability"] as? Double {
+                        cell.chanceOfRain = chanceOfRain
+                    }
+                    if let rainInt = data["precipIntensity"] as? Double {
+                        cell.rainIntensity = rainInt
+                    }
+                    if let nearStormDist = data["nearestStormDistance"] as? Double {
+                        cell.nearestStormDistance = nearStormDist
+                    }
+                    if let nearStormDir = data["nearestStormBearing"] as? Double {
+                        cell.nearestStormDirection = nearStormDir
+                    }
+                    if let time = data["time"] as? Double {
+                        cell.lblTime.text = Utilities().getDateFromTimestamp(time)
+                        cell.timestamp = Utilities().getDateFromTimestamp(time)
+                    }
+                    if let imageIcon = data["icon"] as? String {
+                        switch(imageIcon){
+                        case "clear-day":
+                            cell.imageIcon = WeatherIcon.clearDay
+                        case "clear-night":
+                            cell.imageIcon = WeatherIcon.clearNight
+                        case "rain":
+                            cell.imageIcon = WeatherIcon.rain
+                        case "snow":
+                            cell.imageIcon = WeatherIcon.snow
+                        case "sleet":
+                            cell.imageIcon = WeatherIcon.snow
+                        case "wind":
+                            cell.imageIcon = WeatherIcon.wind
+                        case "fog":
+                            cell.imageIcon = WeatherIcon.fog
+                        case "cloudy":
+                            cell.imageIcon = WeatherIcon.cloudy
+                        case "partly-cloudy-day":
+                            cell.imageIcon = WeatherIcon.partlyCloudyDay
+                        case "partly-cloudy-night":
+                            cell.imageIcon = WeatherIcon.partlyCloudyNight
+                        case "hail":
+                            cell.imageIcon = WeatherIcon.rain
+                        case "thunderstorm":
+                            cell.imageIcon = WeatherIcon.thunderstorm
+                        case "tornado":
+                            cell.imageIcon = WeatherIcon.tornado
+                            
+                        default:
+                            cell.imageIcon = WeatherIcon.nothing
+                        }
+                        let averageTemp = cell.temperatureMaximum - (cell.temperatureMaximum - cell.temperatureMinimum)
+                        cell.lblTemperature.text = String(format: "%.2f", Utilities().convertToCelsius(averageTemp)) + "°C"
+                        cell.weatherIcon.image = UIImage(named: cell.imageIcon.rawValue)
+                    }
+                }
+            }
+        }
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 7
+    }
 }
+
+

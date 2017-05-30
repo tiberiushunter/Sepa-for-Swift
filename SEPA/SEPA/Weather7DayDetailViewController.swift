@@ -1,5 +1,5 @@
 //
-//  Weather48HourDetailViewController.swift
+//  Weather7DayDetailViewController.swift
 //  SEPA
 //
 //  Created by Welek Samuel on 19/05/2017.
@@ -9,14 +9,15 @@
 import UIKit
 import MapKit
 
-class Weather48HourDetailViewController: UIViewController, CLLocationManagerDelegate {
+class Weather7DayDetailViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
     
     var timestamp = ""
     
     var summary = ""
-    var currentTemperature = 0.00
+    var temperatureMinimum = 0.00
+    var temperatureMaximum = 0.00
     var feelLikeTemperaure = 0.00
     var windDirection = 0.00
     var windSpeed = 0.00
@@ -29,12 +30,12 @@ class Weather48HourDetailViewController: UIViewController, CLLocationManagerDele
     @IBOutlet weak var topStackView: UIStackView!
     
     @IBOutlet weak var detailsStackView: UIStackView!
-  
+ 
+    @IBOutlet weak var lblMinTemp: UILabel!
+    
+    @IBOutlet weak var lblMaxTemp: UILabel!
+    
     @IBOutlet weak var lblSummary: UILabel!
-    
-    @IBOutlet weak var lblCurrentTemp: UILabel!
-    
-    @IBOutlet weak var lblFeelLikeTemp: UILabel!
     
     @IBOutlet weak var lblWindDirection: UILabel!
     
@@ -64,8 +65,9 @@ class Weather48HourDetailViewController: UIViewController, CLLocationManagerDele
         }
         
         self.lblSummary.text = self.summary
-        self.lblCurrentTemp.text = String(format: "%.2f", Utilities().convertToCelsius(self.currentTemperature)) + "°C"
-        self.lblFeelLikeTemp.text = String(format: "%.0f", Utilities().convertToCelsius(self.feelLikeTemperaure)) + "°C"
+        
+        self.lblMinTemp.text = String(format: "%.0f", Utilities().convertToCelsius(self.temperatureMinimum)) + "°C"
+        self.lblMaxTemp.text = String(format: "%.0f", Utilities().convertToCelsius(self.temperatureMaximum)) + "°C"
         self.lblWindDirection.text = String(format: "%.0f", self.windDirection) + "°N"
         self.lblWindSpeed.text = String(format: "%.2f", self.windSpeed) + "mph"
         self.lblChanceOfRain.text = String(format: "%.0f", self.chanceOfRain * 100) + "%"

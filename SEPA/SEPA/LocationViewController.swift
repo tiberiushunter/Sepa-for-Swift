@@ -7,11 +7,23 @@
 //
 
 import UIKit
+import MapKit
 
-class LocationViewController: UIViewController {
+class LocationViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
+    let locationManager = CLLocationManager()
+    var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
 
         // Do any additional setup after loading the view.
     }
@@ -19,6 +31,33 @@ class LocationViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus){
+        guard status == .AuthorizedAlways else {
+            return
+        }
+        mapView.showsUserLocation = true
+        mapView.showsCompass = true
+    }
+    
+    func getLocation(){
+        if let loc = locationManager.location?.coordinate{
+            coords = loc
+        }
+    }
+    
+    @IBAction func AddLocation(sender: AnyObject) {
+        let coord = locationManager.location?.coordinate
+       
+        if let lat = coord?.latitude{
+            print("Lat: \(lat)")
+        }
+        if let long = coord?.longitude{
+            print("Long: \(long)")
+        }
+        
     }
     
 

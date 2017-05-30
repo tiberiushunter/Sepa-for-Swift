@@ -28,6 +28,14 @@ class Utilities {
         let currentDate = NSDate(timeIntervalSince1970: timestamp)
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return String(dateFormatter.stringFromDate(currentDate))
+    }
+    
+    func getDateTimeFromTimestamp(timestamp: Double)->String{
+        let currentDate = NSDate(timeIntervalSince1970: timestamp)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale.currentLocale()
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         return String(dateFormatter.stringFromDate(currentDate))
     }

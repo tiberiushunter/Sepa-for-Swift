@@ -128,8 +128,8 @@ class Weather48HourViewController: UIViewController, UITableViewDataSource, UITa
                                 cell.nearestStormDirection = nearStormDir
                             }
                             if let time = data["time"] as? Double {
-                                cell.lblTime.text = Utilities().getDateFromTimestamp(time)
-                                cell.timestamp = Utilities().getDateFromTimestamp(time)
+                                cell.lblTime.text = Utilities().getDateTimeFromTimestamp(time)
+                                cell.timestamp = Utilities().getDateTimeFromTimestamp(time)
                             }
                             if let imageIcon = data["icon"] as? String {
                                 switch(imageIcon){
