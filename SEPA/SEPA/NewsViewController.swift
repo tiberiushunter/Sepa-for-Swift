@@ -102,7 +102,14 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return newsArticles.count
     }
     
-
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+       // let header = view as! UITableViewHeaderFooterView
+      //  let headerImage = UIImage(named: "bbcNews")
+      //  let headerImageView = UIImageView(image: headerImage)
+      //  headerImageView.contentMode = .ScaleAspectFill
+      //  header.addSubview(headerImageView)
+        
+    }
     
 
 }
