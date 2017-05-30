@@ -22,13 +22,27 @@ struct WeatherURL {
     }
 }
 
-struct NewsURL {
-    private let baseURL = "https://newsapi.org/v1/articles?"
-    private let source = "source=bbc-news"
+struct NewsSourcesURL {
+    private let baseURL = "https://newsapi.org/v1/sources?"
     private let sortBy = "&sortBy=top"
     private let key = "&apiKey=02f5dd4595a8408b997e26e65d25f91e"
     
     init (){
+    }
+    
+    func getFullURL() -> String {
+        return baseURL + sortBy + key
+    }
+}
+
+struct NewsArticlesURL {
+    private let baseURL = "https://newsapi.org/v1/articles?"
+    private var source = ""
+    private let sortBy = "&sortBy=top"
+    private let key = "&apiKey=02f5dd4595a8408b997e26e65d25f91e"
+    
+    init (source: String){
+        self.source = "source=" + source
     }
     
     func getFullURL() -> String {

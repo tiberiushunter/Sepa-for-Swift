@@ -38,6 +38,7 @@
 		E2CED75F1EDD12AF007DBAEF /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED75E1EDD12AF007DBAEF /* Enums.swift */; };
 		E2CED7611EDD1DC3007DBAEF /* NewsArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7601EDD1DC3007DBAEF /* NewsArticleModel.swift */; };
 		E2CED7661EDD4108007DBAEF /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7651EDD4108007DBAEF /* SettingsTableViewCell.swift */; };
+		E2F420DC1EDE0CA0003D1AD9 /* NewsSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F420DB1EDE0CA0003D1AD9 /* NewsSourceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		E2CED75E1EDD12AF007DBAEF /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		E2CED7601EDD1DC3007DBAEF /* NewsArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArticleModel.swift; sourceTree = "<group>"; };
 		E2CED7651EDD4108007DBAEF /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		E2F420DB1EDE0CA0003D1AD9 /* NewsSourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsSourceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */,
 				E2CED75C1EDD08B1007DBAEF /* NewsTableViewCell.swift */,
 				E2CED7601EDD1DC3007DBAEF /* NewsArticleModel.swift */,
+				E2F420DB1EDE0CA0003D1AD9 /* NewsSourceModel.swift */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				E2CED75B1EDCF541007DBAEF /* Weather7DayTableCell.swift in Sources */,
 				E2CED75D1EDD08B1007DBAEF /* NewsTableViewCell.swift in Sources */,
 				E27DF3761EDB561E0064DA71 /* Weather48HourTableCell.swift in Sources */,
+				E2F420DC1EDE0CA0003D1AD9 /* NewsSourceModel.swift in Sources */,
 				E20FD9D51ED4582300876005 /* DashboardTableViewCell.swift in Sources */,
 				E2A59D2B1ECE701000AAD24C /* Weather48HourViewController.swift in Sources */,
 				E27DF3741EDB25440064DA71 /* WeatherCurrentlyViewController.swift in Sources */,

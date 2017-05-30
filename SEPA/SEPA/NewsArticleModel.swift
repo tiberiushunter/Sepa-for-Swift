@@ -9,6 +9,7 @@
 import Foundation
 
 class NewsArticleModel {
+    private var newsSourceId: String
     private var newsHeadline: String
     private var newsDescription: String
     private var author: String
@@ -16,13 +17,18 @@ class NewsArticleModel {
     private var urlToImage: String
     private var publishedAt: String
     
-    required init(newsHeadline: String, newsDescription: String, author: String, url: String, urlToImage: String, publishedAt: String){
+    required init(newsSourceId: String, newsHeadline: String, newsDescription: String, author: String, url: String, urlToImage: String, publishedAt: String){
+        self.newsSourceId = newsSourceId
         self.newsHeadline = newsHeadline
         self.newsDescription = newsDescription
         self.author = author
         self.url = url
         self.urlToImage = urlToImage
         self.publishedAt = publishedAt
+    }
+    
+    func getNewsSourceId() -> String{
+        return newsSourceId
     }
     
     func getNewsHeadline() -> String{
@@ -47,6 +53,10 @@ class NewsArticleModel {
 
     func getPublishedAt() -> String{
         return publishedAt
+    }
+    
+    func setNewsSourceId(newsSourceId: String){
+        self.newsSourceId = newsSourceId
     }
     
     func setNewsHeadline(newsHeadline: String){
