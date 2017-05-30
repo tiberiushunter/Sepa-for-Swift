@@ -1,6 +1,20 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 72,
+          "top" : 71,
+          "right" : 72,
+          "left" : 71
+        }
+      },
       "idiom" : "universal",
       "filename" : "bbcSports.png",
       "scale" : "1x"

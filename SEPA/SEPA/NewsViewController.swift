@@ -13,7 +13,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     var passedString = "blank"
     var newsArticles: Array<NewsArticleModel> = []
-    var newsSources = ["BBC News"]
+    var newsSources: Array<String> = []
     
     let reuseIdentifier = "tableViewCell"
 
@@ -24,8 +24,16 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        
+        
+        let bbcNewsSource = NSUserDefaults.standardUserDefaults().objectForKey("newsSource_bbcNews") as! Bool
+        
+        if(bbcNewsSource == true){
+            newsSources.append("Channel 4")
+        }
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         getNews { jsonString in
             self.jsonString = jsonString as String
@@ -51,7 +59,6 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
 
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -113,7 +120,5 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
       //  header.addSubview(headerImageView)
         
     }
-    
-
 }
 
