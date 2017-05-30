@@ -13,7 +13,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     var passedString = "blank"
     var newsArticles: Array<NewsArticleModel> = []
-    var newsSources = ["bbc-news"]
+    var newsSources = ["BBC News"]
     
     let reuseIdentifier = "tableViewCell"
 
@@ -88,9 +88,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         return self.newsSources[0]
-        
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
