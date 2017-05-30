@@ -248,7 +248,7 @@
         <!--7 Days-->
         <scene sceneID="g4z-er-8Qf">
             <objects>
-                <viewController storyboardIdentifier="Weather7Days" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3BD-tl-8uf" customClass="Weather7DayViewController" customModule="SEPA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Weather7Days" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3BD-tl-8uf" customClass="Weather7DayViewController" customModule="SEPA" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aZ0-oV-kyR"/>
                         <viewControllerLayoutGuide type="bottom" id="dTx-oc-5Et"/>
@@ -258,18 +258,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Es1-EU-ANy">
-                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" id="DZl-7i-kjW" customClass="Weather7DayTableCell" customModule="SEPA">
-                                        <rect key="frame" x="0.0" y="1" width="560" height="100"/>
+                                        <rect key="frame" x="0.0" y="1" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="DZl-7i-kjW" id="WB2-cU-Lag">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cv0-MY-7H3">
-                                                    <rect key="frame" x="8" y="8" width="544" height="83"/>
+                                                    <rect key="frame" x="8" y="8" width="584" height="83"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6FF-ru-HWW">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="83"/>
@@ -298,7 +298,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAz-5v-diK">
-                                                            <rect key="frame" x="142" y="0.0" width="402" height="83"/>
+                                                            <rect key="frame" x="142" y="0.0" width="442" height="83"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -330,10 +330,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Es1-EU-ANy" firstAttribute="leading" secondItem="nMN-9G-c5A" secondAttribute="leadingMargin" id="MPI-hC-oe6"/>
-                            <constraint firstItem="Es1-EU-ANy" firstAttribute="trailing" secondItem="nMN-9G-c5A" secondAttribute="trailingMargin" id="Pp8-KF-91h"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Es1-EU-ANy" secondAttribute="bottom" id="hW4-EJ-ze4"/>
-                            <constraint firstItem="Es1-EU-ANy" firstAttribute="top" secondItem="aZ0-oV-kyR" secondAttribute="bottom" id="iSq-mQ-tDp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Es1-EU-ANy" secondAttribute="trailing" constant="-20" id="2s2-Cq-BsN"/>
+                            <constraint firstItem="Es1-EU-ANy" firstAttribute="bottom" secondItem="nMN-9G-c5A" secondAttribute="bottomMargin" id="sKG-ys-MIe"/>
+                            <constraint firstItem="Es1-EU-ANy" firstAttribute="top" secondItem="aZ0-oV-kyR" secondAttribute="bottom" id="w6M-dR-jye"/>
+                            <constraint firstItem="Es1-EU-ANy" firstAttribute="leading" secondItem="nMN-9G-c5A" secondAttribute="leadingMargin" constant="-20" id="yJF-Pu-L3v"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="7 Days" image="first" id="dKC-xn-NLH"/>
@@ -367,7 +367,7 @@
         <!--48 Hour-->
         <scene sceneID="kk6-q0-GCx">
             <objects>
-                <viewController storyboardIdentifier="Weather48Hour" title="48 Hour" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fXe-tC-Hsa" customClass="Weather48HourViewController" customModule="SEPA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Weather48Hour" title="48 Hour" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fXe-tC-Hsa" customClass="Weather48HourViewController" customModule="SEPA" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OXD-CJ-YPc"/>
                         <viewControllerLayoutGuide type="bottom" id="Y9F-nW-Dw8"/>
@@ -377,18 +377,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mSI-A9-nhb">
-                                <rect key="frame" x="20" y="20" width="560" height="531"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" id="Riq-CL-RtM" customClass="Weather48HourTableCell" customModule="SEPA">
-                                        <rect key="frame" x="0.0" y="1" width="560" height="100"/>
+                                        <rect key="frame" x="0.0" y="1" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="Riq-CL-RtM" id="vWR-vC-WzN">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQc-49-rV4">
-                                                    <rect key="frame" x="8" y="8" width="544" height="83"/>
+                                                    <rect key="frame" x="8" y="8" width="584" height="83"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0hd-7q-V4Z">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="83"/>
@@ -417,7 +417,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLM-Yy-iUW">
-                                                            <rect key="frame" x="142" y="0.0" width="402" height="83"/>
+                                                            <rect key="frame" x="142" y="0.0" width="442" height="83"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -449,10 +449,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="mSI-A9-nhb" secondAttribute="trailing" id="DU6-1H-Aas"/>
-                            <constraint firstItem="mSI-A9-nhb" firstAttribute="leading" secondItem="jAa-jU-RQ4" secondAttribute="leadingMargin" id="Kvc-FX-dnN"/>
-                            <constraint firstItem="mSI-A9-nhb" firstAttribute="top" secondItem="OXD-CJ-YPc" secondAttribute="bottom" id="P0G-DJ-pqW"/>
-                            <constraint firstItem="Y9F-nW-Dw8" firstAttribute="top" secondItem="mSI-A9-nhb" secondAttribute="bottom" id="XmM-DC-FE7"/>
+                            <constraint firstItem="mSI-A9-nhb" firstAttribute="leading" secondItem="jAa-jU-RQ4" secondAttribute="leadingMargin" constant="-20" id="POF-iD-VCL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mSI-A9-nhb" secondAttribute="trailing" constant="-20" id="U2c-k7-oVd"/>
+                            <constraint firstItem="mSI-A9-nhb" firstAttribute="top" secondItem="OXD-CJ-YPc" secondAttribute="bottom" id="rba-HI-Vwl"/>
+                            <constraint firstItem="Y9F-nW-Dw8" firstAttribute="top" secondItem="mSI-A9-nhb" secondAttribute="bottom" id="s5b-Ig-g7E"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="48 Hour" image="first" id="XDL-Nu-zmF"/>

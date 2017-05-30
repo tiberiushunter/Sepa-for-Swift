@@ -43,20 +43,22 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getLocation(){
+        print(coords.latitude)
         if let loc = locationManager.location?.coordinate{
             coords = loc
         }
+        mapView.showsUserLocation = true
     }
     
     @IBAction func AddLocation(sender: AnyObject) {
-        let coord = locationManager.location?.coordinate
-       
-        if let lat = coord?.latitude{
+        getLocation()
+        
+        let lat = coords.latitude
             print("Lat: \(lat)")
-        }
-        if let long = coord?.longitude{
+        
+        let long = coords.longitude
             print("Long: \(long)")
-        }
+        
         
     }
     

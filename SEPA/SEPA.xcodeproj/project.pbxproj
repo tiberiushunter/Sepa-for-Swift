@@ -15,33 +15,6 @@
 		E20FD9EB1ED474EB00876005 /* WeatherTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */; };
 		E20FD9EE1ED476D600876005 /* Weather7DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */; };
 		E20FD9F01ED477F600876005 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20FD9EF1ED477F600876005 /* Weather.storyboard */; };
-		E212212C1ED8DF3600A76502 /* cloudy-day-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221111ED8DF3600A76502 /* cloudy-day-1.svg */; };
-		E212212D1ED8DF3600A76502 /* cloudy-day-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221121ED8DF3600A76502 /* cloudy-day-2.svg */; };
-		E212212E1ED8DF3600A76502 /* cloudy-day-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221131ED8DF3600A76502 /* cloudy-day-3.svg */; };
-		E212212F1ED8DF3600A76502 /* cloudy-night-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221141ED8DF3600A76502 /* cloudy-night-1.svg */; };
-		E21221301ED8DF3600A76502 /* cloudy-night-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221151ED8DF3600A76502 /* cloudy-night-2.svg */; };
-		E21221311ED8DF3600A76502 /* cloudy-night-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221161ED8DF3600A76502 /* cloudy-night-3.svg */; };
-		E21221321ED8DF3600A76502 /* cloudy.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221171ED8DF3600A76502 /* cloudy.svg */; };
-		E21221331ED8DF3600A76502 /* day.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221181ED8DF3600A76502 /* day.svg */; };
-		E21221341ED8DF3600A76502 /* night.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221191ED8DF3600A76502 /* night.svg */; };
-		E21221351ED8DF3600A76502 /* rainy-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = E212211A1ED8DF3600A76502 /* rainy-1.svg */; };
-		E21221361ED8DF3600A76502 /* rainy-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = E212211B1ED8DF3600A76502 /* rainy-2.svg */; };
-		E21221371ED8DF3600A76502 /* rainy-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = E212211C1ED8DF3600A76502 /* rainy-3.svg */; };
-		E21221381ED8DF3600A76502 /* rainy-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = E212211D1ED8DF3600A76502 /* rainy-4.svg */; };
-		E21221391ED8DF3600A76502 /* rainy-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = E212211E1ED8DF3600A76502 /* rainy-5.svg */; };
-		E212213A1ED8DF3600A76502 /* rainy-6.svg in Resources */ = {isa = PBXBuildFile; fileRef = E212211F1ED8DF3600A76502 /* rainy-6.svg */; };
-		E212213B1ED8DF3600A76502 /* rainy-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221201ED8DF3600A76502 /* rainy-7.svg */; };
-		E212213C1ED8DF3600A76502 /* snowy-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221211ED8DF3600A76502 /* snowy-1.svg */; };
-		E212213D1ED8DF3600A76502 /* snowy-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221221ED8DF3600A76502 /* snowy-2.svg */; };
-		E212213E1ED8DF3600A76502 /* snowy-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221231ED8DF3600A76502 /* snowy-3.svg */; };
-		E212213F1ED8DF3600A76502 /* snowy-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221241ED8DF3600A76502 /* snowy-4.svg */; };
-		E21221401ED8DF3600A76502 /* snowy-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221251ED8DF3600A76502 /* snowy-5.svg */; };
-		E21221411ED8DF3600A76502 /* snowy-6.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221261ED8DF3600A76502 /* snowy-6.svg */; };
-		E21221421ED8DF3600A76502 /* thunder.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221271ED8DF3600A76502 /* thunder.svg */; };
-		E21221431ED8DF3600A76502 /* weather_sagittarius.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221281ED8DF3600A76502 /* weather_sagittarius.svg */; };
-		E21221441ED8DF3600A76502 /* weather_sunset.svg in Resources */ = {isa = PBXBuildFile; fileRef = E21221291ED8DF3600A76502 /* weather_sunset.svg */; };
-		E21221451ED8DF3600A76502 /* weather-sprite.svg in Resources */ = {isa = PBXBuildFile; fileRef = E212212A1ED8DF3600A76502 /* weather-sprite.svg */; };
-		E21221461ED8DF3600A76502 /* weather.svg in Resources */ = {isa = PBXBuildFile; fileRef = E212212B1ED8DF3600A76502 /* weather.svg */; };
 		E27DF3741EDB25440064DA71 /* WeatherCurrentlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DF3731EDB25440064DA71 /* WeatherCurrentlyViewController.swift */; };
 		E27DF3761EDB561E0064DA71 /* Weather48HourTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DF3751EDB561E0064DA71 /* Weather48HourTableCell.swift */; };
 		E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D281ECE701000AAD24C /* AppDelegate.swift */; };
@@ -61,6 +34,9 @@
 		E2CED7561EDCE0E2007DBAEF /* LocationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7551EDCE0E2007DBAEF /* LocationDataModel.swift */; };
 		E2CED7591EDCF408007DBAEF /* Weather7DayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7581EDCF408007DBAEF /* Weather7DayDetailViewController.swift */; };
 		E2CED75B1EDCF541007DBAEF /* Weather7DayTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED75A1EDCF541007DBAEF /* Weather7DayTableCell.swift */; };
+		E2CED75D1EDD08B1007DBAEF /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED75C1EDD08B1007DBAEF /* NewsTableViewCell.swift */; };
+		E2CED75F1EDD12AF007DBAEF /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED75E1EDD12AF007DBAEF /* Enums.swift */; };
+		E2CED7611EDD1DC3007DBAEF /* NewsArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7601EDD1DC3007DBAEF /* NewsArticleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,33 +65,6 @@
 		E20FD9EA1ED474EB00876005 /* WeatherTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTabBarController.swift; sourceTree = "<group>"; };
 		E20FD9ED1ED476D600876005 /* Weather7DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather7DayViewController.swift; sourceTree = "<group>"; };
 		E20FD9EF1ED477F600876005 /* Weather.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
-		E21221111ED8DF3600A76502 /* cloudy-day-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "cloudy-day-1.svg"; sourceTree = "<group>"; };
-		E21221121ED8DF3600A76502 /* cloudy-day-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "cloudy-day-2.svg"; sourceTree = "<group>"; };
-		E21221131ED8DF3600A76502 /* cloudy-day-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "cloudy-day-3.svg"; sourceTree = "<group>"; };
-		E21221141ED8DF3600A76502 /* cloudy-night-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "cloudy-night-1.svg"; sourceTree = "<group>"; };
-		E21221151ED8DF3600A76502 /* cloudy-night-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "cloudy-night-2.svg"; sourceTree = "<group>"; };
-		E21221161ED8DF3600A76502 /* cloudy-night-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "cloudy-night-3.svg"; sourceTree = "<group>"; };
-		E21221171ED8DF3600A76502 /* cloudy.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cloudy.svg; sourceTree = "<group>"; };
-		E21221181ED8DF3600A76502 /* day.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = day.svg; sourceTree = "<group>"; };
-		E21221191ED8DF3600A76502 /* night.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = night.svg; sourceTree = "<group>"; };
-		E212211A1ED8DF3600A76502 /* rainy-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "rainy-1.svg"; sourceTree = "<group>"; };
-		E212211B1ED8DF3600A76502 /* rainy-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "rainy-2.svg"; sourceTree = "<group>"; };
-		E212211C1ED8DF3600A76502 /* rainy-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "rainy-3.svg"; sourceTree = "<group>"; };
-		E212211D1ED8DF3600A76502 /* rainy-4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "rainy-4.svg"; sourceTree = "<group>"; };
-		E212211E1ED8DF3600A76502 /* rainy-5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "rainy-5.svg"; sourceTree = "<group>"; };
-		E212211F1ED8DF3600A76502 /* rainy-6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "rainy-6.svg"; sourceTree = "<group>"; };
-		E21221201ED8DF3600A76502 /* rainy-7.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "rainy-7.svg"; sourceTree = "<group>"; };
-		E21221211ED8DF3600A76502 /* snowy-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "snowy-1.svg"; sourceTree = "<group>"; };
-		E21221221ED8DF3600A76502 /* snowy-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "snowy-2.svg"; sourceTree = "<group>"; };
-		E21221231ED8DF3600A76502 /* snowy-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "snowy-3.svg"; sourceTree = "<group>"; };
-		E21221241ED8DF3600A76502 /* snowy-4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "snowy-4.svg"; sourceTree = "<group>"; };
-		E21221251ED8DF3600A76502 /* snowy-5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "snowy-5.svg"; sourceTree = "<group>"; };
-		E21221261ED8DF3600A76502 /* snowy-6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "snowy-6.svg"; sourceTree = "<group>"; };
-		E21221271ED8DF3600A76502 /* thunder.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = thunder.svg; sourceTree = "<group>"; };
-		E21221281ED8DF3600A76502 /* weather_sagittarius.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = weather_sagittarius.svg; sourceTree = "<group>"; };
-		E21221291ED8DF3600A76502 /* weather_sunset.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = weather_sunset.svg; sourceTree = "<group>"; };
-		E212212A1ED8DF3600A76502 /* weather-sprite.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "weather-sprite.svg"; sourceTree = "<group>"; };
-		E212212B1ED8DF3600A76502 /* weather.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = weather.svg; sourceTree = "<group>"; };
 		E27DF3731EDB25440064DA71 /* WeatherCurrentlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCurrentlyViewController.swift; sourceTree = "<group>"; };
 		E27DF3751EDB561E0064DA71 /* Weather48HourTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather48HourTableCell.swift; sourceTree = "<group>"; };
 		E2A59D251ECE700F00AAD24C /* SEPA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEPA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +90,9 @@
 		E2CED7551EDCE0E2007DBAEF /* LocationDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataModel.swift; sourceTree = "<group>"; };
 		E2CED7581EDCF408007DBAEF /* Weather7DayDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather7DayDetailViewController.swift; sourceTree = "<group>"; };
 		E2CED75A1EDCF541007DBAEF /* Weather7DayTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather7DayTableCell.swift; sourceTree = "<group>"; };
+		E2CED75C1EDD08B1007DBAEF /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		E2CED75E1EDD12AF007DBAEF /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		E2CED7601EDD1DC3007DBAEF /* NewsArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArticleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				E2A59D2C1ECE701000AAD24C /* NewsViewController.swift */,
+				E2CED75C1EDD08B1007DBAEF /* NewsTableViewCell.swift */,
+				E2CED7601EDD1DC3007DBAEF /* NewsArticleModel.swift */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -246,40 +200,6 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		E21221101ED8DF1C00A76502 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E21221111ED8DF3600A76502 /* cloudy-day-1.svg */,
-				E21221121ED8DF3600A76502 /* cloudy-day-2.svg */,
-				E21221131ED8DF3600A76502 /* cloudy-day-3.svg */,
-				E21221141ED8DF3600A76502 /* cloudy-night-1.svg */,
-				E21221151ED8DF3600A76502 /* cloudy-night-2.svg */,
-				E21221161ED8DF3600A76502 /* cloudy-night-3.svg */,
-				E21221171ED8DF3600A76502 /* cloudy.svg */,
-				E21221181ED8DF3600A76502 /* day.svg */,
-				E21221191ED8DF3600A76502 /* night.svg */,
-				E212211A1ED8DF3600A76502 /* rainy-1.svg */,
-				E212211B1ED8DF3600A76502 /* rainy-2.svg */,
-				E212211C1ED8DF3600A76502 /* rainy-3.svg */,
-				E212211D1ED8DF3600A76502 /* rainy-4.svg */,
-				E212211E1ED8DF3600A76502 /* rainy-5.svg */,
-				E212211F1ED8DF3600A76502 /* rainy-6.svg */,
-				E21221201ED8DF3600A76502 /* rainy-7.svg */,
-				E21221211ED8DF3600A76502 /* snowy-1.svg */,
-				E21221221ED8DF3600A76502 /* snowy-2.svg */,
-				E21221231ED8DF3600A76502 /* snowy-3.svg */,
-				E21221241ED8DF3600A76502 /* snowy-4.svg */,
-				E21221251ED8DF3600A76502 /* snowy-5.svg */,
-				E21221261ED8DF3600A76502 /* snowy-6.svg */,
-				E21221271ED8DF3600A76502 /* thunder.svg */,
-				E21221281ED8DF3600A76502 /* weather_sagittarius.svg */,
-				E21221291ED8DF3600A76502 /* weather_sunset.svg */,
-				E212212A1ED8DF3600A76502 /* weather-sprite.svg */,
-				E212212B1ED8DF3600A76502 /* weather.svg */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		E2A59D1C1ECE700F00AAD24C = {
 			isa = PBXGroup;
 			children = (
@@ -303,8 +223,8 @@
 		E2A59D271ECE700F00AAD24C /* SEPA */ = {
 			isa = PBXGroup;
 			children = (
-				E21221101ED8DF1C00A76502 /* Resources */,
 				E20FD9DC1ED463B000876005 /* Constants.swift */,
+				E2CED75E1EDD12AF007DBAEF /* Enums.swift */,
 				E2CED7501EDC8138007DBAEF /* Extensions.swift */,
 				E2CED74E1EDC8038007DBAEF /* Utilities.swift */,
 				E20FD9E11ED4728200876005 /* Dashboard */,
@@ -467,37 +387,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E21221431ED8DF3600A76502 /* weather_sagittarius.svg in Resources */,
-				E21221461ED8DF3600A76502 /* weather.svg in Resources */,
-				E21221411ED8DF3600A76502 /* snowy-6.svg in Resources */,
-				E212213D1ED8DF3600A76502 /* snowy-2.svg in Resources */,
-				E21221401ED8DF3600A76502 /* snowy-5.svg in Resources */,
-				E21221391ED8DF3600A76502 /* rainy-5.svg in Resources */,
-				E212213F1ED8DF3600A76502 /* snowy-4.svg in Resources */,
-				E21221321ED8DF3600A76502 /* cloudy.svg in Resources */,
 				E2A59D351ECE701000AAD24C /* LaunchScreen.storyboard in Resources */,
-				E21221351ED8DF3600A76502 /* rainy-1.svg in Resources */,
 				E20FD9F01ED477F600876005 /* Weather.storyboard in Resources */,
-				E21221341ED8DF3600A76502 /* night.svg in Resources */,
-				E21221331ED8DF3600A76502 /* day.svg in Resources */,
-				E21221421ED8DF3600A76502 /* thunder.svg in Resources */,
-				E212212E1ED8DF3600A76502 /* cloudy-day-3.svg in Resources */,
-				E21221311ED8DF3600A76502 /* cloudy-night-3.svg in Resources */,
 				E2A59D321ECE701000AAD24C /* Assets.xcassets in Resources */,
-				E21221381ED8DF3600A76502 /* rainy-4.svg in Resources */,
-				E212213C1ED8DF3600A76502 /* snowy-1.svg in Resources */,
-				E212212C1ED8DF3600A76502 /* cloudy-day-1.svg in Resources */,
-				E212213E1ED8DF3600A76502 /* snowy-3.svg in Resources */,
-				E212213B1ED8DF3600A76502 /* rainy-7.svg in Resources */,
-				E212212F1ED8DF3600A76502 /* cloudy-night-1.svg in Resources */,
-				E212213A1ED8DF3600A76502 /* rainy-6.svg in Resources */,
-				E212212D1ED8DF3600A76502 /* cloudy-day-2.svg in Resources */,
-				E21221371ED8DF3600A76502 /* rainy-3.svg in Resources */,
-				E21221361ED8DF3600A76502 /* rainy-2.svg in Resources */,
-				E21221451ED8DF3600A76502 /* weather-sprite.svg in Resources */,
 				E2A59D301ECE701000AAD24C /* Main.storyboard in Resources */,
-				E21221301ED8DF3600A76502 /* cloudy-night-2.svg in Resources */,
-				E21221441ED8DF3600A76502 /* weather_sunset.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,15 +418,18 @@
 				E20FD9C71ED4230800876005 /* CalendarViewController.swift in Sources */,
 				E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */,
 				E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */,
+				E2CED7611EDD1DC3007DBAEF /* NewsArticleModel.swift in Sources */,
 				E2CED7591EDCF408007DBAEF /* Weather7DayDetailViewController.swift in Sources */,
 				E2CED7561EDCE0E2007DBAEF /* LocationDataModel.swift in Sources */,
 				E20FD9DD1ED463B000876005 /* Constants.swift in Sources */,
 				E2A59D291ECE701000AAD24C /* AppDelegate.swift in Sources */,
 				E20FD9D31ED4530D00876005 /* DashboardTableViewController.swift in Sources */,
 				E2CED74F1EDC8038007DBAEF /* Utilities.swift in Sources */,
+				E2CED75F1EDD12AF007DBAEF /* Enums.swift in Sources */,
 				E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */,
 				E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */,
 				E2CED75B1EDCF541007DBAEF /* Weather7DayTableCell.swift in Sources */,
+				E2CED75D1EDD08B1007DBAEF /* NewsTableViewCell.swift in Sources */,
 				E27DF3761EDB561E0064DA71 /* Weather48HourTableCell.swift in Sources */,
 				E20FD9D51ED4582300876005 /* DashboardTableViewCell.swift in Sources */,
 				E2A59D2B1ECE701000AAD24C /* Weather48HourViewController.swift in Sources */,
