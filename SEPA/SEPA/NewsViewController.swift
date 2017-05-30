@@ -25,11 +25,12 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        NSUserDefaults.standardUserDefaults().setObject(Bool(true), forKey:"newsSource_bbcNews")
         
         let bbcNewsSource = NSUserDefaults.standardUserDefaults().objectForKey("newsSource_bbcNews") as! Bool
         
         if(bbcNewsSource == true){
-            newsSources.append("Channel 4")
+            newsSources.append("BBC News")
         }
         
         tableView.dataSource = self
