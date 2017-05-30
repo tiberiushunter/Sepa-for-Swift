@@ -24,6 +24,8 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         
         getNews { jsonString in
             self.jsonString = jsonString as String
@@ -41,8 +43,9 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         )
                         self.newsArticles.append(newsArticle)
                     }
-                    self.tableView.dataSource = self
-                    self.tableView.delegate = self
+                    dispatch_async(dispatch_get_main_queue()) {
+                       self.tableView.reloadData()
+                    }
                 }
             }
         }
