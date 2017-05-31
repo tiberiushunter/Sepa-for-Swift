@@ -9,6 +9,25 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+    
+    /*
+ 
+ 
+ 
+ 
+ //
+ 
+ //    let bbcNewsSource = NSUserDefaults.standardUserDefaults().objectForKey("newsSource_bbcNews") as! Bool
+ 
+ //    if(bbcNewsSource == true){
+ //    newsSources.append("BBC News")
+ //   }
+ 
+ NSUserDefaults.standardUserDefaults().setObject(Bool(true), forKey:"newsSource_bbc-news")
+ 
+ 
+ 
+ */
 
     let settingList = ["abc News",
                      "Al Jalzeera",

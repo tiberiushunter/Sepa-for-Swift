@@ -22,16 +22,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-     //   NSUserDefaults.standardUserDefaults().setObject(Bool(true), forKey:"newsSource_bbcNews")
-        
-    //    let bbcNewsSource = NSUserDefaults.standardUserDefaults().objectForKey("newsSource_bbcNews") as! Bool
-        
-    //    if(bbcNewsSource == true){
-        //    newsSources.append("BBC News")
-     //   }
-        
-        
+
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -43,7 +34,11 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
                             id: String(sources[i]["id"]!),
                             name: String(sources[i]["name"]!)
                         )
-                        self.newsSources.append(newsSource)
+                        //Here we check if the User has enabled the News Source in the Settings Page
+                        if ((NSUserDefaults.standardUserDefaults().objectForKey("newsSource_" + newsSource.getId())) != nil &&
+                            NSUserDefaults.standardUserDefaults().objectForKey("newsSource_" + newsSource.getId()) as! Bool){
+                                self.newsSources.append(newsSource)
+                        }
                     }
                     for j in 0 ..< self.newsSources.count {
                         self.getNewsArticles(self.newsSources[j].getId()) { jsonString in
@@ -62,7 +57,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                         self.newsArticles.append(newsArticle)
                                     }
                                     dispatch_async(dispatch_get_main_queue()){
-                                        if( j == self.newsSources.count - 1){
+                                        if(j == self.newsSources.count - 1){
                                             self.tableView.reloadData()
                                         }
                                     }
@@ -118,22 +113,32 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             completion(jsonString!)
             
-    
-            
         })
         task.resume()
     }
     
     func getNumberOfArticlesFromSource (section: Int) -> Int {
-        var count = 0
-        let newsSource = self.newsSources[section].getId()
+        var articleCount = 0
+        let newsSourceId = self.newsSources[section].getId()
        
-        for k in 0 ..< newsArticles.count {
-            if (self.newsArticles[k].getNewsSourceId() == newsSource){
-                count += 1
+        for i in 0 ..< newsArticles.count {
+            if (self.newsArticles[i].getNewsSourceId() == newsSourceId){
+                articleCount += 1
             }
         }
-        return count
+        return articleCount
+    }
+    
+    func getArticlesFromSectionId (section: Int) -> Array<NewsArticleModel> {
+        var newsArticlesForSection = Array<NewsArticleModel>()
+        let newsSourceId = self.newsSources[section].getId()
+        
+        for i in 0 ..< newsArticles.count {
+            if (self.newsArticles[i].getNewsSourceId() == newsSourceId){
+                newsArticlesForSection.append(self.newsArticles[i])
+            }
+        }
+        return newsArticlesForSection
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -141,14 +146,16 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         var urlToImage = ""
         
-        if(self.newsArticles[indexPath.row].getUrlToImage() != "<null>"){
-            urlToImage = self.newsArticles[indexPath.row].getUrlToImage()
+        var newsArticlesForSection = getArticlesFromSectionId(indexPath.section)
+
+        //TODO: Sort this nasty if statement out asking if a string of "<null>" exists!
+        if (newsArticlesForSection[indexPath.row].getUrlToImage() != "<null>"){
+            urlToImage = newsArticlesForSection[indexPath.row].getUrlToImage()
         }
         
-        cell.lblHeadline.text = self.newsArticles[indexPath.row].getNewsHeadline()
-        cell.lblDescription.text = self.newsArticles[indexPath.row].getNewsDescription()
+        cell.lblHeadline.text = newsArticlesForSection[indexPath.row].getNewsHeadline()
+        cell.lblDescription.text = newsArticlesForSection[indexPath.row].getNewsDescription()
         cell.articleImage.loadRequest(NSURLRequest(URL: NSURL(string: urlToImage)!))
-    
         
         return cell
     }
@@ -166,7 +173,6 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return getNumberOfArticlesFromSource(section)
-        //return 10
         
     }
     
