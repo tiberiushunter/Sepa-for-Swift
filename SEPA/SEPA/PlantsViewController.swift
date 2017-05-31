@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 class PlantsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
-
-    var passedString = "blank"
     
     @IBOutlet weak var tableView: UITableView!
     

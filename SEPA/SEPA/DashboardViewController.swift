@@ -29,10 +29,12 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     var lastCalc = 0.00
     var lastLong = 0.00
     var lastLat = 0.00
+    var lastConv = 0.00
+    var lastConvUnit = ""
     
     var appTitles = ["My Weather", "My News", "My Plants", "My Location History", "My Calculator", "My Converter", "My Settings"]
     
-    var appSummaries = ["", "Last updated: Just Now", "", "", "Last Result:", "Last Result: 28mph", "Adjust Sepa for your needs"]
+    var appSummaries = ["", "", "", "", "", "", "Adjust Sepa for your needs"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,6 +172,12 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         lastCalc = (NSUserDefaults.standardUserDefaults().doubleForKey("lastCalc"))
         lastLat = (NSUserDefaults.standardUserDefaults().doubleForKey("lastLat"))
         lastLong = (NSUserDefaults.standardUserDefaults().doubleForKey("lastLong"))
+        lastConv = (NSUserDefaults.standardUserDefaults().doubleForKey("lastConv"))
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("lastConvUnit") != nil){
+            lastConvUnit = (NSUserDefaults.standardUserDefaults().objectForKey("lastConvUnit")as! String!)
+        }
+        
         tableView.reloadData()
         
     }
@@ -240,6 +248,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
                 cell.summary.text = "Last Result = \(Double(lastCalc))"
             case "My Converter":
                 cell.dashboardIcon.image = UIImage(named: "dashboard-converter")
+                cell.summary.text = "Last Result = \(Double(lastConv))" + lastConvUnit
             case "My Settings":
                 cell.dashboardIcon.image = UIImage(named: "dashboard-settings")
         default:

@@ -16,7 +16,6 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
-    var passedString = "blank"
     let reuseIdentifier = "tableViewCell"
     
     override func viewDidLoad() {

@@ -11,7 +11,6 @@ import WebKit
 
 class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var passedString = "blank"
     var newsArticles: Array<NewsArticleModel> = []
     var newsSources: Array<NewsSourceModel> = []
 

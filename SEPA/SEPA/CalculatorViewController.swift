@@ -10,7 +10,6 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
 
-    var passedString = "blank"
     var currentOperation: Operator = Operator.nothing
     var calcState: CalculationState = CalculationState.enteringNum
     

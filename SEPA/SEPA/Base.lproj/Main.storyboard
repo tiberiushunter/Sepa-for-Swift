@@ -101,31 +101,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J2y-wd-3D7">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tce-zD-Tfw">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5x-8p-o4T">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="426"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNo-py-xJc">
-                                        <rect key="frame" x="0.0" y="426" width="560" height="110"/>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qq7-Hk-WsT">
+                                        <rect key="frame" x="140" y="0.0" width="320" height="471"/>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="C2Q-lD-ez7">
+                                        <rect key="frame" x="0.0" y="471" width="600" height="65"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QyE-98-ZQ5">
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="65"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roI-U6-ebT">
+                                                <rect key="frame" x="217" y="0.0" width="166" height="65"/>
+                                                <state key="normal" title="Convert"/>
+                                                <connections>
+                                                    <action selector="convertBtnClick:" destination="f74-2J-m59" eventType="touchUpInside" id="eYw-ja-MH6"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mUb-z6-Gha">
+                                                <rect key="frame" x="433" y="0.0" width="167" height="65"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ZNo-py-xJc" firstAttribute="top" secondItem="J2y-wd-3D7" secondAttribute="top" constant="426" id="blJ-Uj-X7H"/>
+                                    <constraint firstAttribute="trailing" secondItem="C2Q-lD-ez7" secondAttribute="trailing" id="574-Pg-Ats"/>
+                                    <constraint firstItem="C2Q-lD-ez7" firstAttribute="leading" secondItem="Tce-zD-Tfw" secondAttribute="leading" id="Crb-DT-7zr"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="J2y-wd-3D7" firstAttribute="top" secondItem="rX9-NM-NRq" secondAttribute="bottom" id="53r-WQ-SO2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="J2y-wd-3D7" secondAttribute="trailing" id="M7R-SP-MKq"/>
-                            <constraint firstItem="9gu-Lc-KAT" firstAttribute="top" secondItem="J2y-wd-3D7" secondAttribute="bottom" id="gpI-Ou-KO9"/>
-                            <constraint firstItem="J2y-wd-3D7" firstAttribute="leading" secondItem="FU7-1D-TPi" secondAttribute="leadingMargin" id="qiv-gz-Aej"/>
+                            <constraint firstItem="Tce-zD-Tfw" firstAttribute="leading" secondItem="FU7-1D-TPi" secondAttribute="leadingMargin" constant="-20" id="SSj-kb-rI9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tce-zD-Tfw" secondAttribute="trailing" constant="-20" id="cQ5-wb-SOc"/>
+                            <constraint firstItem="9gu-Lc-KAT" firstAttribute="top" secondItem="Tce-zD-Tfw" secondAttribute="bottom" id="cqH-EZ-UUF"/>
+                            <constraint firstItem="Tce-zD-Tfw" firstAttribute="top" secondItem="rX9-NM-NRq" secondAttribute="bottom" id="s6v-ai-UwK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" id="oWd-Es-Unr"/>
                     <navigationItem key="navigationItem" title="Converter" id="dP1-qy-PQy"/>
+                    <connections>
+                        <outlet property="pickerView" destination="Qq7-Hk-WsT" id="htI-Cu-lJP"/>
+                        <outlet property="txtFrom" destination="QyE-98-ZQ5" id="rIY-UX-1CL"/>
+                        <outlet property="txtTo" destination="mUb-z6-Gha" id="e5K-AB-fi7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt1-G2-ZfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -259,7 +284,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hwv-gg-Oi1">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hwv-gg-Oi1">
                                 <rect key="frame" x="135" y="120" width="331" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BV-pn-qfR">
@@ -268,7 +293,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ZA2-Fu-fKD">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ZA2-Fu-fKD">
                                         <rect key="frame" x="0.0" y="74" width="331" height="64"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iy-5z-w90">
@@ -313,7 +338,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="H6Y-io-hi0">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="H6Y-io-hi0">
                                         <rect key="frame" x="0.0" y="148" width="331" height="64"/>
                                         <subviews>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhL-Yq-ME9">
@@ -358,7 +383,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="nGJ-e2-a2U">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="nGJ-e2-a2U">
                                         <rect key="frame" x="0.0" y="222" width="331" height="64"/>
                                         <subviews>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24O-yv-2U8">
@@ -403,7 +428,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="cOp-9v-i7J">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="cOp-9v-i7J">
                                         <rect key="frame" x="0.0" y="296" width="331" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aip-TJ-q1e">
