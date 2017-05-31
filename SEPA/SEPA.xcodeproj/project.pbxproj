@@ -26,7 +26,7 @@
 		E2A59D4B1ECE701100AAD24C /* SEPAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D4A1ECE701100AAD24C /* SEPAUITests.swift */; };
 		E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */; };
 		E2A59D611ECE82F100AAD24C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */; };
-		E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */; };
+		E2A59D631ECE831C00AAD24C /* PlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A59D621ECE831C00AAD24C /* PlantsViewController.swift */; };
 		E2CED74F1EDC8038007DBAEF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED74E1EDC8038007DBAEF /* Utilities.swift */; };
 		E2CED7511EDC8138007DBAEF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7501EDC8138007DBAEF /* Extensions.swift */; };
 		E2CED7531EDCB432007DBAEF /* Weather48HourDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7521EDCB432007DBAEF /* Weather48HourDetailViewController.swift */; };
@@ -86,7 +86,7 @@
 		E2A59D4C1ECE701100AAD24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2A59D5E1ECE82D500AAD24C /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		E2A59D601ECE82F100AAD24C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		E2A59D621ECE831C00AAD24C /* PlantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsViewController.swift; sourceTree = "<group>"; };
 		E2CED74E1EDC8038007DBAEF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E2CED7501EDC8138007DBAEF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E2CED7521EDCB432007DBAEF /* Weather48HourDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather48HourDetailViewController.swift; sourceTree = "<group>"; };
@@ -172,12 +172,12 @@
 			name = Converter;
 			sourceTree = "<group>";
 		};
-		E20FD9E31ED4728E00876005 /* Photos */ = {
+		E20FD9E31ED4728E00876005 /* Plants */ = {
 			isa = PBXGroup;
 			children = (
-				E2A59D621ECE831C00AAD24C /* PhotoViewController.swift */,
+				E2A59D621ECE831C00AAD24C /* PlantsViewController.swift */,
 			);
-			name = Photos;
+			name = Plants;
 			sourceTree = "<group>";
 		};
 		E20FD9E41ED4729300876005 /* Settings */ = {
@@ -242,7 +242,7 @@
 				E20FD9E51ED472A100876005 /* LocationHistory */,
 				E20FD9E21ED4728900876005 /* Converter */,
 				E20FD9E01ED4727A00876005 /* Calculator */,
-				E20FD9E31ED4728E00876005 /* Photos */,
+				E20FD9E31ED4728E00876005 /* Plants */,
 				E20FD9E41ED4729300876005 /* Settings */,
 				E2A59D281ECE701000AAD24C /* AppDelegate.swift */,
 				E2A59D2E1ECE701000AAD24C /* Main.storyboard */,
@@ -463,7 +463,7 @@
 				E2CED74F1EDC8038007DBAEF /* Utilities.swift in Sources */,
 				E2CED75F1EDD12AF007DBAEF /* Enums.swift in Sources */,
 				E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */,
-				E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */,
+				E2A59D631ECE831C00AAD24C /* PlantsViewController.swift in Sources */,
 				E2CED7661EDD4108007DBAEF /* SettingsTableViewCell.swift in Sources */,
 				E2CED75B1EDCF541007DBAEF /* Weather7DayTableCell.swift in Sources */,
 				E2F420E21EDE7853003D1AD9 /* DashboardViewController.swift in Sources */,

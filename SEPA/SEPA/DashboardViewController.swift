@@ -18,9 +18,9 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     
     var lastCalc = 0.00
     
-    var appTitles = ["My Weather", "My News", "My Photos", "My Location History", "My Calculator", "My Converter", "My Settings"]
+    var appTitles = ["My Weather", "My News", "My Plants", "My Location History", "My Calculator", "My Converter", "My Settings"]
     
-    var appSummaries = ["Sunny Today!", "Last updated: Just Now", "3 New Photos Today", "Last updated: Just Now", "Last Result: 5", "Last Result: 28mph", "Adjust Sepa for your needs"]
+    var appSummaries = ["Sunny Today!", "Last updated: Just Now", "Could do with some watering", "Last updated: Just Now", "Last Result: 5", "Last Result: 28mph", "Adjust Sepa for your needs"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +91,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         switch (cell.title.text!){
             case "My Weather": cell.dashboardIcon.image = UIImage(named: "fog")
             case "My News": cell.dashboardIcon.image = UIImage(named: "dashboard-news")
-            case "My Photos": cell.dashboardIcon.image = UIImage(named: "dashboard-photos")
+            case "My Plants": cell.dashboardIcon.image = UIImage(named: "dashboard-plants")
             case "My Location History": cell.dashboardIcon.image = UIImage(named: "dashboard-locationhistory")
             case "My Calculator":
                 cell.dashboardIcon.image = UIImage(named: "dashboard-calculator")
@@ -111,7 +111,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         switch(cell.title.text!){
             case "My Weather" : performSegueWithIdentifier("showWeather", sender: indexPath)
             case "My News" : performSegueWithIdentifier("showNews", sender: indexPath)
-            case "My Photos" : performSegueWithIdentifier("showPhotos", sender: indexPath)
+            case "My Plants" : performSegueWithIdentifier("showPlants", sender: indexPath)
             case "My Location History" : performSegueWithIdentifier("showLocationHistory", sender: indexPath)
             case "My Calculator" : performSegueWithIdentifier("showCalculator", sender: indexPath)
             case "My Converter" : performSegueWithIdentifier("showConverter", sender: indexPath)

@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="-434" y="-796"/>
         </scene>
-        <!--Photos-->
+        <!--Plants-->
         <scene sceneID="VAA-TE-OBC">
             <objects>
-                <viewController title="Photos" id="JHN-9l-Cbq" customClass="PhotoViewController" customModule="SEPA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Plants" id="JHN-9l-Cbq" customClass="PlantsViewController" customModule="SEPA" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XMi-6G-bAw"/>
                         <viewControllerLayoutGuide type="bottom" id="ihS-qg-acR"/>
@@ -144,8 +144,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Photos" id="0mG-AV-iJY"/>
-                    <navigationItem key="navigationItem" title="Photos" id="KDy-mz-jyR"/>
+                    <tabBarItem key="tabBarItem" title="Plants" id="0mG-AV-iJY"/>
+                    <navigationItem key="navigationItem" title="Plants" id="KDy-mz-jyR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFV-03-7nP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -658,10 +658,10 @@
                         <segue destination="8rJ-Kc-sve" kind="show" identifier="showNews" id="H6E-tr-gT1"/>
                         <segue destination="mak-Ge-HjU" kind="show" identifier="showWeather" id="yHy-MG-64G"/>
                         <segue destination="zlv-Ta-eR2" kind="show" identifier="showSettings" id="ioM-Yz-pLf"/>
-                        <segue destination="JHN-9l-Cbq" kind="show" identifier="showPhotos" id="nOk-U8-JUq"/>
                         <segue destination="qHa-Yi-P3T" kind="show" identifier="showCalculator" id="Mzd-yD-UI4"/>
                         <segue destination="f74-2J-m59" kind="show" identifier="showConverter" id="DP1-Ok-gK9"/>
                         <segue destination="5mD-YP-cxM" kind="show" identifier="showLocationHistory" id="fwN-en-MCb"/>
+                        <segue destination="JHN-9l-Cbq" kind="show" identifier="showPlants" id="F23-hv-LUG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMp-Yf-fz9" userLabel="First Responder" sceneMemberID="firstResponder"/>

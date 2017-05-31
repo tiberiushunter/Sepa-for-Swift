@@ -1,5 +1,5 @@
 //
-//  PhotoViewController.swift
+//  PlantsViewController.swift
 //  SEPA
 //
 //  Created by Welek Samuel on 19/05/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController {
+class PlantsViewController: UIViewController {
 
     var passedString = "blank"
     
