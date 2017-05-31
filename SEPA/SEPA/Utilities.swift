@@ -39,7 +39,5 @@ class Utilities {
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         return String(dateFormatter.stringFromDate(currentDate))
     }
-    
-    
 }
 

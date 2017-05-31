@@ -43,7 +43,6 @@ class PlantsViewController: UIViewController, UITableViewDataSource, UITableView
                     ambientTemperature: json![i]["AmbientTemperature"] as! String
                 )
                 self.plantData.append(data)
-                print(self.plantData[i].getTimestamp())
             }
             dispatch_async(dispatch_get_main_queue()){
                 self.tableView.reloadData()
@@ -86,7 +85,7 @@ class PlantsViewController: UIViewController, UITableViewDataSource, UITableView
         let cell: PlantsTableViewCell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PlantsTableViewCell
 
         
-        cell.timestamp.text = "Timestamp: " + plantData[indexPath.row].getTimestamp()
+        cell.timestamp.text = "Last Updated: " + plantData[indexPath.row].getTimestamp() + " CET"
         cell.ambientLight.text = "Ambient Light: " + plantData[indexPath.row].getAmbientLight() + "%"
         cell.externalLight.text = "External Light: " + plantData[indexPath.row].getExternalLight() + "%"
         cell.soilMoisture.text = "Soil Moisture: " + plantData[indexPath.row].getSoilMoisture() + "%"

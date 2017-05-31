@@ -21,6 +21,9 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     var weatherSummary = ""
     var weatherIcon = WeatherIcon.nothing
     
+    var plantSummary = ""
+    var plantData: Array<PlantsModel> = []
+    
     let reuseIdentifier = "tableViewCell"
     
     var lastCalc = 0.00
@@ -40,6 +43,35 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+        
+        self.getPlantData() { jsonString in
+            
+            let jsonStr = jsonString as String
+            let json: AnyObject? = jsonStr.parseJSONString
+            
+            for i in 0 ..< json!.count {
+                let data = PlantsModel(
+                    timestamp: json![i]["Timestamp"] as! String,
+                    ambientLight: json![i]["AmbientLight"] as! String,
+                    externalLight: json![i]["ExternalLight"] as! String,
+                    soilMoisture: json![i]["SoilMoisture"] as! String,
+                    hardwareTemperature: json![i]["HardwareTemperature"] as! String,
+                    externalTemperature: json![i]["ExternalTemperature"] as! String,
+                    ambientHumidity: json![i]["AmbientHumidity"] as! String,
+                    ambientTemperature: json![i]["AmbientTemperature"] as! String
+                )
+                self.plantData.append(data)
+            }
+            dispatch_async(dispatch_get_main_queue()){
+                if(Double(self.plantData[0].getSoilMoisture())! < 90.0){
+                    self.plantSummary = "Plant Needs Watering!"
+                } else{
+                    self.plantSummary = "Plant doesn't need watering."
+                }
+                self.tableView.reloadData()
+            }
+        }
+
         
     }
     
@@ -74,6 +106,27 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
             let jsonString = NSString(data: data!, encoding: NSUTF8StringEncoding)
             
             completion(jsonString!)
+        })
+        task.resume()
+    }
+    
+    func getPlantData(completion: (NSString) -> ()) {
+        let urlPath = PlantApi().getFullURL()
+        let url: NSURL = NSURL(string: urlPath)!
+        let request = NSMutableURLRequest(URL: url)
+        
+        let session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "GET"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            let jsonString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            
+            completion(jsonString!)
+            
         })
         task.resume()
     }
@@ -153,16 +206,6 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let id = segue.identifier {
-            switch(id) {
-            case "showWeather" : break
-            case "showNews": break
-            default: break
-            }
-        }
-    }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: DashboardTableViewCell = (tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as? DashboardTableViewCell)!
@@ -180,6 +223,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
                 cell.dashboardIcon.image = UIImage(named: "dashboard-news")
             case "My Plants":
                 cell.dashboardIcon.image = UIImage(named: "dashboard-plants")
+                cell.summary.text = plantSummary
             case "My Location History":
                 cell.dashboardIcon.image = UIImage(named: "dashboard-locationhistory")
             case "My Calculator":
