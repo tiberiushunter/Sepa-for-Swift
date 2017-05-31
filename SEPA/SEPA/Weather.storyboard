@@ -480,24 +480,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4xl-hL-DR7">
                                 <rect key="frame" x="20" y="20" width="560" height="531"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X2L-gT-awm">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="298"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X2L-gT-awm">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="50"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Gwh-1q-LYl">
-                                                <rect key="frame" x="255" y="0.0" width="50" height="298"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-N8-D1Z">
-                                                        <rect key="frame" x="0.0" y="124" width="50" height="50"/>
-                                                    </imageView>
-                                                </subviews>
-                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-N8-D1Z">
+                                                <rect key="frame" x="180" y="0.0" width="200" height="50"/>
+                                            </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oBJ-Ql-1FV">
-                                        <rect key="frame" x="0.0" y="298" width="560" height="233"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oBJ-Ql-1FV">
+                                        <rect key="frame" x="0.0" y="50" width="560" height="481"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p9A-IM-LX1">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="233"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p9A-IM-LX1">
+                                                <rect key="frame" x="0.0" y="151" width="275" height="179"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Summary" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="q1g-JI-PID">
                                                         <rect key="frame" x="0.0" y="0.0" width="275" height="17"/>
@@ -548,24 +543,10 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Nearest Storm Distance" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="A5D-bn-CLp">
-                                                        <rect key="frame" x="0.0" y="189" width="275" height="17"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Nearest Storm Direction" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="M7I-TH-Bf6">
-                                                        <rect key="frame" x="0.0" y="216" width="275" height="17"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qFR-2P-Ane">
-                                                <rect key="frame" x="285" y="0.0" width="275" height="233"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qFR-2P-Ane">
+                                                <rect key="frame" x="285" y="151" width="275" height="179"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="summary" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PUf-Pm-s4k">
                                                         <rect key="frame" x="0.0" y="0.0" width="275" height="17"/>
@@ -616,20 +597,6 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="nearestStormDistance" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="S2K-fX-9jC">
-                                                        <rect key="frame" x="0.0" y="189" width="275" height="17"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="NearestStormDirection" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="1A2-dg-If4">
-                                                        <rect key="frame" x="0.0" y="216" width="275" height="17"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -653,8 +620,6 @@
                         <outlet property="lblChanceOfRain" destination="qxo-H1-eE0" id="ggT-n8-Phw"/>
                         <outlet property="lblCurrentTemp" destination="neU-5w-8Hx" id="KyB-Sr-Bgu"/>
                         <outlet property="lblFeelLikeTemp" destination="Sv7-1b-PJj" id="LAJ-2E-SVA"/>
-                        <outlet property="lblNearestStormDirection" destination="1A2-dg-If4" id="rWF-lP-OHA"/>
-                        <outlet property="lblNearestStormDistance" destination="S2K-fX-9jC" id="ifE-WT-Fyz"/>
                         <outlet property="lblRainIntensity" destination="zuO-nX-rIm" id="Qxc-ZQ-P1U"/>
                         <outlet property="lblSummary" destination="PUf-Pm-s4k" id="4zq-bf-emL"/>
                         <outlet property="lblWindDirection" destination="4Ph-fV-CAX" id="M9o-gJ-iFt"/>

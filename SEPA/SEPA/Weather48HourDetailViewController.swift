@@ -53,7 +53,7 @@ class Weather48HourDetailViewController: UIViewController, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = self.timestamp + " - Detail"
+        self.title = self.timestamp
         
         let orientation = UIApplication.sharedApplication().statusBarOrientation
         
@@ -70,8 +70,6 @@ class Weather48HourDetailViewController: UIViewController, CLLocationManagerDele
         self.lblWindSpeed.text = String(format: "%.2f", self.windSpeed) + "mph"
         self.lblChanceOfRain.text = String(format: "%.0f", self.chanceOfRain * 100) + "%"
         self.lblRainIntensity.text = String(format: "%.2f", self.rainIntensity)
-        self.lblNearestStormDistance.text = String(format: "%.0f", self.nearestStormDistance) + " miles"
-        self.lblNearestStormDirection.text = String(format: "%.0f", self.nearestStormDirection) + "°N"
         self.weatherImage.image = UIImage(named:self.imageIcon.rawValue)
     }
     

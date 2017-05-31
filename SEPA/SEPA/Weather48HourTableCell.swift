@@ -27,8 +27,6 @@ class Weather48HourTableCell: UITableViewCell {
     var windSpeed = 0.00
     var chanceOfRain = 0.00
     var rainIntensity = 0.00
-    var nearestStormDistance = 0.00
-    var nearestStormDirection = 0.00
     var imageIcon = WeatherIcon.nothing
     
     override func awakeFromNib() {
