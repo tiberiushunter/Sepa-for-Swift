@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E20FD9C71ED4230800876005 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9C61ED4230800876005 /* CalendarViewController.swift */; };
+		E20FD9C71ED4230800876005 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9C61ED4230800876005 /* ConverterViewController.swift */; };
 		E20FD9D31ED4530D00876005 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D21ED4530D00876005 /* DashboardTableViewController.swift */; };
 		E20FD9D51ED4582300876005 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */; };
 		E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD9D61ED45A5200876005 /* LocationViewController.swift */; };
@@ -60,7 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E20FD9C61ED4230800876005 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		E20FD9C61ED4230800876005 /* ConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 		E20FD9D21ED4530D00876005 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		E20FD9D61ED45A5200876005 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -161,12 +161,12 @@
 			name = Dashboard;
 			sourceTree = "<group>";
 		};
-		E20FD9E21ED4728900876005 /* Calendar */ = {
+		E20FD9E21ED4728900876005 /* Converter */ = {
 			isa = PBXGroup;
 			children = (
-				E20FD9C61ED4230800876005 /* CalendarViewController.swift */,
+				E20FD9C61ED4230800876005 /* ConverterViewController.swift */,
 			);
-			name = Calendar;
+			name = Converter;
 			sourceTree = "<group>";
 		};
 		E20FD9E31ED4728E00876005 /* Photos */ = {
@@ -237,7 +237,7 @@
 				E20FD9DE1ED4722E00876005 /* Weather */,
 				E20FD9DF1ED4727400876005 /* News */,
 				E20FD9E51ED472A100876005 /* LocationHistory */,
-				E20FD9E21ED4728900876005 /* Calendar */,
+				E20FD9E21ED4728900876005 /* Converter */,
 				E20FD9E01ED4727A00876005 /* Calculator */,
 				E20FD9E31ED4728E00876005 /* Photos */,
 				E20FD9E41ED4729300876005 /* Settings */,
@@ -440,7 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20FD9C71ED4230800876005 /* CalendarViewController.swift in Sources */,
+				E20FD9C71ED4230800876005 /* ConverterViewController.swift in Sources */,
 				E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */,
 				E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */,
 				E2CED7611EDD1DC3007DBAEF /* NewsArticleModel.swift in Sources */,

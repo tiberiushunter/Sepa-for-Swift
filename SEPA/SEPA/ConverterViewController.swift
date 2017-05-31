@@ -1,5 +1,5 @@
 //
-//  CalendarViewController.swift
+//  ConverterViewController.swift
 //  SEPA
 //
 //  Created by Welek Samuel on 19/05/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController {
+class ConverterViewController: UIViewController {
 
     var passedString = "blank"
     

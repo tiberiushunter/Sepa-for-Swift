@@ -118,6 +118,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         return newsSources.count
     }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.settingSectionList[section]
+    }
 
     /*
     // MARK: - Navigation
