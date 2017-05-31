@@ -38,7 +38,6 @@ struct NewsSourcesURL {
 struct NewsArticlesURL {
     private let baseURL = "https://newsapi.org/v1/articles?"
     private var source = ""
-    private let sortBy = "&sortBy=top"
     private let key = "&apiKey=02f5dd4595a8408b997e26e65d25f91e"
     
     init (source: String){
@@ -46,7 +45,7 @@ struct NewsArticlesURL {
     }
     
     func getFullURL() -> String {
-        return baseURL + source + sortBy + key
+        return baseURL + source + key
     }
 }
 

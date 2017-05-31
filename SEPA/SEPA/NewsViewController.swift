@@ -14,9 +14,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var passedString = "blank"
     var newsArticles: Array<NewsArticleModel> = []
     var newsSources: Array<NewsSourceModel> = []
-    
-    var flag = false
-    
+
     let reuseIdentifier = "tableViewCell"
     
     @IBOutlet weak var tableView: UITableView!
@@ -37,7 +35,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
         
-        getNewsSources() { jsonString in
+        self.getNewsSources() { jsonString in
             if let jsonDictionary = Utilities().convertStringToDictionary(jsonString as String){
                 if let sources = jsonDictionary["sources"] as? [Dictionary<String, AnyObject>]{
                     for i in 0 ..< sources.count {
@@ -47,30 +45,31 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         )
                         self.newsSources.append(newsSource)
                     }
-                    for i in 0 ..< self.newsSources.count {
-                        self.getNewsArticles(self.newsSources[i].getId()) { jsonString in
+                    for j in 0 ..< self.newsSources.count {
+                        self.getNewsArticles(self.newsSources[j].getId()) { jsonString in
                             if let jsonDictionary = Utilities().convertStringToDictionary(jsonString as String){
                                 if let articles = jsonDictionary["articles"] as? [Dictionary<String, AnyObject>]{
-                                    for i in 0 ..< articles.count {
+                                    for k in 0 ..< articles.count {
                                         let newsArticle = NewsArticleModel(
-                                            newsSourceId: self.newsSources[i].getId(),
-                                            newsHeadline: String(articles[i]["title"]!),
-                                            newsDescription: String(articles[i]["description"]!),
-                                            author: String(articles[i]["author"]!),
-                                            url: String(articles[i]["url"]!),
-                                            urlToImage: String(articles[i]["urlToImage"]!),
-                                            publishedAt: String(articles[i]["publishedAt"]!)
+                                            newsSourceId: self.newsSources[j].getId(),
+                                            newsHeadline: String(articles[k]["title"]!),
+                                            newsDescription: String(articles[k]["description"]!),
+                                            author: String(articles[k]["author"]!),
+                                            url: String(articles[k]["url"]!),
+                                            urlToImage: String(articles[k]["urlToImage"]!),
+                                            publishedAt: String(articles[k]["publishedAt"]!)
                                         )
                                         self.newsArticles.append(newsArticle)
                                     }
-                                    dispatch_async(dispatch_get_main_queue()) {
-                                        self.tableView.reloadData()
+                                    dispatch_async(dispatch_get_main_queue()){
+                                        if( j == self.newsSources.count - 1){
+                                            self.tableView.reloadData()
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                    
                 }
             }
         }
@@ -129,8 +128,8 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var count = 0
         let newsSource = self.newsSources[section].getId()
        
-        for i in 0 ..< self.newsArticles.count {
-            if (self.newsArticles[i].getNewsSourceId() == newsSource){
+        for k in 0 ..< newsArticles.count {
+            if (self.newsArticles[k].getNewsSourceId() == newsSource){
                 count += 1
             }
         }
@@ -166,8 +165,8 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return getNumberOfArticlesFromSource(section)
-        return 10
+        return getNumberOfArticlesFromSource(section)
+        //return 10
         
     }
     
