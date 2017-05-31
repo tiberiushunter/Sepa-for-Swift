@@ -28,149 +28,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
  
  
  */
-
-    let settingList = ["abc News",
-                     "Al Jalzeera",
-                     "Ars Technica",
-                     "Associated Press",
-                     "BBC News",
-                     "BBC Sports",
-                     "Bild",
-                     "Bloomberg",
-                     "Breitbart",
-                     "Business Insider",
-                     "Business Insider UK",
-                     "BuzzFeed",
-                     "CNBC",
-                     "CNN",
-                     "Daily Mail",
-                     "Der Tagesspiegel",
-                     "Die Zeit",
-                     "Engadget",
-                     "Entertainment Weekly",
-                     "ESPN",
-                     "ESPN Cric Info",
-                     "Financial Times",
-                     "Football Italia",
-                     "Fortune",
-                     "Four Four Two",
-                     "Fox Sports",
-                     "Google News",
-                     "Gruenderszene",
-                     "Hacker News",
-                     "Handelsblatt",
-                     "IGN",
-                     "Independent",
-                     "Mashable",
-                     "Metro",
-                     "Mirror",
-                     "MTV News",
-                     "MTV News UK",
-                     "National Geographic",
-                     "New Scientist",
-                     "Newsweek",
-                     "New York Magazine",
-                     "NFL News",
-                     "Online Focus",
-                     "Polygon",
-                     "Recode",
-                     "Reddit",
-                     "Reuters",
-                     "Spiegel Online",
-                     "t3N",
-                     "Talk Sport",
-                     "Tech Crunch",
-                     "Tech Radar",
-                     "The Economist",
-                     "The Guardian",
-                     "The Hindu",
-                     "The Huffington Post",
-                     "The Lad Bible",
-                     "The New York Times",
-                     "The Next Web",
-                     "The Sport Bible",
-                     "The Telegraph",
-                     "The Times Of India",
-                     "The Verge",
-                     "The Wall Street Journal",
-                     "The Washington Post",
-                     "Time",
-                     "USA Today",
-                     "Wired.de",
-                     "Wirtschafts Woche"]
-    
-    let switchList = ["abcNews",
-                     "al-jalzeera",
-                     "arsTechnica",
-                     "associatedPress",
-                     "bbcNews",
-                     "bbcSports",
-                     "bild",
-                     "bloomberg",
-                     "breitbart",
-                     "businessInsider",
-                     "businessInsiderUK",
-                     "buzzFeed",
-                     "cnbc",
-                     "cnn",
-                     "dailyMail",
-                     "derTagesspiegel",
-                     "dieZeit",
-                     "engadget",
-                     "entertainmentWeekly",
-                     "espn",
-                     "espnCricInfo",
-                     "financialTimes",
-                     "footballItalia",
-                     "fortune",
-                     "fourFourTwo",
-                     "foxSports",
-                     "googleNews",
-                     "gruenderszene",
-                     "hackerNews",
-                     "handelsblatt",
-                     "ign",
-                     "independent",
-                     "mashable",
-                     "metro",
-                     "mirror",
-                     "mtvNews",
-                     "mtvNewsUK",
-                     "nationalGeographic",
-                     "newScientist",
-                     "newsweek",
-                     "newYorkMagazine",
-                     "nflNews",
-                     "onlineFocus",
-                     "polygon",
-                     "recode",
-                     "reddit",
-                     "reuters",
-                     "spiegelOnline",
-                     "t3N",
-                     "talkSport",
-                     "techCrunch",
-                     "techRadar",
-                     "theEconomist",
-                     "theGuardian",
-                     "theHindu",
-                     "theHuffingtonPost",
-                     "theLadBible",
-                     "theNewYorkTimes",
-                     "theNextWeb",
-                     "theSportBible",
-                     "theTelegraph",
-                     "theTimesOfIndia",
-                     "theVerge",
-                     "theWallStreetJournal",
-                     "theWashingtonPost",
-                     "time",
-                     "usaToday",
-                     "wired.de",
-                     "wirtschaftsWoche"]
-    
     
     let settingSectionList = ["My News Sources"]
+    
+    var newsSources: Array<NewsSourceModel> = []
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -184,8 +45,50 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
  
         tableView.dataSource = self
         tableView.delegate = self
+        
+        self.getNewsSources() { jsonString in
+            if let jsonDictionary = Utilities().convertStringToDictionary(jsonString as String){
+                if let sources = jsonDictionary["sources"] as? [Dictionary<String, AnyObject>]{
+                    for i in 0 ..< sources.count {
+                        let newsSource = NewsSourceModel(
+                            id: String(sources[i]["id"]!),
+                            name: String(sources[i]["name"]!)
+                        )
+                            self.newsSources.append(newsSource)
+                        //Below checks to see if the news source currently has a key
+                        //if it doesn't then add the key with the default value of false
+                        if ((NSUserDefaults.standardUserDefaults().objectForKey("newsSource_" + newsSource.getId())) == nil){
+                            NSUserDefaults.standardUserDefaults().setObject(Bool(false), forKey:"newsSource_" + newsSource.getId())
+                        }
+                    }
+                    dispatch_async(dispatch_get_main_queue()){
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
-
+    
+    func getNewsSources(completion: (NSString) -> ()) {
+        let urlPath = NewsSourcesURL().getFullURL()
+        let url: NSURL = NSURL(string: urlPath)!
+        let request = NSMutableURLRequest(URL: url)
+        
+        let session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "GET"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            let jsonString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            
+            completion(jsonString!)
+            
+        })
+        task.resume()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -195,16 +98,14 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: SettingsTableViewCell = (tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as? SettingsTableViewCell)!
         
-        cell.lblSetting.text = settingList[indexPath.row]
-        cell.setting = switchList[indexPath.row]
-        cell.newsLogo.image = UIImage(named: switchList[indexPath.row])
+        cell.lblSetting.text = newsSources[indexPath.row].getName()
+        cell.setting = newsSources[indexPath.row].getId()
+        cell.newsLogo.image = UIImage(named: newsSources[indexPath.row].getId())
+        
+        cell.checkSwitchStatus()
         
         return cell
     }
-    
-   // func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-   //     return
-  //  }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
     }
@@ -214,7 +115,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingList.count
+        return newsSources.count
     }
     
 

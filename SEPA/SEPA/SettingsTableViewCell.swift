@@ -34,4 +34,12 @@ class SettingsTableViewCell: UITableViewCell {
         }
     }
     
+    func checkSwitchStatus(){
+        if(NSUserDefaults.standardUserDefaults().objectForKey("newsSource_" + setting) != nil &&
+            NSUserDefaults.standardUserDefaults().objectForKey("newsSource_" + setting) as! Bool) {
+            self.`switch`.setOn(true, animated: false)
+        } else{
+            self.`switch`.setOn(false, animated: false)
+        }
+    }
 }
