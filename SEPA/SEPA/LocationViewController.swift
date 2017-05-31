@@ -43,7 +43,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getLocation(){
-        print(coords.latitude)
         if let loc = locationManager.location?.coordinate{
             coords = loc
         }
@@ -54,12 +53,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         getLocation()
         
         let lat = coords.latitude
-            print("Lat: \(lat)")
-        
         let long = coords.longitude
-            print("Long: \(long)")
-        
-        
+        NSUserDefaults.standardUserDefaults().setDouble(lat, forKey:"lastLat")
+        NSUserDefaults.standardUserDefaults().setDouble(long, forKey:"lastLong")
     }
     
 

@@ -27,10 +27,12 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     let reuseIdentifier = "tableViewCell"
     
     var lastCalc = 0.00
+    var lastLong = 0.00
+    var lastLat = 0.00
     
     var appTitles = ["My Weather", "My News", "My Plants", "My Location History", "My Calculator", "My Converter", "My Settings"]
     
-    var appSummaries = ["Sunny Today!", "Last updated: Just Now", "Could do with some watering", "Last updated: Just Now", "Last Result: 5", "Last Result: 28mph", "Adjust Sepa for your needs"]
+    var appSummaries = ["", "Last updated: Just Now", "", "", "Last Result:", "Last Result: 28mph", "Adjust Sepa for your needs"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +73,6 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
                 self.tableView.reloadData()
             }
         }
-
-        
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus){
@@ -168,7 +168,10 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated)
         lastCalc = (NSUserDefaults.standardUserDefaults().doubleForKey("lastCalc"))
+        lastLat = (NSUserDefaults.standardUserDefaults().doubleForKey("lastLat"))
+        lastLong = (NSUserDefaults.standardUserDefaults().doubleForKey("lastLong"))
         tableView.reloadData()
+        
     }
 
     @IBAction func editButtonAction(sender: AnyObject) {
@@ -226,6 +229,12 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
                 cell.summary.text = plantSummary
             case "My Location History":
                 cell.dashboardIcon.image = UIImage(named: "dashboard-locationhistory")
+                if (lastLat == 0.00 && lastLong == 0.00){
+                    cell.summary.text = "Add a marker to set past location."
+                }
+                else{
+                cell.summary.text = "Lat = \(Double(lastLat)) Long = \(Double(lastLong))"
+            }
             case "My Calculator":
                 cell.dashboardIcon.image = UIImage(named: "dashboard-calculator")
                 cell.summary.text = "Last Result = \(Double(lastCalc))"
