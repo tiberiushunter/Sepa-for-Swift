@@ -40,6 +40,7 @@
 		E2CED7661EDD4108007DBAEF /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CED7651EDD4108007DBAEF /* SettingsTableViewCell.swift */; };
 		E2F420DC1EDE0CA0003D1AD9 /* NewsSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F420DB1EDE0CA0003D1AD9 /* NewsSourceModel.swift */; };
 		E2F420DE1EDE6267003D1AD9 /* NewsArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F420DD1EDE6267003D1AD9 /* NewsArticleViewController.swift */; };
+		E2F420E21EDE7853003D1AD9 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F420E11EDE7853003D1AD9 /* DashboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		E2CED7651EDD4108007DBAEF /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		E2F420DB1EDE0CA0003D1AD9 /* NewsSourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsSourceModel.swift; sourceTree = "<group>"; };
 		E2F420DD1EDE6267003D1AD9 /* NewsArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArticleViewController.swift; sourceTree = "<group>"; };
+		E2F420E11EDE7853003D1AD9 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				E20FD9D41ED4582300876005 /* DashboardTableViewCell.swift */,
 				E20FD9D21ED4530D00876005 /* DashboardTableViewController.swift */,
+				E2F420E11EDE7853003D1AD9 /* DashboardViewController.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				E2A59D631ECE831C00AAD24C /* PhotoViewController.swift in Sources */,
 				E2CED7661EDD4108007DBAEF /* SettingsTableViewCell.swift in Sources */,
 				E2CED75B1EDCF541007DBAEF /* Weather7DayTableCell.swift in Sources */,
+				E2F420E21EDE7853003D1AD9 /* DashboardViewController.swift in Sources */,
 				E2CED75D1EDD08B1007DBAEF /* NewsTableViewCell.swift in Sources */,
 				E27DF3761EDB561E0064DA71 /* Weather48HourTableCell.swift in Sources */,
 				E2F420DC1EDE0CA0003D1AD9 /* NewsSourceModel.swift in Sources */,

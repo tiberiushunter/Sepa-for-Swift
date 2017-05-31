@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFO-J3-s2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872" y="-448"/>
+            <point key="canvasLocation" x="244" y="-448"/>
         </scene>
         <!--News-->
         <scene sceneID="wg7-f3-ORb">
@@ -303,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="394" y="-1836"/>
+            <point key="canvasLocation" x="378" y="-1836"/>
         </scene>
         <!--News Article-->
         <scene sceneID="Bf8-HI-Hhf">
@@ -348,184 +348,105 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="5bX-80-Tyx" kind="relationship" relationship="rootViewController" id="IOE-6p-V9O"/>
+                        <segue destination="gID-TG-Epf" kind="relationship" relationship="rootViewController" id="ksg-8E-Req"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQS-Wc-Lna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1104" y="-2001"/>
+            <point key="canvasLocation" x="-1212" y="-2713"/>
         </scene>
-        <!--SEPA Dashboard-->
-        <scene sceneID="NVy-D8-1gG">
+        <!--Sepa Dashboard-->
+        <scene sceneID="pyl-FG-ffY">
             <objects>
-                <tableViewController title="SEPA Dashboard" id="5bX-80-Tyx" customClass="DashboardTableViewController" customModule="SEPA" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xn0-fP-tnK">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gID-TG-Epf" customClass="DashboardViewController" customModule="SEPA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N2H-cz-YL0"/>
+                        <viewControllerLayoutGuide type="bottom" id="XcS-PZ-ar9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ln4-mU-1QH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vjV-5L-WEH">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tableViewCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" id="5dF-4Z-H8S" customClass="DashboardTableViewCell" customModule="SEPA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="125"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5dF-4Z-H8S" id="2Rv-V1-rQg">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DY-SX-j1M">
+                                                    <rect key="frame" x="8" y="8" width="584" height="108"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghg-w9-QPp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="108"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="diB-sh-ByK"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-Pw-ckL">
+                                                            <rect key="frame" x="100" y="0.0" width="484" height="108"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uv3-I2-id9">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="484" height="90"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5I-Oc-DIz">
+                                                                    <rect key="frame" x="0.0" y="90" width="484" height="18"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2DY-SX-j1M" secondAttribute="trailing" id="A2A-vv-wi8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2DY-SX-j1M" secondAttribute="bottom" id="NXn-Hr-bP9"/>
+                                                <constraint firstItem="2DY-SX-j1M" firstAttribute="leading" secondItem="2Rv-V1-rQg" secondAttribute="leadingMargin" id="ZoI-fi-GPS"/>
+                                                <constraint firstItem="2DY-SX-j1M" firstAttribute="top" secondItem="2Rv-V1-rQg" secondAttribute="topMargin" id="tET-ru-kWh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dashboardIcon" destination="ghg-w9-QPp" id="ong-mp-gQW"/>
+                                            <outlet property="imageView" destination="ghg-w9-QPp" id="m4E-eQ-ATx"/>
+                                            <outlet property="summary" destination="r5I-Oc-DIz" id="oEq-dx-2mR"/>
+                                            <outlet property="title" destination="Uv3-I2-id9" id="hfk-Xc-1bZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection headerTitle="My Dashboard Apps" id="9MP-aw-lGh">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weatherTableViewCell" textLabel="8xo-aC-oTp" style="IBUITableViewCellStyleDefault" id="awN-Nb-Mtb" customClass="DashboardTableViewCell" customModule="SEPA">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awN-Nb-Mtb" id="hOS-W9-4YN">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8xo-aC-oTp">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="mak-Ge-HjU" kind="show" id="FFD-Nv-Lbk"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsTableViewCell" textLabel="Tgk-BX-04u" style="IBUITableViewCellStyleDefault" id="hoF-8r-e7T" customClass="DashboardTableViewCell" customModule="SEPA">
-                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hoF-8r-e7T" id="IEq-NM-qns">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tgk-BX-04u">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="8rJ-Kc-sve" kind="show" id="u90-F0-yCE"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calendarTableViewCell" textLabel="2vX-PL-GW5" style="IBUITableViewCellStyleDefault" id="vdY-fv-8my" customClass="DashboardTableViewCell" customModule="SEPA">
-                                        <rect key="frame" x="0.0" y="180" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vdY-fv-8my" id="e7N-Zm-lC8">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2vX-PL-GW5">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="f74-2J-m59" kind="show" id="65V-e4-ynW"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationTableViewCell" textLabel="d1k-ZD-DYC" style="IBUITableViewCellStyleDefault" id="fdu-04-HfZ" customClass="DashboardTableViewCell" customModule="SEPA">
-                                        <rect key="frame" x="0.0" y="224" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fdu-04-HfZ" id="Qd5-bU-i8x">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Location History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d1k-ZD-DYC">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="5mD-YP-cxM" kind="show" id="jCj-05-eWH"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calculatorTableViewCell" textLabel="3LZ-Cn-kuR" style="IBUITableViewCellStyleDefault" id="mIK-Sd-VZN" customClass="DashboardTableViewCell" customModule="SEPA">
-                                        <rect key="frame" x="0.0" y="268" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mIK-Sd-VZN" id="BDG-vd-xFS">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3LZ-Cn-kuR">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="qHa-Yi-P3T" kind="show" id="LkL-XE-bqj"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photosTableViewCell" textLabel="c2g-Uz-jnl" style="IBUITableViewCellStyleDefault" id="lSP-CQ-b1x" customClass="DashboardTableViewCell" customModule="SEPA">
-                                        <rect key="frame" x="0.0" y="312" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lSP-CQ-b1x" id="PBf-Hd-jYs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c2g-Uz-jnl">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="JHN-9l-Cbq" kind="show" id="JOx-Oa-O4Z"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Settings" id="Uen-LO-xJi">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsTableViewCell" textLabel="OnR-Qo-FAL" style="IBUITableViewCellStyleDefault" id="Nhm-pv-5IO">
-                                        <rect key="frame" x="0.0" y="384" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nhm-pv-5IO" id="jEx-ND-L12">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OnR-Qo-FAL">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zlv-Ta-eR2" kind="show" id="1hY-1Z-7XS"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="5bX-80-Tyx" id="PfZ-BC-3kb"/>
-                            <outlet property="delegate" destination="5bX-80-Tyx" id="1Bc-jv-gnM"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="SEPA Dashboard" id="htV-Oe-XQi"/>
+                        <constraints>
+                            <constraint firstItem="XcS-PZ-ar9" firstAttribute="top" secondItem="vjV-5L-WEH" secondAttribute="bottom" id="GeZ-mO-DAL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vjV-5L-WEH" secondAttribute="trailing" constant="-20" id="VD7-U6-Kb6"/>
+                            <constraint firstItem="vjV-5L-WEH" firstAttribute="top" secondItem="N2H-cz-YL0" secondAttribute="bottom" id="mcD-B5-4zG"/>
+                            <constraint firstItem="vjV-5L-WEH" firstAttribute="leading" secondItem="Ln4-mU-1QH" secondAttribute="leadingMargin" constant="-20" id="ud1-0S-isG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sepa Dashboard" id="mka-yR-jmE"/>
                     <connections>
-                        <outlet property="TableView" destination="Xn0-fP-tnK" id="E9E-FV-Gx2"/>
+                        <outlet property="tableView" destination="vjV-5L-WEH" id="iuV-ZY-LKR"/>
+                        <segue destination="8rJ-Kc-sve" kind="show" identifier="showNews" id="H6E-tr-gT1"/>
+                        <segue destination="mak-Ge-HjU" kind="show" identifier="showWeather" id="yHy-MG-64G"/>
+                        <segue destination="zlv-Ta-eR2" kind="show" identifier="showSettings" id="ioM-Yz-pLf"/>
+                        <segue destination="JHN-9l-Cbq" kind="show" identifier="showPhotos" id="nOk-U8-JUq"/>
+                        <segue destination="qHa-Yi-P3T" kind="show" identifier="showCalculator" id="Mzd-yD-UI4"/>
+                        <segue destination="f74-2J-m59" kind="show" identifier="showConverter" id="DP1-Ok-gK9"/>
+                        <segue destination="5mD-YP-cxM" kind="show" identifier="showLocationHistory" id="fwN-en-MCb"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DAy-98-sdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OMp-Yf-fz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-379" y="-2001"/>
+            <point key="canvasLocation" x="-379" y="-2689"/>
         </scene>
         <!--WeatherInitial-->
         <scene sceneID="SXr-Tn-j27">

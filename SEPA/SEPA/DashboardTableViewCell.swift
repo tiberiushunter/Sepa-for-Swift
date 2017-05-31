@@ -9,6 +9,12 @@
 import UIKit
 
 class DashboardTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var dashboardIcon: UIImageView!
+    
+    @IBOutlet weak var title: UILabel!
+    
+    @IBOutlet weak var summary: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
