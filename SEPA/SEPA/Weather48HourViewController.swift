@@ -28,7 +28,6 @@ class Weather48HourViewController: UIViewController, UITableViewDataSource, UITa
         getWeather { jsonString in
             if let jsonDictionary = Utilities().convertStringToDictionary(jsonString as String){
                 if let weatherData = jsonDictionary["hourly"]!["data"]! as? [Dictionary<String, AnyObject>]{
-                    print(weatherData)
                     for i in 0 ..< weatherData.count {
                         let weatherHourData = WeatherModel(
                             time: Double(weatherData[i]["time"]! as! NSNumber),

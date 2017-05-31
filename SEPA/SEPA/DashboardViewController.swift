@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import MapKit
 
-class DashboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class DashboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate  {
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    let locationManager = CLLocationManager()
+    var coords = CLLocationCoordinate2D(latitude: 53.4846, longitude: -2.2708)
+    
+    var weatherSummary = ""
+    var weatherIcon = WeatherIcon.nothing
     
     let reuseIdentifier = "tableViewCell"
     
@@ -29,6 +36,80 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
         tableView.delegate = self
         
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus){
+        if (status == .AuthorizedAlways){
+            updateWeatherData()
+        } else if (status == .Denied){
+            let alert = UIAlertController(title: "Error", message: "Goto Settings and allow this app to access your location", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func getLocation(){
+        if let loc = locationManager.location?.coordinate{
+            coords = loc
+        }
+    }
+    
+    func getWeather(completion: (NSString) -> ()) {
+        let urlPath = WeatherURL(lat: String(coords.latitude), long: String(coords.longitude)).getFullURL()
+        let url: NSURL = NSURL(string: urlPath)!
+        let request = NSMutableURLRequest(URL: url)
+        let session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "GET"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            let jsonString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            
+            completion(jsonString!)
+        })
+        task.resume()
+    }
+    
+    func updateWeatherData(){
+        getLocation()
+        getWeather { jsonString in
+            if let jsonDictionary = Utilities().convertStringToDictionary(jsonString as String){
+                if let currently = jsonDictionary["currently"] as? Dictionary<String, AnyObject>{
+                    if let sum = currently["summary"] as? String {
+                        self.weatherSummary = sum
+                    }
+                    if let imageIcon = currently["icon"] as? String {
+                        switch(imageIcon){
+                        case "clear-day": self.weatherIcon = WeatherIcon.clearDay
+                        case "clear-night": self.weatherIcon = WeatherIcon.clearNight
+                        case "rain": self.weatherIcon = WeatherIcon.rain
+                        case "snow": self.weatherIcon = WeatherIcon.snow
+                        case "sleet": self.weatherIcon = WeatherIcon.snow
+                        case "wind": self.weatherIcon = WeatherIcon.wind
+                        case "fog": self.weatherIcon = WeatherIcon.fog
+                        case "cloudy": self.weatherIcon = WeatherIcon.cloudy
+                        case "partly-cloudy-day": self.weatherIcon = WeatherIcon.partlyCloudyDay
+                        case "partly-cloudy-night": self.weatherIcon = WeatherIcon.partlyCloudyNight
+                        case "hail": self.weatherIcon = WeatherIcon.rain
+                        case "thunderstorm": self.weatherIcon = WeatherIcon.thunderstorm
+                        case "tornado": self.weatherIcon = WeatherIcon.tornado
+                        default: self.weatherIcon = WeatherIcon.nothing
+                        }
+                    }
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
     
     override func viewWillAppear(animated: Bool){
@@ -89,16 +170,27 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         cell.title.text = appTitles[indexPath.row]
         cell.summary.text = appSummaries[indexPath.row]
         switch (cell.title.text!){
-            case "My Weather": cell.dashboardIcon.image = UIImage(named: "fog")
-            case "My News": cell.dashboardIcon.image = UIImage(named: "dashboard-news")
-            case "My Plants": cell.dashboardIcon.image = UIImage(named: "dashboard-plants")
-            case "My Location History": cell.dashboardIcon.image = UIImage(named: "dashboard-locationhistory")
+        case "My Weather":
+            if(self.weatherIcon != WeatherIcon.nothing){
+                cell.dashboardIcon.image = UIImage(named: self.weatherIcon.rawValue)
+            }
+            
+            cell.summary.text = "Summary: " + weatherSummary
+            case "My News":
+                cell.dashboardIcon.image = UIImage(named: "dashboard-news")
+            case "My Plants":
+                cell.dashboardIcon.image = UIImage(named: "dashboard-plants")
+            case "My Location History":
+                cell.dashboardIcon.image = UIImage(named: "dashboard-locationhistory")
             case "My Calculator":
                 cell.dashboardIcon.image = UIImage(named: "dashboard-calculator")
                 cell.summary.text = "Last Result = \(Double(lastCalc))"
-            case "My Converter": cell.dashboardIcon.image = UIImage(named: "dashboard-converter")
-            case "My Settings": cell.dashboardIcon.image = UIImage(named: "dashboard-settings")
-        default: cell.dashboardIcon.image = UIImage(named: "dashboard-calculator")
+            case "My Converter":
+                cell.dashboardIcon.image = UIImage(named: "dashboard-converter")
+            case "My Settings":
+                cell.dashboardIcon.image = UIImage(named: "dashboard-settings")
+        default:
+            cell.dashboardIcon.image = UIImage(named: "dashboard-calculator")
         }
         
         return cell

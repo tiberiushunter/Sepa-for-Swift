@@ -69,6 +69,11 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
+    
+    override func viewWillAppear(animated: Bool){
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
