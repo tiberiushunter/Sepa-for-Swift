@@ -141,6 +141,19 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return newsArticlesForSection
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let id = segue.identifier{
+            if (id == "showNewsArticle"){
+                let newVc = segue.destinationViewController as! NewsArticleViewController
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let cell = tableView.cellForRowAtIndexPath(indexPath) as! NewsTableCell
+                    newVc.contentUrl = cell.url
+                }
+                
+            }
+        }
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: NewsTableCell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! NewsTableCell
         
@@ -156,6 +169,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.lblHeadline.text = newsArticlesForSection[indexPath.row].getNewsHeadline()
         cell.lblDescription.text = newsArticlesForSection[indexPath.row].getNewsDescription()
         cell.articleImage.loadRequest(NSURLRequest(URL: NSURL(string: urlToImage)!))
+        cell.url = newsArticlesForSection[indexPath.row].getUrl()
         
         return cell
     }
