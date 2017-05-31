@@ -10,14 +10,15 @@ import UIKit
 
 class DashboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     @IBOutlet weak var tableView: UITableView!
     
     let reuseIdentifier = "tableViewCell"
     
-    var dummyTitles = ["My Weather", "My News", "My Photos", "My Location History", "My Calculator", "My Converter", "My Settings"]
+    var appTitles = ["My Weather", "My News", "My Photos", "My Location History", "My Calculator", "My Converter", "My Settings"]
     
-    var dummySummaries = ["Sunny Today!", "Last updated: Just Now", "3 New Photos Today", "Last updated: Just Now", "Last Result: 5", "Last Result: 28mph", "Adjust Sepa for your needs"]
+    var appSummaries = ["Sunny Today!", "Last updated: Just Now", "3 New Photos Today", "Last updated: Just Now", "Last Result: 5", "Last Result: 28mph", "Adjust Sepa for your needs"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,37 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
         tableView.delegate = self
         
+    }
+    
+    @IBAction func editButtonAction(sender: AnyObject) {
+        if(editButton.title == "Edit"){
+            editButton.title = "Done"
+        } else{
+            editButton.title = "Edit"
+        }
+        tableView.editing = !tableView.editing
+       
+    }
+    
+    func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.None
+    }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true}
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        var itemToMove = appTitles[fromIndexPath.row]
+        appTitles.removeAtIndex(fromIndexPath.row)
+        appTitles.insert(itemToMove, atIndex: toIndexPath.row)
+        
+        itemToMove = appSummaries[fromIndexPath.row]
+        appSummaries.removeAtIndex(fromIndexPath.row)
+        appSummaries.insert(itemToMove, atIndex: toIndexPath.row)
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,9 +78,18 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: DashboardTableViewCell = (tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as? DashboardTableViewCell)!
         
-        cell.title.text = dummyTitles[indexPath.row]
-        cell.summary.text = dummySummaries[indexPath.row]
-        cell.dashboardIcon.image = UIImage(named: "fog")
+        cell.title.text = appTitles[indexPath.row]
+        cell.summary.text = appSummaries[indexPath.row]
+        switch (cell.title.text!){
+            case "My Weather": cell.dashboardIcon.image = UIImage(named: "fog")
+            case "My News": cell.dashboardIcon.image = UIImage(named: "dashboard-news")
+            case "My Photos": cell.dashboardIcon.image = UIImage(named: "dashboard-photos")
+            case "My Location History": cell.dashboardIcon.image = UIImage(named: "dashboard-locationhistory")
+            case "My Calculator": cell.dashboardIcon.image = UIImage(named: "dashboard-calculator")
+            case "My Converter": cell.dashboardIcon.image = UIImage(named: "dashboard-converter")
+            case "My Settings": cell.dashboardIcon.image = UIImage(named: "dashboard-settings")
+        default: cell.dashboardIcon.image = UIImage(named: "dashboard-calculator")
+        }
         
         return cell
     }
@@ -75,7 +116,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyTitles.count
+        return appTitles.count
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
