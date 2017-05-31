@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0y-7E-XIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2378" y="-448"/>
+            <point key="canvasLocation" x="-2354" y="-796"/>
         </scene>
         <!--Converter-->
         <scene sceneID="OCt-7l-ecZ">
@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt1-G2-ZfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-430" y="-448"/>
+            <point key="canvasLocation" x="-434" y="-796"/>
         </scene>
         <!--Photos-->
         <scene sceneID="VAA-TE-OBC">
@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFV-03-7nP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1726" y="-448"/>
+            <point key="canvasLocation" x="-1706" y="-796"/>
         </scene>
         <!--Calculator-->
         <scene sceneID="Sdl-Fl-B2R">
@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzf-95-QiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1080" y="-448"/>
+            <point key="canvasLocation" x="-1072" y="-796"/>
         </scene>
         <!--Location History-->
         <scene sceneID="tkh-2z-0a8">
@@ -183,13 +183,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AEG-nQ-Oye">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AEG-nQ-Oye" firstAttribute="leading" secondItem="Caa-Fy-0xX" secondAttribute="leadingMargin" id="BdD-kP-jBq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AEG-nQ-Oye" secondAttribute="trailing" id="bN2-Bb-NTk"/>
+                            <constraint firstItem="AEG-nQ-Oye" firstAttribute="leading" secondItem="Caa-Fy-0xX" secondAttribute="leadingMargin" constant="-20" id="BdD-kP-jBq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AEG-nQ-Oye" secondAttribute="trailing" constant="-20" id="bN2-Bb-NTk"/>
                             <constraint firstItem="ygk-7U-ZHl" firstAttribute="top" secondItem="AEG-nQ-Oye" secondAttribute="bottom" id="fAy-d0-v0O"/>
                             <constraint firstItem="AEG-nQ-Oye" firstAttribute="top" secondItem="8bm-qh-CgY" secondAttribute="bottom" id="wFO-IN-ztf"/>
                         </constraints>
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFO-J3-s2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="-448"/>
+            <point key="canvasLocation" x="200" y="-796"/>
         </scene>
         <!--News-->
         <scene sceneID="wg7-f3-ORb">
@@ -303,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="378" y="-1836"/>
+            <point key="canvasLocation" x="-38" y="-1924"/>
         </scene>
         <!--News Article-->
         <scene sceneID="Bf8-HI-Hhf">
@@ -337,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wH3-uv-Pls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="-1836"/>
+            <point key="canvasLocation" x="768" y="-1924"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rJE-OI-AYP">
@@ -353,7 +353,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQS-Wc-Lna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1212" y="-2713"/>
+            <point key="canvasLocation" x="-1620" y="-2261"/>
         </scene>
         <!--Sepa Dashboard-->
         <scene sceneID="pyl-FG-ffY">
@@ -378,26 +378,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DY-SX-j1M">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2DY-SX-j1M">
                                                     <rect key="frame" x="8" y="8" width="584" height="108"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghg-w9-QPp">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qK7-3e-t3S">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="108"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="diB-sh-ByK"/>
+                                                                <constraint firstAttribute="width" constant="100" id="fc5-Cn-bei"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-Pw-ckL">
-                                                            <rect key="frame" x="100" y="0.0" width="484" height="108"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-Pw-ckL">
+                                                            <rect key="frame" x="110" y="0.0" width="474" height="108"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uv3-I2-id9">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="484" height="90"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="474" height="80"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5I-Oc-DIz">
-                                                                    <rect key="frame" x="0.0" y="90" width="484" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="90" width="474" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -415,8 +415,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dashboardIcon" destination="ghg-w9-QPp" id="ong-mp-gQW"/>
-                                            <outlet property="imageView" destination="ghg-w9-QPp" id="m4E-eQ-ATx"/>
+                                            <outlet property="dashboardIcon" destination="qK7-3e-t3S" id="fmV-sa-fte"/>
                                             <outlet property="summary" destination="r5I-Oc-DIz" id="oEq-dx-2mR"/>
                                             <outlet property="title" destination="Uv3-I2-id9" id="hfk-Xc-1bZ"/>
                                         </connections>
@@ -446,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMp-Yf-fz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-379" y="-2689"/>
+            <point key="canvasLocation" x="-795" y="-2261"/>
         </scene>
         <!--WeatherInitial-->
         <scene sceneID="SXr-Tn-j27">
@@ -455,7 +454,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0V-cF-x1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationItem title="News" id="wIh-te-87M"/>
             </objects>
-            <point key="canvasLocation" x="195.5" y="-2403"/>
+            <point key="canvasLocation" x="-260.5" y="-2731"/>
         </scene>
     </scenes>
     <resources>
