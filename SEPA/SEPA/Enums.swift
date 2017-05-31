@@ -22,3 +22,16 @@ enum WeatherIcon: String {
     case tornado = "stormy"
     case nothing = ""
 }
+
+enum Operator: String {
+    case add = "+"
+    case subtract = "-"
+    case multiply = "*"
+    case divide = "/"
+    case nothing = ""
+}
+
+enum CalculationState: String {
+    case enteringNum = "enteringNum"
+    case newNumStarted = "newNumStarted"
+}

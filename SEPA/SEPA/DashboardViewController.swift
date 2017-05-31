@@ -16,6 +16,8 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     
     let reuseIdentifier = "tableViewCell"
     
+    var lastCalc = 0.00
+    
     var appTitles = ["My Weather", "My News", "My Photos", "My Location History", "My Calculator", "My Converter", "My Settings"]
     
     var appSummaries = ["Sunny Today!", "Last updated: Just Now", "3 New Photos Today", "Last updated: Just Now", "Last Result: 5", "Last Result: 28mph", "Adjust Sepa for your needs"]
@@ -23,12 +25,18 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+       
         tableView.dataSource = self
         tableView.delegate = self
         
     }
     
+    override func viewWillAppear(animated: Bool){
+        super.viewWillAppear(animated)
+        lastCalc = (NSUserDefaults.standardUserDefaults().doubleForKey("lastCalc"))
+        tableView.reloadData()
+    }
+
     @IBAction func editButtonAction(sender: AnyObject) {
         if(editButton.title == "Edit"){
             editButton.title = "Done"
@@ -85,7 +93,9 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
             case "My News": cell.dashboardIcon.image = UIImage(named: "dashboard-news")
             case "My Photos": cell.dashboardIcon.image = UIImage(named: "dashboard-photos")
             case "My Location History": cell.dashboardIcon.image = UIImage(named: "dashboard-locationhistory")
-            case "My Calculator": cell.dashboardIcon.image = UIImage(named: "dashboard-calculator")
+            case "My Calculator":
+                cell.dashboardIcon.image = UIImage(named: "dashboard-calculator")
+                cell.summary.text = "Last Result = \(Double(lastCalc))"
             case "My Converter": cell.dashboardIcon.image = UIImage(named: "dashboard-converter")
             case "My Settings": cell.dashboardIcon.image = UIImage(named: "dashboard-settings")
         default: cell.dashboardIcon.image = UIImage(named: "dashboard-calculator")
