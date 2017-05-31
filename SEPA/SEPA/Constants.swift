@@ -49,6 +49,19 @@ struct NewsArticlesURL {
     }
 }
 
+struct PlantApi {
+    private let baseURL = "http://www.chrisjhughes.co.uk/api/tree?"
+    private let key = "key=an7dI1DwSM591d137eda34b"
+    
+    init (){
+        
+    }
+    
+    func getFullURL() -> String {
+        return baseURL + key
+    }
+}
+
 struct UnixTimeURL {
     private let baseURL = "http://www.convert-unix-time.com/api?"
     private var timestamp = ""

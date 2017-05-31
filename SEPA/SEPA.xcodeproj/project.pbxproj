@@ -41,6 +41,8 @@
 		E2F420DE1EDE6267003D1AD9 /* NewsArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F420DD1EDE6267003D1AD9 /* NewsArticleViewController.swift */; };
 		E2F420E21EDE7853003D1AD9 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F420E11EDE7853003D1AD9 /* DashboardViewController.swift */; };
 		E2F420E51EDE9AE4003D1AD9 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F420E41EDE9AE4003D1AD9 /* WeatherModel.swift */; };
+		E2F420E71EDED58E003D1AD9 /* PlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F420E61EDED58E003D1AD9 /* PlantsModel.swift */; };
+		E2F420EB1EDEEACA003D1AD9 /* PlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F420EA1EDEEACA003D1AD9 /* PlantsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		E2F420DD1EDE6267003D1AD9 /* NewsArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArticleViewController.swift; sourceTree = "<group>"; };
 		E2F420E11EDE7853003D1AD9 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		E2F420E41EDE9AE4003D1AD9 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		E2F420E61EDED58E003D1AD9 /* PlantsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsModel.swift; sourceTree = "<group>"; };
+		E2F420EA1EDEEACA003D1AD9 /* PlantsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +179,8 @@
 		E20FD9E31ED4728E00876005 /* Plants */ = {
 			isa = PBXGroup;
 			children = (
-				E2A59D621ECE831C00AAD24C /* PlantsViewController.swift */,
+				E2F420E91EDED5AD003D1AD9 /* PlantsModels */,
+				E2F420E81EDED599003D1AD9 /* PlantsViewControllers */,
 			);
 			name = Plants;
 			sourceTree = "<group>";
@@ -318,6 +323,23 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		E2F420E81EDED599003D1AD9 /* PlantsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E2A59D621ECE831C00AAD24C /* PlantsViewController.swift */,
+				E2F420EA1EDEEACA003D1AD9 /* PlantsTableViewCell.swift */,
+			);
+			name = PlantsViewControllers;
+			sourceTree = "<group>";
+		};
+		E2F420E91EDED5AD003D1AD9 /* PlantsModels */ = {
+			isa = PBXGroup;
+			children = (
+				E2F420E61EDED58E003D1AD9 /* PlantsModel.swift */,
+			);
+			name = PlantsModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -456,6 +478,7 @@
 				E2A59D5F1ECE82D500AAD24C /* CalculatorViewController.swift in Sources */,
 				E2A59D2D1ECE701000AAD24C /* NewsViewController.swift in Sources */,
 				E2CED7611EDD1DC3007DBAEF /* NewsArticleModel.swift in Sources */,
+				E2F420E71EDED58E003D1AD9 /* PlantsModel.swift in Sources */,
 				E2CED7591EDCF408007DBAEF /* Weather7DayDetailViewController.swift in Sources */,
 				E2CED7561EDCE0E2007DBAEF /* LocationDataModel.swift in Sources */,
 				E20FD9DD1ED463B000876005 /* Constants.swift in Sources */,
@@ -463,6 +486,7 @@
 				E2CED74F1EDC8038007DBAEF /* Utilities.swift in Sources */,
 				E2CED75F1EDD12AF007DBAEF /* Enums.swift in Sources */,
 				E20FD9D71ED45A5200876005 /* LocationViewController.swift in Sources */,
+				E2F420EB1EDEEACA003D1AD9 /* PlantsTableViewCell.swift in Sources */,
 				E2A59D631ECE831C00AAD24C /* PlantsViewController.swift in Sources */,
 				E2CED7661EDD4108007DBAEF /* SettingsTableViewCell.swift in Sources */,
 				E2CED75B1EDCF541007DBAEF /* Weather7DayTableCell.swift in Sources */,
